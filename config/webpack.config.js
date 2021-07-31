@@ -62,6 +62,8 @@ const swSrc = paths.swSrc;
 const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
+const lessRegex = /\.less$/;
+const lessModuleRegex = /\.module\.less$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
 const hasJsxRuntime = (() => {
@@ -130,8 +132,8 @@ module.exports = function (webpackEnv) {
               stage: 3,
             }),
             require('postcss-px-to-viewport')({
-              viewportWidth: 1920, // (Number) The width of the viewport.
-              viewportHeight: 1080, // (Number) The height of the viewport.
+              viewportWidth: 375, // (Number) The width of the viewport.
+              viewportHeight: 667, // (Number) The height of the viewport.
               unitPrecision: 3, // (Number) The decimal numbers to allow the REM units to grow to.
               viewportUnit: "vw", // (String) Expected units.
               selectorBlackList: [], // (Array) The selectors to ignore and leave as px.
@@ -539,6 +541,29 @@ module.exports = function (webpackEnv) {
                 },
                 'sass-loader'
               ),
+            },
+            {
+              test: lessRegex,
+              exclude: lessModuleRegex,
+              use: getStyleLoaders({
+                importLoaders: 1,
+                modules: true,
+                sourceMap: isEnvProduction && shouldUseSourceMap
+              },
+                "less-loader"
+              ),
+              sideEffects: true
+            },
+            {
+              test: lessModuleRegex,
+              use: getStyleLoaders({
+                importLoaders: 1,
+                sourceMap: isEnvProduction && shouldUseSourceMap,
+                modules: true,
+                getLocalIdent: getCSSModuleLocalIdent
+              },
+                "less-loader"
+              )
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.

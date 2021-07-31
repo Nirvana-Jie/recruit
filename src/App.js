@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Redirect, Switch } from "react-router-dom"
+import { Redirect, Switch,Route } from "react-router-dom"
+import Waiting from './pages/Waiting/Waiting';
 import './App.css';
 
 export default class App extends Component {
@@ -7,7 +8,8 @@ export default class App extends Component {
     return (
       <div>
         <Switch>
-          <Redirect to="./pages/home/home.jsx"/>
+          <Route path='/waiting' component={Waiting}></Route>
+          <Redirect to="/waiting" />
         </Switch>
       </div>
     )
