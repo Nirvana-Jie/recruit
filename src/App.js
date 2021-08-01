@@ -1,9 +1,9 @@
-import "./css/index.css";
+import Create from "./componets/Create";
+import React from "react";
 function App() {
   return (
     <div className="App">
-      <h2>Hellp project</h2>
-      <div className="box"></div>
+      <Create />
     </div>
   );
 }
