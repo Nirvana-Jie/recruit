@@ -20,6 +20,11 @@ export default class Map extends PureComponent {
     c.style.height = "0";
     console.log(c.offsetleft);
   };
+  componentDidMount() {
+    const { map } = this;
+    console.log(map.style);
+    map.style.overflowX = "hidden";
+  }
   render() {
     return (
       <div>
@@ -30,6 +35,7 @@ export default class Map extends PureComponent {
           </div>
         </div>
         <div
+          ref={(c) => (this.map = c)}
           className="map"
           onTouchStart={this.Animate}
           onTouchEnd={this.cancelAnimate}
