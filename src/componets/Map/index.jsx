@@ -24,6 +24,14 @@ export default class Map extends PureComponent {
     const { map } = this;
     console.log(map.style);
     map.style.overflowX = "hidden";
+    //禁止滚动
+    document.body.addEventListener(
+      "touchmove",
+      function (e) {
+        e.preventDefault();
+      },
+      { passive: false }
+    );
   }
   render() {
     return (

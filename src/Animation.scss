@@ -1,0 +1,45 @@
+.route {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+// // 帧动画
+// .up-enter {
+//     opacity: 0;
+//     height: 0vh;
+// }
+
+// .up-enter ,.up-enter-active {
+//     opacity: 1;
+//     height: 100vh;
+//     transition: all 3000ms linear;
+// }
+.up-enter {
+    margin-top: 100vh;
+}
+
+.up-enter-active {
+    transition: all 1s ;
+    margin-top: 0;
+}
+
+.up-exit {
+    opacity: 1;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.up-exit.up-exit-active {
+    opacity: 0;
+    height: 0vh;
+    transition: all 1s linear;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
