@@ -1,5 +1,6 @@
 import "./index.scss";
 import React, { PureComponent } from "react";
+import Cover from "../Cover";
 export default class Map extends PureComponent {
   Animate = () => {
     const c = this.cartoon;
@@ -22,6 +23,7 @@ export default class Map extends PureComponent {
   render() {
     return (
       <div>
+        <Cover />
         <div className="window" ref={(c) => (this.window = c)}>
           <div className="content">
             阿巴阿巴<img src="/img/1.jpeg" alt="wdnmd"></img>

@@ -1,0 +1,17 @@
+.back {
+  width: 375px;
+  height: 100%;
+  background-color: royalblue;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  .person {
+    width: 300px;
+    height: 500px;
+    background-color: salmon;
+    transition-property: all;
+  }
+}
