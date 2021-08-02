@@ -60,6 +60,7 @@
     "react-redux": "^7.2.4",
     "react-refresh": "^0.8.3",
     "react-router-dom": "^5.2.0",
+    "react-transition-group": "^4.4.2",
     "redux": "^4.1.0",
     "resolve": "1.18.1",
     "resolve-url-loader": "^3.1.2",
@@ -154,5 +155,7 @@
       "react-app"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "node-sass": "^6.0.1"
+  }
 }

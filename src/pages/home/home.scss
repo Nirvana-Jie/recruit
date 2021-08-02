@@ -1,0 +1,44 @@
+@keyframes reverseRotataZ{
+    0%{-webkit-transform: rotateZ(0deg);}
+    100%{-webkit-transform: rotateZ(-360deg);}
+}
+@keyframes rotataZ{
+    0%{-webkit-transform: rotateZ(0deg);}
+    100%{-webkit-transform: rotateZ(360deg);}
+}
+
+.musicControl{
+    position:absolute;
+    right:10px;
+    top:20px;
+    display:inline-block;
+    .mc-play{
+        display:inline-block;
+        width:25px;
+        height:25px;
+        overflow:hidden;
+        background: url(./music.png) no-repeat;
+        background-size:100%;
+        .stop{
+            background-position:left bottom;
+        }
+        .on{
+            background-position:0px 1px;
+            animation: reverseRotataZ 1.2s linear infinite;
+        }
+    }
+}
+.title{
+    position: absolute;
+    top: 100px;
+    left:75px;
+}
+.message{
+    height: 200px;
+    width: 300px;
+    background: violet;
+    position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}

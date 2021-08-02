@@ -1,5 +1,10 @@
+#waiting {
+    width: 100%;
+}
+
 #Waiting_header{
     display: flex;
+    width: 100%;
     justify-content: center;
     margin-top: 100px;
     .Waiting_title{
@@ -14,27 +19,15 @@
 #Waiting_loading{
     width:80%;
     height:100px;
-    background: #ddd;
     border-radius: 20px;
-    box-shadow: 3px 4px 4px #aaa;
     margin-top: 100px;
     margin-left: 50px;
     position: relative;
     .pro{
         width: 250px;
         height: 40px;
-        background: #EFEFF4;
         border-radius:  20px;
-        box-shadow: 3px 4px 4px #aaa;
         position: absolute;
-        ::-webkit-progress-bar {
-            background-color: #f2f2f2;
-            border-radius: 20px;
-        };
-        ::-webkit-progress-value {
-            background: lawngreen;
-            border-radius: 0.5rem;
-        }
     };
     .sp{
         position: absolute;
