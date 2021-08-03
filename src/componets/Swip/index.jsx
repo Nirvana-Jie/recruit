@@ -7,10 +7,11 @@ SwiperCore.use(Navigation);
 
 export default class Swip extends PureComponent {
   render() {
+    const { showNum } = this.props;
     return (
       <Swiper
         spaceBetween={50}
-        slidesPerView={3}
+        slidesPerView={showNum}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
         crossFade={true}

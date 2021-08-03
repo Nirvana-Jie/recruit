@@ -1,0 +1,56 @@
+.food {
+  button {
+    background-color: rgb(22, 155, 213);
+    color: #fff;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    line-height: 40px;
+  }
+  .content {
+    $width: 320px;
+    $height: 40px;
+    margin: auto;
+    position: absolute;
+    //居中样式，后面可以总体加，可去！
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 320px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: saddlebrown;
+    align-items: center;
+    justify-content: space-around;
+    .shut {
+      width: 30px;
+      height: 30px;
+      background-color: red;
+      z-index: 1;
+      position: absolute;
+      right: 0;
+      top: -30px;
+    }
+    .header {
+      width: $width;
+      height: $height;
+      display: flex;
+      justify-content: space-between;
+    }
+    .body {
+      width: $width;
+      height: 300px;
+      background-color: salmon;
+    }
+    .footer {
+      width: $width;
+      display: $height;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

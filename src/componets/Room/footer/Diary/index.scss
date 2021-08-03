@@ -1,0 +1,23 @@
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+.diary {
+  .swiper-container {
+    width: 100%;
+  }
+  .swiper-slide {
+    text-align: center;
+  }
+  .swiper-slide div {
+    width: 86%;
+    border-radius: 7px;
+    margin: 10px 0 10px 4%;
+  }
+  .swiper-slide div img {
+    width: 100%;
+    display: block;
+    border-radius: 7px;
+  }
+}

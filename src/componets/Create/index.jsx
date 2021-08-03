@@ -49,13 +49,13 @@ export default class Create extends PureComponent {
             </div>
           </div>
           <div className="header">
-            <Swip key={1} />
+            <Swip key={1} showNum={3} />
           </div>
           <div className="body">
-            <Swip key={2} />
+            <Swip key={2} showNum={3} />
           </div>
           <div className="footer">
-            <Swip key={3} />
+            <Swip key={3} showNum={3} />
           </div>
           <div className="submit">
             <p>生成你的信息和形象</p>

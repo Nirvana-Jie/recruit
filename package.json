@@ -1,16 +1,11 @@
 {
-<<<<<<< HEAD
   "name": "fresh_welcome",
-=======
-  "name": "recruit",
->>>>>>> d2bcfde8b9e52044858a83d9264fe705613478f9
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@babel/core": "7.12.3",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
     "@svgr/webpack": "5.5.0",
-<<<<<<< HEAD
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -18,13 +13,6 @@
     "@typescript-eslint/parser": "^4.5.0",
     "antd-mobile": "^2.3.4",
     "antd-mobile-demo-data": "^0.3.0",
-=======
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "@typescript-eslint/eslint-plugin": "^4.5.0",
-    "@typescript-eslint/parser": "^4.5.0",
->>>>>>> d2bcfde8b9e52044858a83d9264fe705613478f9
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.0",
     "babel-loader": "8.1.0",
@@ -57,41 +45,23 @@
     "less": "^4.1.1",
     "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "0.11.3",
-<<<<<<< HEAD
     "node-sass": "^5.0.0",
-=======
->>>>>>> d2bcfde8b9e52044858a83d9264fe705613478f9
     "optimize-css-assets-webpack-plugin": "5.0.4",
     "pnp-webpack-plugin": "1.6.4",
     "postcss-flexbugs-fixes": "4.2.1",
     "postcss-loader": "3.0.0",
     "postcss-normalize": "8.0.1",
     "postcss-preset-env": "6.7.0",
-<<<<<<< HEAD
     "postcss-safe-parser": "5.0.2",
     "prompts": "2.4.0",
     "pubsub-js": "^1.9.3",
     "rc-form": "^2.4.12",
-=======
-    "postcss-px-to-viewport": "^1.1.1",
-    "postcss-safe-parser": "5.0.2",
-    "prompts": "2.4.0",
-    "pubsub.js": "^1.5.2",
->>>>>>> d2bcfde8b9e52044858a83d9264fe705613478f9
     "react": "^17.0.2",
     "react-app-polyfill": "^2.0.0",
     "react-dev-utils": "^11.0.3",
     "react-dom": "^17.0.2",
-<<<<<<< HEAD
     "react-refresh": "^0.8.3",
     "react-router-dom": "^5.2.0",
-=======
-    "react-redux": "^7.2.4",
-    "react-refresh": "^0.8.3",
-    "react-router-dom": "^5.2.0",
-    "react-transition-group": "^4.4.2",
-    "redux": "^4.1.0",
->>>>>>> d2bcfde8b9e52044858a83d9264fe705613478f9
     "resolve": "1.18.1",
     "resolve-url-loader": "^3.1.2",
     "sass-loader": "^10.0.5",
@@ -101,11 +71,7 @@
     "terser-webpack-plugin": "4.2.3",
     "ts-pnp": "1.2.0",
     "url-loader": "4.1.1",
-<<<<<<< HEAD
     "web-vitals": "^1.0.1",
-=======
-    "web-vitals": "^1.1.2",
->>>>>>> d2bcfde8b9e52044858a83d9264fe705613478f9
     "webpack": "4.44.2",
     "webpack-dev-server": "3.11.1",
     "webpack-manifest-plugin": "2.2.0",
@@ -134,7 +100,6 @@
       "last 1 safari version"
     ]
   },
-<<<<<<< HEAD
   "plugins": [
     [
       "import",
@@ -144,8 +109,6 @@
       }
     ]
   ],
-=======
->>>>>>> d2bcfde8b9e52044858a83d9264fe705613478f9
   "jest": {
     "roots": [
       "<rootDir>/src"
@@ -157,23 +120,15 @@
     "setupFiles": [
       "react-app-polyfill/jsdom"
     ],
-<<<<<<< HEAD
     "setupFilesAfterEnv": [
       "<rootDir>/src/setupTests.js"
     ],
-=======
-    "setupFilesAfterEnv": [],
->>>>>>> d2bcfde8b9e52044858a83d9264fe705613478f9
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
       "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
     ],
     "testEnvironment": "jsdom",
-<<<<<<< HEAD
     "testRunner": "C:\\Users\\ASUS\\Desktop\\fresh_welcome\\node_modules\\jest-circus\\runner.js",
-=======
-    "testRunner": "C:\\Users\\HUAWEI\\Desktop\\recruit\\node_modules\\jest-circus\\runner.js",
->>>>>>> d2bcfde8b9e52044858a83d9264fe705613478f9
     "transform": {
       "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
@@ -212,11 +167,7 @@
     ]
   },
   "devDependencies": {
-<<<<<<< HEAD
     "babel-plugin-import": "^1.13.3",
     "postcss-px-to-viewport": "^1.1.1"
-=======
-    "node-sass": "^6.0.1"
->>>>>>> d2bcfde8b9e52044858a83d9264fe705613478f9
   }
 }
