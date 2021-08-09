@@ -3,24 +3,33 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation } from "swiper";
 import "swiper/components/navigation/navigation.scss";
 import "swiper/swiper.scss";
+import "./index.scss";
 SwiperCore.use(Navigation);
 
 export default class Swip extends PureComponent {
+  componentDidMount() {}
   render() {
+    const { showPic } = this.props;
     const { showNum } = this.props;
+    const { type } = this.props;
+    let b = 1;
     return (
       <Swiper
         spaceBetween={50}
         slidesPerView={showNum}
         onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
         crossFade={true}
         navigation
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
+        {showPic.map((data, index) => {
+          return (
+            <SwiperSlide>
+              <div className={`${type}${index} ${type}`}>
+                <img src={data}></img>
+              </div>
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     );
   }
