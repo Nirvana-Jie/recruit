@@ -1,0 +1,17 @@
+@keyframes rotate{
+    0%{
+        transform: rotate(0)
+    }
+    100%{
+        transform: rotate(360deg)
+    }
+}
+.audioBox{
+    height: 22px;
+    width: 22px;
+    src: url('../../../assets/img/Music.png');
+    position: fixed;
+    top: 81px;
+    right: 5px;
+    animation:'rotate 20s linear infinite';
+}

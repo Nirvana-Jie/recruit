@@ -1,60 +1,74 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link, Redirect } from 'react-router-dom'
 import './home.scss'
+import button from '../../assets/img/Home/button.png'
+import slide from '../../assets/api/slide'
 
 
 export default class home extends Component {
  
     state={
         startY:0,
-        moveY:0
+        moveY:0,
+        time:'0',
+        deadline:new Date('2021/9/14 00:00:00'),
+        d:'00',
+        h:'00',
+        m:'00',
+        s:'00'
+
     }
     componentDidMount(){
-        //获取手指的初始坐标
-        window.addEventListener('touchstart',(event) => {
-            const {startY} =this.state
-             this.setState({
-                startY:event.targetTouches[0].pageY
-            })
-            console.log(startY);
-        });
-        //移动手指 touchmove：计算手指的滑动距离，并且移动盒子
-        window.addEventListener('touchmove',(event) => {
-            const {startY} =this.state
-            console.log(event.targetTouches[0].pageY);
-            //计算移动距离
+        //获取倒计时
+        this.timer = setInterval(() => {
+            const {deadline} =this.state
+            let time =new Date()
+            let leftime =deadline.getTime()-time.getTime();
+            let leftd =Math.floor(leftime/(1000*60*60*24));
+            let lefth = Math.floor(leftime/(1000*60*60)%24) ; 
+            let leftm = Math.floor(leftime/(1000*60)%60) ; 
+            let lefts = Math.floor(leftime/1000%60);
+            if(leftd<10)leftd='0'+leftd;
+            if(lefth<10)lefth='0'+lefth;
+            if(leftm<10)leftm='0'+leftm;
+            if(lefts<10)lefts='0'+lefts;
             this.setState({
-                moveY:event.targetTouches[0].pageY - startY,
+                d:leftd,
+                h:lefth,
+                m:leftm,
+                s:lefts
             })
-        });
-        window.addEventListener('touchend',(event) => {
-            const {moveY} =this.state
-            if(Math.abs(moveY)>150){
-                //moveY是正值时，路由跳转
-                if(moveY<0){
-                    this.props.history.push('/creat');
-                }
-            }
-        })
+        },1000)
+        slide(this,this.homeNode,'/create')
+        
+        }
+    componentWillUnmount(){
+        //清除定时器
+        clearInterval(this.timer)
     }
 
-    render() {
-        return (
-            <div style={{height: "100vh"}}>
-                {/* <span className='musicControl'>
-                    <Link className='mc-play'>
-                        <audio  controls="controls" autoplay="autoplay">
-                            <source src='./Level04Loop.mp3'></source>
-                        </audio>
-                    </Link>
-                </span> */}
-                <div className='title'>
-                    <h1>未来，邮你探寻</h1>
-                </div>
-                <div className='message'>
+  
 
-                </div>
-                
+    render() {
+        const {d,h,m,s} = this.state
+        return (
+            <div className='home_backgroud' ref={c=>this.homeNode=c} >
+                    <div className='t1'>
+                    距新生入学还有
+                    </div>
+                    <div className='t2'>
+                        <span>{d}</span>
+                        <span>天</span>
+                        <span>{h}</span>
+                        <span>时</span>
+                        <span>{m}</span>
+                        <span>分</span>
+                        <span>{s}</span>
+                        <span>秒</span>
+                    </div>
+                    <img alt='button' src={button}></img>
+                    <div className='t3'>开启我的</div>
+                    <div className='t4'>重邮探索之旅</div>
             </div>
         )
     }

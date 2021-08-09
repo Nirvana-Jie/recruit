@@ -18,12 +18,14 @@
 //     transition: all 3000ms linear;
 // }
 .up-enter {
+    width: 100vw;
     margin-top: 100vh;
 }
 
 .up-enter-active {
-    transition: all 1s ;
-    margin-top: 0;
+    width: 100vw;
+    transition: all 1.5s linear;
+    margin-top: 0px;
 }
 
 .up-exit {
@@ -37,8 +39,8 @@
 
 .up-exit.up-exit-active {
     opacity: 0;
-    height: 0vh;
-    transition: all 1s linear;
+    height: 100vh;
+    transition: all 1.5s linear;
     position: fixed;
     top: 0;
     left: 0;
