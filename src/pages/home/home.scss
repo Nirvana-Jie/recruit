@@ -6,39 +6,42 @@
     0%{-webkit-transform: rotateZ(0deg);}
     100%{-webkit-transform: rotateZ(360deg);}
 }
-.home_backgroud{
+.hidden{
     width: 100vw;
-    background: url('../../assets/img/Home/999\ 1.png');
-    background-size:contain;
+    height: 100vh;
+    overflow: hidden;
+}
+.home_backgroud{
+    width: 375px;
+    height: 812px;
+    background: url('../../assets/img/Home/首页x尺寸.png');
+    background-size: contain;
     background-repeat: no-repeat;
+    z-index: -1;
     .t1{
-        padding-left: 105px;
-        padding-top: 253px;
+        position: absolute;
+        top:265px;
+        left: 104px;
+        width: 180px;
         font-family:'basic';
         font-style: normal;
-        font-weight: bold;
+        font-weight: lighter;
         font-size: 20px;
         line-height: 28px;
         letter-spacing: 0.22em;
         color: #50783B;
     }
     .t2{
-        padding-left: 95px;
-        padding-top: 2px;
-        font-family:'basic';
-        font-style: normal;
-        font-weight: bold;
-        font-size: 20px;
-        line-height: 28px;
-        letter-spacing: 0.22em;
-        color: #50783B;
+        position: absolute;
+        top:293px;
+        left: 97px;
         span:nth-child(odd){
             font-family:'basic';
             font-style: normal;
-            font-weight: bold;
             font-size: 21px;
             line-height: 29px;
             letter-spacing: 0.18em;
+            font-weight: lighter;
             color: #FFA302;
             display: inline-block;
             text-align: center;
@@ -47,7 +50,7 @@
         span:nth-child(even){
             font-family:'basic';
             font-style: normal;
-            font-weight: bold;
+            font-weight: lighter;
             font-size: 15px;
             line-height: 21px;
             letter-spacing: 0.18em;
@@ -58,29 +61,32 @@
     img{
         width: 50px;
         height: 27px;
-        padding-left: 163px;
-        padding-top: 239px;
+        position: absolute;
+        top:559px;
+        left: 162px;
     }
     .t3{
-        padding-left: 148px;
-        padding-top: 7px;
         font-family:'basic';
         font-style: normal;
-        font-weight: bold;
+        font-weight: lighter;
         font-size: 20px;
         line-height: 28px;
         color: #FFFFFF;
+        position: absolute;
+        top:592px;
+        left: 146px;
     }
     .t4{
-        padding-left: 128px;
-        padding-top: 1px;
         padding-bottom: 21px;
         font-family:'basic';
         font-style: normal;
-        font-weight: bold;
+        font-weight: lighter;
         font-size: 20px;
         line-height: 28px;
         color: #FFFFFF;
+        position: absolute;
+        top:615px;
+        left: 126px;
     }
 }
 

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import { withRouter } from 'react-router-dom' 
 import './Music.scss'
 import musicPic from '../../../assets/img/Music.png'
-import music from'./Level04Loop.mp3'
+import music from'./ハム,Foxtail-Grass Studio - ひやむぎ、そーめん、时々うどん.mp3'
 
 
 class Music extends PureComponent {
@@ -12,28 +12,34 @@ class Music extends PureComponent {
   };
 
   componentDidMount() {
-    window.addEventListener('touchstart',()=>{
-      console.log(this.props.location);
-      if(this.props.location.pathname==='/create')
-      this.state.audio.play()
-    })
+    console.log(this);
+    window.addEventListener('touchstart', this.windowControl);
+    
   }
- 
-  
+
+   windowControl=()=>{
+    if(this.props.location.pathname==='/create'){
+      this.state.audio.play();
+    }
+   
+  }
    control = () => {
     const {music} =this
     const {audio,Flag} = this.state
     audio.preload = Flag; 
     audio.autoplay =Flag;
     audio.loop = Flag;
-     this.setState({Flag:!Flag},()=>{
+    this.setState({Flag:!Flag},()=>{
       music.style.animation =Flag?'rotate 20s linear infinite':'rotate 20s linear infinite paused';
       if(Flag){
-        this.state.audio.play()
+        if(this.props.location.pathname==='/create'){
+          this.state.audio.play()
+        }
       }else{
         this.state.audio.pause()
       }
      })
+     window.removeEventListener('touchstart',this.windowControl)
   }
   render() {
     return (

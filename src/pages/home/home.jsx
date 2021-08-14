@@ -15,7 +15,8 @@ export default class home extends Component {
         d:'00',
         h:'00',
         m:'00',
-        s:'00'
+        s:'00',
+        date:new Date().getTime()
 
     }
     componentDidMount(){
@@ -39,7 +40,7 @@ export default class home extends Component {
                 s:lefts
             })
         },1000)
-        slide(this,this.homeNode,'/create')
+        slide(this,this.homeNode,`/invite?name=曾闻捷&time=${this.state.date}`)
         
         }
     componentWillUnmount(){
@@ -52,24 +53,27 @@ export default class home extends Component {
     render() {
         const {d,h,m,s} = this.state
         return (
-            <div className='home_backgroud' ref={c=>this.homeNode=c} >
-                    <div className='t1'>
-                    距新生入学还有
-                    </div>
-                    <div className='t2'>
-                        <span>{d}</span>
-                        <span>天</span>
-                        <span>{h}</span>
-                        <span>时</span>
-                        <span>{m}</span>
-                        <span>分</span>
-                        <span>{s}</span>
-                        <span>秒</span>
-                    </div>
-                    <img alt='button' src={button}></img>
-                    <div className='t3'>开启我的</div>
-                    <div className='t4'>重邮探索之旅</div>
+            <div className="hidden">
+                <div className='home_backgroud' ref={c=>this.homeNode=c} >
+                        <div className='t1'>
+                        距新生入学还有
+                        </div>
+                        <div className='t2'>
+                            <span>{d}</span>
+                            <span>天</span>
+                            <span>{h}</span>
+                            <span>时</span>
+                            <span>{m}</span>
+                            <span>分</span>
+                            <span>{s}</span>
+                            <span>秒</span>
+                        </div>
+                        <img alt='button' src={button}></img>
+                        <div className='t3'>开启我的</div>
+                        <div className='t4'>重邮探索之旅</div>
+                </div>                    
             </div>
+            
         )
     }
 }

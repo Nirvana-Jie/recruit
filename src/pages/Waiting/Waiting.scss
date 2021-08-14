@@ -1,37 +1,160 @@
+@keyframes fly {
+    0%{
+        top:22px;
+        left: 0px;
+    }
+    25%{
+        top:0px;
+        left:#{(69/375) *100}vw
+    }
+    50%{
+        top:22px;
+        left:#{(138/375) *100}vw
+    }
+    75%{
+        top:0px;
+        left:#{(207/375) *100}vw
+    }
+    100%{
+        top:22px;
+        left:#{(276/375) *100}vw
+    }
+}
+@keyframes progress_change {
+    from{
+        clip-path: polygon(0 0,0 0, 0 100%, 0 100%);
+    }
+    to{
+        clip-path: polygon(0 0,100% 0, 100% 100%, 0 100%);
+    }
+}
+@keyframes windmill {
+    0%{
+        transform: rotate(0);
+        left:-4px;
+    }
+    100%{
+        transform: rotate(360deg);
+        left: #{(305/375) *100}vw;
+    }
+}
 #waiting {
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
-
-#Waiting_header{
+.main{
     display: flex;
-    width: 100%;
-    justify-content: center;
-    padding-top: 100px;
-    .Waiting_title{
-        font-size: 30px;
+    flex-direction: column;
+    align-items: center;
+    width: 375px;
+    height: 812px;
+    background: url('../../assets/img/Waiting/background.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+    #Waiting_loading{
+        padding-top:280px ;
+        width:85%;
+        height:100px;
+        border-radius: 20px;
+        .pics{
+            position: relative;
+            padding-bottom: 0px;
+            .mountain{
+                width: 142px;
+                height: 90px;
+                z-index: -100;
+            }
+            .leftFlower{
+                width: 23px;
+                height: 22px;
+                position: absolute;
+                left: 100px;
+                top:51px;
+            }
+            .rightFlower{
+                width: 30px;
+                height: 28px;
+                // padding-left: 2px;
+                padding-bottom: 20px;
+            }
+            .juanjuan{
+                width: 62px;
+                height: 56px;
+                position:absolute;
+                left: 276px;
+                top:22.5px;
+                animation: fly 2.7s linear;
+            }
+            .pro{
+                position: absolute;
+                width: 316px;
+                height: 17px;
+                top: 81px;
+                background: #FBFFEE;
+                border:1px solid black;
+                border-radius: 11px;
+               .pro2{
+                position: absolute;
+                width: 316px;
+                height: 18px;
+                background:url('../../assets/img/Waiting/进度条.png');
+                background-size:cover;
+                animation: progress_change 2.7s linear;
+               }
+               img{
+                   position: absolute;
+                   z-index: 100;
+                   width: 26px;
+                   height: 27px;
+                   top:-4px;
+                   left: #{(305/375)*100}vw;
+                  animation: windmill 2.7s linear ;
+               }
+            };
+           
+        }
     }
-}
-#Waiting_header img{
-    width:70px;
-    height: 70px;
-}
-
-#Waiting_loading{
-    width:80%;
-    height:100px;
-    border-radius: 20px;
-    margin-top: 100px;
-    margin-left: 50px;
-    position: relative;
-    .pro{
-        width: 250px;
-        height: 40px;
-        border-radius:  20px;
-        position: absolute;
-    };
-    .sp{
-        position: absolute;
-        top:40px
+    .sp{ 
+        // position: absolute;
+        // top:110px;
+        // left:143px;
+        padding-top: 10px;
+        width: 29px;
+        height: 15px;
+        font-family: 'Wendy One';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 15px;
+        text-align: center;
+        color: #627C6F;
     }
-
+    .welcome{
+        padding-top: 10px;
+        img{
+            width: 22px;
+            height: 21px;
+        }
+        span{
+            padding-left: 2px;
+            font-family:'basic';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 11px;
+            line-height: 15px;
+            text-align: center;
+            color: #692D51;
+        }
+    }
+    .footer{
+        padding-top: 200px;
+        font-family: 'basic';
+        font-weight: normal;
+        font-size: 9px;
+        line-height: 13px;
+        text-align: center;
+        color: #784469;
+    }
 }
