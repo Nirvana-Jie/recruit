@@ -43,6 +43,7 @@ class App extends Component {
               <Route exact path='/waiting' component={Waiting}></Route>
               <Route exact path='/home' component={Home}></Route>
               <Route exact path='/create' component={Create}></Route>
+              
               <Route exact ptah='/invite' component={Invite}></Route>
             </Switch>
           </CSSTransition>
