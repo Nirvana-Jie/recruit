@@ -5,21 +5,58 @@
 input::-webkit-input-placeholder {
   color: #ffffff;
 }
+
+.hidden {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 .backGround {
   width: 375px;
-  height: 667px;
+  height: 812px;
   background-size: 100%, 100%;
   background-repeat: no-repeat;
-  background-image: url("../../assets/img/create/background1.png");
+  background-image: url("../../assets/img/create/background.png");
   margin-top: 0;
   //防止子元素和父元素外边距重合
   overflow: hidden;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .content {
+    //给swiper 按钮单独设置样式
+    .swiper-container {
+      --swiper-theme-color: #ff6600;
+      --swiper-navigation-color: rgb(239, 148, 40);
+      --swiper-navigation-size: 40px;
+    }
+    $c-width: 375px;
+    width: $c-width;
+    height: 400px;
+    margin-top: 18px;
+    // position: relative;
+    > div {
+      position: relative;
+    }
+    .header {
+      width: $c-width;
+      margin-top: 55px;
+    }
+    .body {
+      z-index: 2;
+      width: $c-width;
+      margin-top: 5px;
+    }
+    .foot {
+      margin-top: -25px;
+      width: $c-width;
+      z-index: 1;
+    }
+  }
   .nameSub {
+    width: 375px;
     font-size: 12px;
-    margin-top: 74px;
+    margin-top: 24px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
@@ -35,7 +72,6 @@ input::-webkit-input-placeholder {
       color: #666666;
     }
     .name {
-      height: 40px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -61,59 +97,47 @@ input::-webkit-input-placeholder {
       }
       .stuName-active {
         background-image: url(../../assets/img/create/name1-active.png);
+        background-size: cover;
       }
     }
     .sub {
+      .select {
+        width: 148px;
+        height: 42px;
+        margin-top: 5px;
+        background-size: cover;
+        background-image: url(../../assets/img/create/name1.png);
+      }
+      .subActive {
+        background-image: url(../../assets/img/create/name1-active.png);
+        background-size: cover;
+      }
       position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
   }
-  .content {
-    $c-width: 375px;
-    height: 400px;
-    margin-top: 42px;
-    position: relative;
-    overflow: hidden;
-    .header {
-      position: absolute;
-      width: $c-width;
-      top: 5px;
-    }
-    .body {
-      z-index: 2;
-      position: absolute;
-      width: $c-width;
-      top: 175px;
-    }
-    .footer {
-      position: absolute;
-      top: 233px;
-      width: $c-width;
-    }
-  }
+
   .submit {
-    margin-top: 10px;
+    margin-top: 130px;
     width: 375px;
     height: 100px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
-    .paizi :active {
-      background-color: red;
-    }
     .paizi {
       .word {
         color: #ffffff;
         position: absolute;
-        top: 12px;
-        font-family: Y "basic";
+        left: 20px;
+        top: 13px;
+        font-family: "basic";
         font-style: normal;
         font-weight: bold;
-        font-size: 30px;
-        line-height: 42px;
+        font-size: 25px;
+        line-height: 35px;
       }
       position: relative;
       width: 164px;
@@ -123,6 +147,7 @@ input::-webkit-input-placeholder {
       flex-wrap: nowrap;
       align-items: center;
       background-image: url(../../assets/img/create/btn.png);
+      background-size: cover;
       font-family: "basic";
       font-style: normal;
       font-weight: bold;
@@ -131,7 +156,7 @@ input::-webkit-input-placeholder {
 
       p {
         position: absolute;
-        top: -30px;
+        top: -20px;
       }
       .readyBtn {
         margin-top: 4px;
@@ -145,115 +170,108 @@ input::-webkit-input-placeholder {
         opacity: 0;
       }
     }
+    .paiziActive {
+      background-image: url(../../assets/img/create/btn-active.png);
+    }
   }
 
   .warn {
-    margin-top: 12px;
+    margin-top: 18px;
     font-size: 12px;
     color: #fff;
     display: none;
   }
 }
-//给swiper 按钮单独设置样式
-.swiper-container {
-  --swiper-theme-color: #ff6600;
-  --swiper-navigation-color: rgb(239, 148, 40);
-  --swiper-navigation-size: 40px;
-}
 //head微调
 .headbox {
-  width: 169.74px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .headbox0 {
-  width: 154px;
-  height: 171.32px;
-  transform: translate(13px, 2px);
+  width: 185px;
+  height: 210px;
+  transform: translate(10px, 11px);
 }
 .headbox1 {
-  width: 125.12px;
-  height: 147px;
-  margin-left: 5px;
-  transform: translate(0, 3px);
+  width: 160px;
+  height: 188px;
+  transform: translate(0, 5px);
 }
 .headbox2 {
-  width: 138.6px;
-  height: 133px;
-  transform: translateY(17px);
+  width: 176.12px;
+  height: 169px;
+  transform: translate(-4px, 30px);
 }
 .headbox3 {
-  width: 139px;
-  height: 97px;
-  transform: translate(4px, 15px);
+  width: 171px;
+  height: 119.33px;
+  transform: translate(4px, 25px);
 }
 //body微调
 .bodybox {
-  img {
-    z-index: 2;
-  }
-
+  z-index: 2;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .bodybox0 {
-  width: 102px;
-  height: 82.96px;
-  transform: translate(4px, 2px);
+  width: 122px;
+  height: 100px;
+  transform: translate(2px, 2px);
 }
 .bodybox1 {
-  width: 109px;
-  height: 70.13px;
-  transform: translateX(4px);
+  width: 133px;
+  height: 85.57px;
+  transform: translateX(1px);
 }
 .bodybox2 {
-  width: 120px;
-  height: 90px;
-  transform: translate(3px, 4px);
+  width: 130.67px;
+  height: 98px;
+  transform: translate(1px, 2px);
 }
 .bodybox3 {
-  width: 139px;
-  height: 77px;
-  transform: translate(2px);
+  width: 160px;
+  height: 89px;
+  transform: translate(0);
 }
 //foot微调
 .footerbox {
-  z-index: 1;
+  z-index: 0;
   display: flex;
   justify-content: center;
 }
 .footerbox0 {
-  width: 79.49px;
-  height: 123.65px;
+  width: 102px;
+  height: 158.67px;
   transform: translate(3.5px, 1px);
 }
 .footerbox1 {
-  width: 80px;
-  height: 129.23px;
-  transform: translate(3px, 0px);
+  width: 97.19px;
+  height: 157px;
+  transform: translate(1px, 0px);
 }
 .footerbox2 {
-  width: 79px;
-  height: 128.01px;
-  transform: translate(3px, -2px);
+  width: 95px;
+  height: 155px;
+  transform: translate(1px, 0px);
 }
 .footerbox3 {
-  height: 135px;
-  left: 151px;
-  transform: translate(3px, 2px);
+  width: 104px;
+  height: 163.23px;
+  transform: translate(2px, -2px);
 }
 .swiper-slide {
   display: flex;
   justify-content: center;
 }
 .bigLetter {
-  position: absolute;
+  position: fixed;
+  bottom: 0;
   width: 375px;
   height: 0px;
   background-image: url(../../assets/img/create/bigletter.png);
   background-size: cover;
-  bottom: 0;
   transition: 1s linear height;
   z-index: 3;
-  pointer-events: none;
 }

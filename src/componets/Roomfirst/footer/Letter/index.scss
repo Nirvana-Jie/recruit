@@ -1,0 +1,92 @@
+.letterback {
+  z-index: 999;
+  width: 375px;
+  height: 470px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto auto;
+
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    display: none;
+  }
+  .swiper-button-prev {
+    position: absolute;
+    top: 400px;
+    left: 40px;
+    width: 35px;
+    height: 35px;
+    background-image: url(../../../../assets/img/room/letterpop/btn.png);
+    background-size: cover;
+    transform: rotate(180deg);
+  }
+  .swiper-button-next {
+    position: absolute;
+    top: 400px;
+    right: 40px;
+    width: 35px;
+    height: 35px;
+    background-image: url(../../../../assets/img/room/letterpop/btn.png);
+    background-size: cover;
+  }
+  .swiper-button-disabled {
+    display: none;
+  }
+  .letter {
+    width: 356.54px;
+    height: 465.79px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .letter1 {
+    background-image: url(../../../../assets/img/room/letterpop/letter1.png);
+    display: flex;
+    justify-content: center;
+    .content {
+      position: absolute;
+      width: 240px;
+      height: 200px;
+      top: 80px;
+      font-family: "basic";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #666666;
+      .profile {
+        width: 50px;
+        height: 50px;
+        // background-image: url(../../../../assets/img/room/letterpop/profile/03.png);
+        background-size: cover;
+        margin-top: 12px;
+      }
+      & > div:nth-child(2) {
+        margin-top: 10px;
+      }
+      & > div {
+        span {
+          color: #fabc45;
+        }
+      }
+    }
+  }
+  .letter2 {
+    background-image: url(../../../../assets/img/room/letterpop/letter2.png);
+    .shut {
+      right: 25px;
+      top: 0px;
+      width: 50px;
+      height: 50px;
+      z-index: 999;
+      position: absolute;
+      background-image: url(../../../../assets/img/room/letterpop/shut.png);
+      background-size: cover;
+    }
+  }
+}

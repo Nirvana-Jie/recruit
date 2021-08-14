@@ -3,25 +3,14 @@ import React, { PureComponent } from "react";
 import "./index.scss";
 import "antd-mobile/lib/picker/style/css";
 import PubSub from "pubsub-js";
-import background from "../../assets/img/create/name1.png";
-import background_active from "../../assets/img/create/name1-active.png";
 //自定义选择器列
 const CustomChildren = (props) => (
-  <div
-    onClick={props.onClick}
-    style={{
-      backgroundSize: "cover",
-      backgroundImage: `url(${props.backImg})`,
-      height: "43px",
-    }}
-  >
+  <div onClick={props.onClick}>
     <div
       className="test"
       style={{
-        marginTop: "5px",
         display: "flex",
-        height: "36px",
-        lineHeight: "36px",
+        lineHeight: "46px",
         fontSize: "12px",
         // backgroundImage: URL(`../../assets/img/create/name1.png`),
       }}
@@ -31,7 +20,7 @@ const CustomChildren = (props) => (
           fontWeight: "70px",
           fontFamily: "basic",
           color: "#FFFFFF",
-          lineHeight: "43px",
+          lineHeight: "46px",
           textAlign: "center",
           fontSize: "12px",
           flex: 1,
@@ -115,7 +104,6 @@ class Test extends PureComponent {
   state = {
     subject: "请选择你的专业",
     color: "#FFFFFF",
-    backImg: background,
   };
   postSubject = (v) => {
     this.setState({ subject: v[0], color: "#000" });
@@ -127,15 +115,13 @@ class Test extends PureComponent {
     letterIn();
   };
   render() {
-    const back = this;
     return (
       <div className="subChange">
         <Picker
           onVisibleChange={(e) => {
-            if (e) this.setState({ backImg: background_active });
+            if (e);
             else {
               this.changeBack();
-              this.setState({ backImg: background });
             }
           }}
           data={seasons}
@@ -145,10 +131,7 @@ class Test extends PureComponent {
           onOk={this.changeBack}
           onDismiss={this.changeBack}
         >
-          <CustomChildren
-            changecolor={this.state.color}
-            backImg={this.state.backImg}
-          >
+          <CustomChildren changecolor={this.state.color}>
             {this.state.subject}
           </CustomChildren>
         </Picker>

@@ -2,31 +2,36 @@ import React, { PureComponent } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation } from "swiper";
 import "swiper/components/navigation/navigation.scss";
+import "swiper/components/pagination/pagination.scss";
 import "swiper/swiper.scss";
 import "./index.scss";
-SwiperCore.use(Navigation);
+SwiperCore.use([Navigation]);
 
 export default class Swip extends PureComponent {
   componentDidMount() {}
   render() {
-    const { showPic } = this.props;
-    const { showNum } = this.props;
-    const { type } = this.props;
-    let b = 1;
+    const { showPic, showNum, type, changePerImg, between } = this.props;
     return (
       <Swiper
-        spaceBetween={50}
+        spaceBetween={between}
         slidesPerView={showNum}
-        onSlideChange={() => console.log("slide change")}
-        crossFade={true}
-        navigation
+        onSlideChange={(e) => {
+          if (type === "headbox" || type === "footerbox" || type === "bodybox")
+            changePerImg(type, e.activeIndex);
+        }}
+        navigation={type === "popUp" ? false : true}
+        Pagination={type === "popUp" ? true : false}
       >
         {showPic.map((data, index) => {
           return (
             <SwiperSlide>
-              <div className={`${type}${index} ${type}`}>
-                <img src={data}></img>
-              </div>
+              <div
+                className={`${type}${index} ${type}`}
+                style={{
+                  backgroundImage: `url(${data})`,
+                  backgroundSize: "cover",
+                }}
+              ></div>
             </SwiperSlide>
           );
         })}
