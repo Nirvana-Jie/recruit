@@ -160,5 +160,6 @@
   },
   "devDependencies": {
     "node-sass": "^6.0.1"
-  }
+  },
+  "homepage":"./welcome-2021"
 }
