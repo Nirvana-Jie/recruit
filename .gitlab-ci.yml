@@ -78,9 +78,8 @@ image_prod:
     - redrock-fe
   script:
     - echo -e "FROM reg.redrock.team/base/redrock-fe-env-caddy:latest\nADD ./build /build" > Dockerfile
-    - docker build . -t reg.redrock.team/fe-prod-artifacts/${REPO_NAME}:${CI_COMMIT_SHA}  -t ccr.ccs.tencentyun.com/redrock/fe-prod-artifacts:${REPO_NAME}-${CI_COMMIT_SHA}
+    - docker build . -t reg.redrock.team/fe-prod-artifacts/${REPO_NAME}:${CI_COMMIT_SHA}
     - docker push "reg.redrock.team/fe-prod-artifacts/${REPO_NAME}:${CI_COMMIT_SHA}"
-    - docker push "ccr.ccs.tencentyun.com/redrock/fe-prod-artifacts:${REPO_NAME}-${CI_COMMIT_SHA}"
   only:
     - master
 
