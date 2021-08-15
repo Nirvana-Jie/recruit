@@ -9,6 +9,7 @@ import Map from "./componets/Roomfirst/footer/Map";
 
 import "./assets/styles/font.scss";
 import Submit from "./componets/Create/Submit";
+import Cover from "./componets/Cover";
 //import "antd-mobile/dist/antd-mobile.css"; // or 'antd-mobile/dist/antd-mobile.less'
 // import TestWrapper from "./componets/HT";
 
@@ -22,6 +23,8 @@ export default class App extends PureComponent {
         <Route path="/food" component={Food} />
         <Route path="/letter" component={Letter} />
         <Route path="/submit" component={Submit} />
+        <Route path="/cover" component={Cover} />
+        <Route path="/diary" component={Diary} />
         <Redirect to="/room"></Redirect>
       </div>
     );

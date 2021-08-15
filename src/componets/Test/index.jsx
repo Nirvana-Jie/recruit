@@ -27,7 +27,7 @@ const CustomChildren = (props) => (
           overflow: "hidden",
           textOverflow: "ellipsis",
           whiteSpace: "nowrap",
-          color: props.changecolor,
+          color: `${props.changecolor}`,
         }}
       >
         {props.children}

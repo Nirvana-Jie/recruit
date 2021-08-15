@@ -82,9 +82,9 @@ export default class Food extends PureComponent {
       },
       {
         id: 7,
-        name: "莘莘食堂",
-        text: "樱花食堂是学校最新的食堂，食堂较小但光线很足。早餐午餐晚餐提供的菜式种类多而便宜。",
-        comment: "“大抄手 真的可以”",
+        name: "莘莘美食城",
+        text: "莘莘美食城是重邮地理位置最高的食堂，也是最好的食堂之一。食堂大而整洁。香辣干锅、掉渣饼、甜品店、还有二楼种类丰富的自选菜，都是邮子们的最爱。",
+        comment: "“掉渣饼你不冲？”",
         from: "——评论选自《掌上重邮》",
         showPic: [
           "http://cdn.redrock.team/hello-student_xxmsc0.jpg",

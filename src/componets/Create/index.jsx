@@ -28,7 +28,8 @@ export default class Create extends PureComponent {
   };
   submit = () => {
     const { warn, paizi } = this;
-    const { isNameFinished, isSubjectFinished } = this.state;
+    const { isNameFinished, isSubjectFinished, perImg, stuName, subject } =
+      this.state;
     paizi.className += " paiziActive";
     const timer = setTimeout(() => {
       paizi.className = "paizi";
@@ -39,6 +40,9 @@ export default class Create extends PureComponent {
       this.setState({
         isSubmit: true,
       });
+      PubSub.publish("person", perImg);
+      PubSub.publish("name", stuName);
+      PubSub.publish("subject", subject);
     }
   };
   getPic = (part) => {
@@ -63,7 +67,6 @@ export default class Create extends PureComponent {
     PubSub.subscribe("picker", (msg, v) => {
       this.setState({ subject: v.subject, isSubjectFinished: true });
     });
-    const showPic = this.getPic();
   }
 
   render() {

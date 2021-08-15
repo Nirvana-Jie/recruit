@@ -4,6 +4,7 @@ import Cover from "../Cover";
 import Letter from "./footer/Letter";
 import Food from "./footer/Food";
 import Diary from "./footer/Diary";
+import PubSub from "pubsub-js";
 export default class Roomfirst extends PureComponent {
   state = {
     isMapActive: false,
@@ -14,6 +15,7 @@ export default class Roomfirst extends PureComponent {
     type: "",
     elementNodes: [],
     firstClick: [true, true, true, true],
+    personImg: "000",
   };
   mapMove = (e) => {
     e.target.className += " mapActive";
@@ -38,14 +40,15 @@ export default class Roomfirst extends PureComponent {
     };
   };
   selectAction = (type, node) => {
+    const { view } = this;
     let offsetX = 0;
     let offsetY = 0;
     switch (type) {
       case "food":
-        offsetX = 365 - window.scrollX;
-        offsetY = window.scrollY + 4;
-        // node.style.transform = `translate(-${offsetX}px,${offsetY}px)`;
-        node.style.transform = `translate(-150px,200px)`;
+        offsetX = view.scrollLeft - 230;
+        offsetY = view.scrollTop + 4;
+        console.log(offsetY);
+        // node.style.transform = `translate(${offsetX}px,-100px)`;
         const timer = setTimeout(() => {
           this.setState({ isFoodActive: true });
           clearTimeout(timer);
@@ -69,7 +72,7 @@ export default class Roomfirst extends PureComponent {
         break;
       case "diary":
         offsetX = 365 - window.scrollX;
-        node.style.transform = `translate(-${offsetX}px,150px)`;
+        // node.style.transform = `translate(${offsetX}px,150px)`;
         const timer3 = setTimeout(() => {
           this.setState({ isDiaryActive: true });
           clearTimeout(timer3);
@@ -102,7 +105,13 @@ export default class Roomfirst extends PureComponent {
     };
   };
   componentDidMount() {
-    window.scrollTo(200, 0);
+    const { view } = this;
+    view.scrollTo(80, 0);
+    PubSub.subscribe("person", (msg, data) => {
+      this.setState({
+        personImg: `${data.headbox}${data.bodybox}${data.footerbox}`,
+      });
+    });
   }
   render() {
     const {
@@ -115,18 +124,14 @@ export default class Roomfirst extends PureComponent {
     } = this.state;
     return (
       <Fragment>
+        <Cover />
         <div
           className="view"
           ref={(c) => {
             this.view = c;
           }}
         >
-          <div
-            className="room"
-            onClick={(e) => {
-              console.log(window.scrollX, window.scrollY);
-            }}
-          >
+          <div className="room">
             {isPopOut ? (
               <div className="pop">
                 {type === "letter" ? (
@@ -140,6 +145,18 @@ export default class Roomfirst extends PureComponent {
             ) : (
               <div></div>
             )}
+            <div className="personBack">
+              <div
+                className="personItem"
+                style={{
+                  backgroundImage:
+                    "url(" +
+                    require(`../../assets/img/create/persons/${this.state.personImg}.png`)
+                      .default +
+                    ")",
+                }}
+              ></div>
+            </div>
             <div className="mapItem" onClick={this.clickItem("map", 0)}></div>
             <div className="foodItem" onClick={this.clickItem("food", 1)}></div>
             <div
@@ -150,7 +167,6 @@ export default class Roomfirst extends PureComponent {
               className="diaryItem"
               onClick={this.clickItem("diary", 3)}
             ></div>
-            <div className="header">123456</div>
           </div>
         </div>
         <div className="footer">
