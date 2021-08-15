@@ -3,15 +3,15 @@ import QRCode from 'qrcode.react'
 import html2canvas from 'html2canvas';
 import './Invite.scss'
 import model from '../../assets/img/Invite/夹克男(1) 1.png'
+import PubSub from 'pubsub-js';
+
 
 
 export default class Invite extends Component {
 
     state = {
-        Flag: true
+        Flag: true,
     }
-
-    componentDidMount() {
         // let browser = {
         //     versions: function () {
         //         let u = navigator.userAgent;
@@ -44,6 +44,8 @@ export default class Invite extends Component {
         //     // 如果是ios系统就执行
            
         // }
+    componentWillMount(){
+        PubSub.unsubscribe(this.token)
     }
 
     componentDidUpdate() {
@@ -112,7 +114,7 @@ export default class Invite extends Component {
                     <h2>重邮邀请函</h2>
                     <div className='invite_header'>
                         <div>亲爱的</div>
-                        <span className='name'>迪丽热巴.迪力木拉提</span>
+                        <span className='name'>{this.state.name}</span>
                         <span className='student'>同学</span>
                     </div>
                     <div className='invite_body'>

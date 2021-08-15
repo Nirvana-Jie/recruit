@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
+
 import mountain from '../../assets/img/Waiting/mountain.png'
 import lefttFlower from '../../assets/img/Waiting/flower2.png'
 import rightFlower from '../../assets/img/Waiting/flower1.png'
@@ -25,7 +26,8 @@ class Waiting extends Component {
         }, 25);
         this.loaing2 = setTimeout(() => {
             //路由自动跳转
-            // this.props.history.push('/home')
+            this.props.history.push('/home')
+
         }, 2700)
     };
     //清除定时器

@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import './home.scss'
 import button from '../../assets/img/Home/button.png'
 import slide from '../../assets/api/slide'
+import PubSub from 'pubsub-js'
 
 
 export default class home extends Component {
@@ -16,6 +17,7 @@ export default class home extends Component {
         h:'00',
         m:'00',
         s:'00',
+        name:'zhu',
         date:new Date().getTime()
 
     }
@@ -40,7 +42,8 @@ export default class home extends Component {
                 s:lefts
             })
         },1000)
-        slide(this,this.homeNode,`/invite?name=曾闻捷&time=${this.state.date}`)
+        slide(this,this.homeNode,`/invite?name=曾闻捷&time=${this.state.date}`);
+        PubSub.publish('setSearchName','zhu')
         
         }
     componentWillUnmount(){

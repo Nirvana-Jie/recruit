@@ -54,6 +54,7 @@
     "postcss-px-to-viewport": "^1.1.1",
     "postcss-safe-parser": "5.0.2",
     "prompts": "2.4.0",
+    "pubsub-js": "^1.9.3",
     "pubsub.js": "^1.5.2",
     "qrcode.react": "^1.0.1",
     "react": "^17.0.2",
@@ -161,5 +162,5 @@
   "devDependencies": {
     "node-sass": "^6.0.1"
   },
-  "homepage":"./cqupt-welcome-2021"
+  "homepage": "./cqupt-welcome-2021"
 }
