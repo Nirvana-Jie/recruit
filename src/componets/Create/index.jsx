@@ -44,6 +44,10 @@ export default class Create extends PureComponent {
       PubSub.publish("name", stuName);
       PubSub.publish("subject", subject);
     }
+    localStorage.setItem(
+      "picture",
+      `${perImg.headbox}${perImg.bodybox}${perImg.footerbox}`
+    );
   };
   getPic = (part) => {
     const b = [1, 2, 3, 4];
@@ -70,11 +74,11 @@ export default class Create extends PureComponent {
   }
 
   render() {
-    const { isSubmit, perImg } = this.state;
+    const { isSubmit, perImg, subject } = this.state;
     return (
       <div className="hidden">
         {isSubmit ? (
-          <Submit person={perImg} />
+          <Submit person={perImg} subject={subject} />
         ) : (
           <div className="backGround">
             {/* <img src={`/img/create/body/1.png`}></img> */}

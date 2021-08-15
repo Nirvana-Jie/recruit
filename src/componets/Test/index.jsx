@@ -105,14 +105,15 @@ class Test extends PureComponent {
     subject: "请选择你的专业",
     color: "#FFFFFF",
   };
-  postSubject = (v) => {
-    this.setState({ subject: v[0], color: "#000" });
-    PubSub.publish("picker", { subject: v[0] });
-  };
-
+  // this.setState({ subject: v[0], color: "#000" });
   changeBack = (e) => {
-    const { letterIn } = this.props;
-    letterIn();
+    const { subject } = this.state;
+    setTimeout(() => {
+      const { letterIn } = this.props;
+      PubSub.publish("picker", { subject });
+      localStorage.setItem("subject", this.state.subject);
+      letterIn();
+    }, 0);
   };
   render() {
     return (

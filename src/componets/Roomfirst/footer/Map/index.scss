@@ -1,3 +1,10 @@
+.resultBack {
+  z-index: 501;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.7);
+}
 .backMap {
   background-image: url(../../../../assets/img/room/Map/map1.png);
   background-size: 100%, 120%;
@@ -5,8 +12,180 @@
   width: 1900px;
   height: 1600px;
   position: absolute;
+  @keyframes big {
+    from {
+      width: 75px;
+      height: 80px;
+    }
+    50% {
+      width: 90px;
+      height: 100px;
+    }
+    to {
+      width: 75px;
+      height: 80px;
+    }
+  }
+  & > div {
+    z-index: 2;
+  }
+  & > div:nth-child(1) {
+    position: absolute;
+    width: 75px;
+    height: 80px;
+    background-image: url(../../../../assets/img/room/Map/wow.png);
+    background-size: cover;
+    bottom: 740px;
+    left: 400px;
+    animation: big 2s infinite;
+  }
+  & > div:nth-child(2) {
+    position: absolute;
+    width: 75px;
+    height: 80px;
+    background-image: url(../../../../assets/img/room/Map/wow.png);
+    background-size: cover;
+    top: 460px;
+    left: 1250px;
+    transform: rotate(90deg);
+    animation: big 2s infinite;
+  }
+  & > div:nth-child(3) {
+    position: absolute;
+    width: 75px;
+    height: 80px;
+    background-image: url(../../../../assets/img/room/Map/wow.png);
+    background-size: cover;
+    top: 550px;
+    left: 1450px;
+    transform: rotate(90deg);
+    animation: big 2s infinite;
+  }
+  & > div:nth-child(4) {
+    position: absolute;
+    width: 75px;
+    height: 80px;
+    background-image: url(../../../../assets/img/room/Map/wow.png);
+    background-size: cover;
+    top: 250px;
+    left: 950px;
+    transform: rotate(90deg);
+    animation: big 2s infinite;
+  }
 }
+.result {
+  z-index: 502;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  width: 305px;
+  height: 419px;
+  background-image: url(../../../../assets/img/room/Map/backPop.png);
+  background-size: cover;
+  .cancel {
+    transform: rotate(10deg);
+    right: 0;
+    top: 100px;
+    position: absolute;
+    width: 41px;
+    height: 41px;
+    background-image: url(../../../../assets/img/room/letterpop/shut.png);
+    background-size: cover;
+  }
+  & > div:nth-child(2) {
+    margin-top: 120px;
+    font-family: "basic";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 34px;
+    /* identical to box height */
 
+    color: #3e600e;
+  }
+  & > div:nth-child(3) {
+    margin-top: 3px;
+    height: 14px;
+    font-family: "basic";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+
+    color: #567f1f;
+  }
+  & > div:nth-child(4) {
+    height: 14px;
+    font-family: "basic";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+
+    color: #567f1f;
+  }
+  & > div:nth-child(5) {
+    margin-top: 10px;
+    width: 190px;
+    height: 132px;
+    left: 93px;
+    top: 278px;
+    border: 2px solid #608a34;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .pic {
+      img {
+        width: 169px;
+        height: 115px;
+        transform: scale(1);
+      }
+    }
+    span {
+      bottom: 75px;
+      position: absolute;
+      font-family: "basic";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 14px;
+      text-align: center;
+      color: #93c39c;
+    }
+  }
+  & > div:nth-child(6) {
+    margin-top: 25px;
+    font-family: "basic";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #4d7711;
+    span {
+      color: #fea501;
+    }
+  }
+  & > div:nth-child(7) {
+    font-family: "basic";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #4d7711;
+  }
+}
 .juanjuan {
   position: fixed;
   z-index: 500;

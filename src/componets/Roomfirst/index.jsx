@@ -5,17 +5,32 @@ import Letter from "./footer/Letter";
 import Food from "./footer/Food";
 import Diary from "./footer/Diary";
 import PubSub from "pubsub-js";
-export default class Roomfirst extends PureComponent {
+import MapPop from "./footer/Map/MapPop";
+import { withRouter } from "react-router";
+class Roomfirst extends PureComponent {
   state = {
     isMapActive: false,
     isFoodActive: false,
     isLetterActive: false,
     isDiaryActive: false,
     isPopOut: false,
+    isTipOut: false,
     type: "",
     elementNodes: [],
     firstClick: [true, true, true, true],
     personImg: "000",
+    tips: [
+      {
+        type: "food",
+        slogan: "天大地大，吃饭最大",
+      },
+      {
+        type: "map",
+        slogan: "新生入学，怎么能没有地图",
+      },
+      { type: "diary", slogan: "迷彩军训，青春无悔" },
+      { type: "letter", slogan: "新生入校，快来报道" },
+    ],
   };
   mapMove = (e) => {
     e.target.className += " mapActive";
@@ -27,6 +42,7 @@ export default class Roomfirst extends PureComponent {
   clickItem = (type, index) => {
     return (e) => {
       const { elementNodes, firstClick } = this.state;
+      // this.preventDefault(e.target);
       //判断是否为第一次点击
       if (firstClick[index]) {
         firstClick[index] = false;
@@ -39,47 +55,68 @@ export default class Roomfirst extends PureComponent {
       }
     };
   };
+  tipOut = (type) => {
+    return () => {
+      const { tips } = this.state;
+      const { tip } = this;
+      tip.className += " tipActive";
+      const Item = tips.filter((data) => {
+        return data.type === type;
+      });
+      tip.innerText = Item[0].slogan;
+      const timer = setTimeout((type) => {
+        tip.className = "tip";
+        clearTimeout(timer);
+      }, 2000);
+    };
+  };
   selectAction = (type, node) => {
-    const { view } = this;
-    let offsetX = 0;
-    let offsetY = 0;
+    const { letterNode, mapNode, foodNode, diaryNode } = this;
     switch (type) {
       case "food":
-        offsetX = view.scrollLeft - 230;
-        offsetY = view.scrollTop + 4;
-        console.log(offsetY);
-        // node.style.transform = `translate(${offsetX}px,-100px)`;
+        foodNode.className += " move";
         const timer = setTimeout(() => {
           this.setState({ isFoodActive: true });
+          this.isFinished();
           clearTimeout(timer);
-        }, 2000);
+        }, 500);
         break;
       case "map":
-        offsetX = 365 - window.scrollX;
-        node.style.transform = `translate(-${offsetX}px,150px)`;
+        mapNode.className += " move";
         const timer1 = setTimeout(() => {
           this.setState({ isMapActive: true });
+          this.isFinished();
           clearTimeout(timer1);
-        }, 2000);
+        }, 500);
         break;
       case "letter":
-        offsetX = 365 - window.scrollX;
-        node.style.transform = `translate(-${offsetX}px,150px)`;
+        letterNode.className += " move";
         const timer2 = setTimeout(() => {
           this.setState({ isLetterActive: true });
+          this.isFinished();
           clearTimeout(timer2);
-        }, 2000);
+        }, 500);
         break;
       case "diary":
-        offsetX = 365 - window.scrollX;
-        // node.style.transform = `translate(${offsetX}px,150px)`;
+        diaryNode.className += " move";
         const timer3 = setTimeout(() => {
           this.setState({ isDiaryActive: true });
+          this.isFinished();
           clearTimeout(timer3);
-        }, 2000);
+        }, 500);
         break;
       default:
         break;
+    }
+  };
+  isFinished = () => {
+    const { isMapActive, isFoodActive, isLetterActive, isDiaryActive } =
+      this.state;
+    if (isMapActive && isFoodActive && isLetterActive && isDiaryActive) {
+      const timer = setTimeout(() => {
+        this.props.history.push("/invite");
+        clearTimeout(timer);
+      }, 4000);
     }
   };
   moveItem = (type) => {
@@ -87,7 +124,7 @@ export default class Roomfirst extends PureComponent {
     const Item = elementNodes.filter((data) => {
       return data.name === type;
     });
-    Item[0].node.className += ` ${type}ItemActive`;
+    // Item[0].node.className += ` ${type}ItemActive`;
     this.selectAction(type, Item[0].node);
   };
 
@@ -101,17 +138,32 @@ export default class Roomfirst extends PureComponent {
         const { view } = this;
         view.style.overflow = "auto";
         clearTimeout(timer);
-      }, 2000);
+      }, 500);
     };
+  };
+  preventDefault = (e) => {
+    e.addEventListener("click", (e) => {
+      e.preventDefault();
+    });
   };
   componentDidMount() {
     const { view } = this;
-    view.scrollTo(80, 0);
+    view.style.overflow = "auto";
     PubSub.subscribe("person", (msg, data) => {
       this.setState({
         personImg: `${data.headbox}${data.bodybox}${data.footerbox}`,
       });
     });
+    // let b = JSON.parse(localStorage.getItem("active"));
+    console.log(localStorage);
+    const letter1 = localStorage.getItem("letterActive");
+    if (letter1 === "true") this.setState({ isLetterActive: true });
+    const food1 = localStorage.getItem("foodActive");
+    if (food1 === "true") this.setState({ isFoodActive: true });
+    const diary1 = localStorage.getItem("diaryActive");
+    if (diary1 === "true") this.setState({ isDiaryActive: true });
+    const map1 = localStorage.getItem("mapActive");
+    if (map1 === "true") this.selectAction("map");
   }
   render() {
     const {
@@ -121,25 +173,62 @@ export default class Roomfirst extends PureComponent {
       isDiaryActive,
       isPopOut,
       type,
+      personImg,
     } = this.state;
     return (
       <Fragment>
-        <Cover />
         <div
           className="view"
           ref={(c) => {
             this.view = c;
           }}
         >
+          <Cover />
+          {isMapActive && isFoodActive && isLetterActive && isDiaryActive ? (
+            <div className="finished">
+              <div className="personback">
+                <div
+                  className="person"
+                  style={{
+                    backgroundImage:
+                      "url(" +
+                      require(`../../assets/img/create/persons/${this.state.personImg}.png`)
+                        .default +
+                      ")",
+                  }}
+                ></div>
+              </div>{" "}
+              <span> 恭喜完成新生要素探秘</span>
+              <span>正在为你生成专属邀请函</span>
+              <span>请稍等......</span>
+            </div>
+          ) : (
+            console.log(789)
+          )}
           <div className="room">
             {isPopOut ? (
-              <div className="pop">
+              <div
+                className="pop"
+                onClick={(e) => {
+                  e.preventDefault();
+                }}
+              >
                 {type === "letter" ? (
-                  <Letter cancel={this.cancel("letter")} />
+                  <Letter
+                    cancel={this.cancel("letter")}
+                    personImg={personImg}
+                  />
                 ) : type === "food" ? (
                   <Food cancel={this.cancel("food")} />
-                ) : (
+                ) : type === "diary" ? (
                   <Diary cancel={this.cancel("diary")} />
+                ) : (
+                  <MapPop
+                    cancel={this.cancel("map")}
+                    letter={isLetterActive}
+                    food={isFoodActive}
+                    diary={isDiaryActive}
+                  />
                 )}
               </div>
             ) : (
@@ -169,44 +258,70 @@ export default class Roomfirst extends PureComponent {
             ></div>
           </div>
         </div>
+
         <div className="footer">
+          <div
+            className="tip"
+            ref={(c) => {
+              this.tip = c;
+            }}
+          ></div>
           {isMapActive ? (
-            <div className="active">
+            <div className="active" onClick={this.tipOut("map")}>
               <div className="map mapActive"></div>
             </div>
           ) : (
-            <div>
-              <div className="map"></div>
+            <div onClick={this.tipOut("map")}>
+              <div
+                className="map"
+                ref={(c) => {
+                  this.mapNode = c;
+                }}
+              ></div>
             </div>
           )}
-
           {isFoodActive ? (
-            <div className="active">
+            <div className="active" onClick={this.tipOut("food")}>
               <div className="food foodActive"></div>
             </div>
           ) : (
-            <div>
-              <div className="food"></div>
+            <div onClick={this.tipOut("food")}>
+              <div
+                className="food"
+                ref={(c) => {
+                  this.foodNode = c;
+                }}
+              ></div>
             </div>
           )}
 
           {isLetterActive ? (
-            <div className="active">
+            <div className="active" onClick={this.tipOut("letter")}>
               <div className="letter letterActive"></div>
             </div>
           ) : (
-            <div>
-              <div className="letter"></div>
+            <div onClick={this.tipOut("letter")}>
+              <div
+                className="letter"
+                ref={(c) => {
+                  this.letterNode = c;
+                }}
+              ></div>
             </div>
           )}
 
           {isDiaryActive ? (
-            <div className="active">
+            <div className="active" onClick={this.tipOut("diary")}>
               <div className="diary diaryActive"></div>
             </div>
           ) : (
-            <div>
-              <div className="diary"></div>
+            <div onClick={this.tipOut("diary")}>
+              <div
+                className="diary"
+                ref={(c) => {
+                  this.diaryNode = c;
+                }}
+              ></div>
             </div>
           )}
         </div>
@@ -214,3 +329,4 @@ export default class Roomfirst extends PureComponent {
     );
   }
 }
+export default withRouter(Roomfirst);

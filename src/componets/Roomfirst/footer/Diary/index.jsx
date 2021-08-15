@@ -8,6 +8,7 @@ import "swiper/components/navigation/navigation.scss";
 SwiperCore.use([Navigation]);
 export default class Diary extends Component {
   render() {
+    const { cancel } = this.props;
     return (
       <div className="swiper_background">
         <Swiper
@@ -71,7 +72,11 @@ export default class Diary extends Component {
           </SwiperSlide>
           <SwiperSlide>
             <div className="diary4">
-              <div></div>
+              <div
+                onClick={() => {
+                  cancel();
+                }}
+              ></div>
               <div className="diary_header">军训风采</div>
               <div className="action1">
                 <div className="action_header">防晒</div>

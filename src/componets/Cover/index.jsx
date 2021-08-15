@@ -1,19 +1,16 @@
 import React, { Component } from "react";
 import "./index.scss";
 export default class Cover extends Component {
+  state = {};
   componentDidMount() {
     document.body.parentNode.style.overflow = "hidden"; //隐藏且禁用
   }
   render() {
-    const { cover } = this;
     return (
       <div
-        ref={(c) => {
-          this.cover = c;
-        }}
         className="back"
-        onTouchStart={() => {
-          cover.style.display = "none";
+        onClick={(e) => {
+          e.target.style.display = "none";
         }}
       >
         <div>探索房间</div>

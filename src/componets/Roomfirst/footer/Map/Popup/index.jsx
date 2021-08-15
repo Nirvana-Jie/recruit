@@ -15,7 +15,7 @@ export default class Popup extends PureComponent {
     ],
   };
   render() {
-    const { buildingName } = this.props;
+    const { buildingName, cancel } = this.props;
     const building = this.state.buildings.filter((data) => {
       return data.name === buildingName;
     });
@@ -24,6 +24,12 @@ export default class Popup extends PureComponent {
     return (
       <div className="backPop">
         <div className="content">
+          <p
+            className="shut"
+            onClick={() => {
+              cancel();
+            }}
+          ></p>
           <p className="title">{name}</p>
           <div className="swip">
             <div>
