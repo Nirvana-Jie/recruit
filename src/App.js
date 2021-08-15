@@ -1,7 +1,6 @@
 import React, { Component, createRef } from 'react'
 import { Switch, Route, withRouter } from "react-router-dom"
 import Waiting from './pages/Waiting/Waiting';
-import Create from './pages/Create/create';
 import Music from './pages/components/Music/Music.jsx';
 import Invite from './pages/Invite/Invite';
 import './App.css';
@@ -42,8 +41,6 @@ class App extends Component {
               <Route exact path='/' component={Waiting}></Route>
               <Route exact path='/waiting' component={Waiting}></Route>
               <Route exact path='/home' component={Home}></Route>
-              <Route exact path='/create' component={Create}></Route>
-              
               <Route exact ptah='/invite' component={Invite}></Route>
             </Switch>
           </CSSTransition>

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import QRCode from 'qrcode.react'
 import html2canvas from 'html2canvas';
 import './Invite.scss'
+// import PubSub from 'pubsub-js'
 import model from '../../assets/img/Invite/夹克男(1) 1.png'
 
 
@@ -147,6 +148,7 @@ export default class Invite extends Component {
                     <button onClick={this.getPic} ref={c => this.button = c} className='button1'>一键保存到相册</button>
                     <button onClick={this.back} ref={c => this.button2 = c} className='button2'></button>
                 </div>
+                <div className='footer'>@红岩网校工作站出品</div>
             </div>
             </div>
         )
