@@ -1,0 +1,128 @@
+.foodBack {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto auto;
+  background-image: url(../../../../assets/img/room/foodpop/foodback.png);
+  width: 330px;
+  height: 507px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .content {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 293px;
+    height: 470px;
+    position: relative;
+    .shut {
+      position: absolute;
+      background-size: cover;
+      background-image: url(../../../../assets/img/room/exit.png);
+      width: 49px;
+      height: 49px;
+      right: -15px;
+      top: -25px;
+    }
+    .swip {
+      margin-top: 8px;
+      width: 268px;
+      height: 177px;
+      background-image: url(../../../../assets/img/room/foodpop/foodswiper.png);
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .swipercontent {
+        width: 254px;
+        height: 157px;
+        border-radius: 16px;
+        overflow: hidden;
+      }
+      .popUp {
+        width: 254px;
+        height: 157px;
+      }
+      .popUp2 {
+        background-position: (0, 10px);
+      }
+    }
+    .infor {
+      margin-top: 25px;
+      font-family: "basic";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 13px;
+      line-height: 18px;
+      color: #666666;
+      width: 247px;
+      height: 54px;
+      & > div {
+        color: #999999;
+        margin-top: 6px;
+        width: 247px;
+        height: 20px;
+        font-family: "basic";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 17px;
+        & > span {
+          float: right;
+          margin-top: 11px;
+        }
+      }
+    }
+    .title {
+      margin-right: 65px;
+      width: 180px;
+      height: 28px;
+      font-family: "basic";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 28px;
+      color: #3e660e;
+      span {
+        width: auto;
+        height: 25px;
+        font-family: "basic";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 25px;
+        color: #ffa300;
+      }
+    }
+    .switch {
+      margin-top: 66px;
+      width: 267px;
+      height: 60px;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      & > .btn {
+        margin-left: 10px;
+        width: 56px;
+        height: 25px;
+        background: #fdd482;
+        border: 0.5px solid #7d580f;
+        box-sizing: border-box;
+        border-radius: 5px;
+        font-family: "basic";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 9px;
+        line-height: 13px;
+        /* identical to box height */
+
+        color: #ffffff;
+      }
+    }
+  }
+}

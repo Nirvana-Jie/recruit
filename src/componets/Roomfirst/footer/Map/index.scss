@@ -1,0 +1,38 @@
+.backMap {
+  background-image: url(../../../../assets/img/room/Map/map1.png);
+  background-size: 100%, 120%;
+  background-repeat: no-repeat;
+  width: 1900px;
+  height: 1600px;
+  position: absolute;
+}
+
+.juanjuan {
+  position: fixed;
+  z-index: 500;
+  width: 100px;
+  height: 130px;
+  //   background-color: red;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+  background-image: url(../../../../assets/img/room/Map/juanjuan3.png);
+  background-repeat: no-repeat;
+  background-position: (0px, -10px);
+  @keyframes run {
+    from {
+      background-position: (0px, -140px);
+    }
+    to {
+      background-position: (-1266px, -140px);
+    }
+  }
+}
+.juanjuan {
+  animation: run 1s steps(12) infinite;
+}
+.paused {
+  animation: run 1s steps(12);
+}

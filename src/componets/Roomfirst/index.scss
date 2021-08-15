@@ -1,0 +1,186 @@
+.view {
+  position: relative;
+  width: 375px;
+  height: 86.51vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  .room {
+    position: relative;
+    width: 80vh;
+    height: 86.51vh;
+    background-size: cover;
+    background-image: url(../../assets/img/room/room.png);
+    .pop {
+      position: fixed;
+      top: 64px;
+      width: 375px;
+      height: 603px;
+      display: flex;
+      justify-content: center;
+      display: block;
+    }
+    .mapItem {
+      position: absolute;
+      top: 320px;
+      width: 111px;
+      height: 174px;
+      background-image: url(../../assets/img/room/mapActive.png);
+      background-size: cover;
+      left: 100px;
+      transition: 2s linear all;
+      opacity: 0;
+      display: none;
+    }
+    // .mapItemActive {
+    //   position: fixed;
+    //   width: 37px;
+    //   height: 58px;
+    //   transform: translate(70px, -60px);
+    // }
+    .personBack {
+      position: absolute;
+      width: 65px;
+      height: 80px;
+      background-size: cover;
+      background-image: url(../../assets/img/room/personback.png);
+      top: 397px;
+      left: 210px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .personItem {
+        margin-top: 5px;
+        width: 40px;
+        height: 80px;
+        background-size: cover;
+        background-image: url(../../assets/img/create/persons/001.png);
+      }
+    }
+    .foodItem {
+      position: absolute;
+      left: 400px;
+      top: 520px;
+      width: 54px;
+      height: 46px;
+      z-index: 100;
+      background-image: url(../../assets/img/room/foodActive.png);
+      background-size: cover;
+      opacity: 1;
+    }
+    .foodItemActive {
+      opacity: 1;
+      transition: 2s linear;
+      position: absolute;
+      left: 200px;
+      top: 450px;
+    }
+
+    .letterItem {
+      position: absolute;
+      width: 53px;
+      height: 57px;
+      background-image: url(../../assets/img/room/letterActive.png);
+      top: 140px;
+      background-size: cover;
+      opacity: 1;
+      left: 165px;
+      // transition: 2s linear all;
+    }
+    // .letterItemActive {
+    //   position: fixed;
+    //   transform: translate(160px, 250px);
+    // }
+    .diaryItem {
+      position: absolute;
+      width: 90px;
+      height: 50px;
+      top: 465px;
+      left: 440px;
+      background-image: url(../../assets/img/room/diaryActive.png);
+      background-size: cover;
+      opacity: 0;
+    }
+    .diaryItemActive {
+      opacity: 1;
+      transition: 2s linear;
+    }
+    .tip {
+      background-color: cadetblue;
+      position: fixed;
+      bottom: 0;
+    }
+    .header {
+      position: fixed;
+      height: 50px;
+      width: 375px;
+      top: 64px;
+    }
+  }
+}
+.footer {
+  width: 375px;
+  height: 13.49vh;
+  background-image: url(../../assets/img/room/footerback.png);
+  background-size: cover;
+  position: relative;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+
+  & > div {
+    width: 73.96px;
+    height: 68.46px;
+    background-image: url(../../assets/img/room/padding.png);
+    background-size: cover;
+    .map {
+      margin-left: 20px;
+      margin-top: 5px;
+      width: 37px;
+      height: 58px;
+      background-image: url(../../assets/img/room/map.png);
+      background-size: cover;
+    }
+    .mapActive {
+      background-image: url(../../assets/img/room/mapActive.png);
+    }
+    .food {
+      margin-left: 7px;
+      margin-top: 17px;
+      width: 54px;
+      height: 46px;
+      background-image: url(../../assets/img/room/food.png);
+      background-size: cover;
+    }
+    .foodActive {
+      background-image: url(../../assets/img/room/foodActive.png);
+    }
+    .letter {
+      margin-left: 14px;
+      margin-top: 7px;
+      width: 53px;
+      height: 57px;
+      background-image: url(../../assets/img/room/letter.png);
+      background-size: cover;
+    }
+    .letterActive {
+      background-image: url(../../assets/img/room/letterActive.png);
+    }
+    .diary {
+      margin-left: 7px;
+      margin-top: 18px;
+      width: 62px;
+      height: 35px;
+      background-image: url(../../assets/img/room/diary.png);
+      background-size: cover;
+    }
+    .diaryActive {
+      background-image: url(../../assets/img/room/diaryActive.png);
+    }
+  }
+  .active {
+    background-image: url(../../assets/img/room/paddingActive.png);
+  }
+}

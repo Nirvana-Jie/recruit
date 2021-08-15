@@ -1,0 +1,122 @@
+.backPop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 305px;
+  height: 419px;
+  background-image: url(../../../../../assets/img/room/Map/backPop.png);
+  background-size: cover;
+  top: 90px;
+  left: 30px;
+  z-index: 1000;
+  display: none;
+  .content {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 283px;
+    height: 307px;
+    background-size: cover;
+
+    .title {
+      margin-top: 10px;
+      height: 42px;
+      font-family: "basic";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 42px;
+      color: #3e600e;
+    }
+    .swip {
+      width: 255px;
+      height: 129px;
+      background-size: cover;
+      background-image: url(../../../../../assets/img/room/Map/swipback.png);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & > div {
+        width: 238px;
+        height: 114px;
+        background-image: url(../../../../../assets/img/room/Map/swipborder.png);
+        background-size: cover;
+      }
+    }
+    .tag {
+      margin-top: 13px;
+      margin-left: 28px;
+      width: 283px;
+      & > p {
+        width: 70px;
+        height: 20px;
+        font-family: "basic";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 8px;
+        color: #2e4240;
+      }
+      & > div {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0px;
+        width: 190px;
+        height: 22px;
+        & > div {
+          // 控制文字不换行
+          white-space: nowrap;
+          padding-left: 10px;
+          padding-right: 10px;
+          margin-right: 10px;
+          height: 22px;
+          background: #fef5d0;
+          border: 1px solid #83bc96;
+          box-sizing: border-box;
+          border-radius: 20px;
+          text-align: center;
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 10px;
+          line-height: 22px;
+          /* identical to box height */
+
+          color: #579d6b;
+          /* Inside Auto Layout */
+        }
+      }
+    }
+    .time {
+      margin-top: 3px;
+      margin-left: 28px;
+      width: 283px;
+      & > p {
+        width: 56px;
+        height: 20px;
+        font-family: "basic";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        color: #2e4240;
+      }
+      & > div {
+        white-space: nowrap;
+        margin-top: 2px;
+        width: 57px;
+        height: 17px;
+        font-family: "basic";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 17px;
+        color: #2c5d3a;
+      }
+    }
+  }
+}
