@@ -17,10 +17,17 @@ export default class Create extends PureComponent {
   };
   blur = () => {};
   saveName = (e) => {
-    this.setState({
-      stuName: e.target.value,
-      isNameFinished: e.target.value !== "" ? true : false,
-    });
+    if (e.target.value === "")
+      this.setState({
+        stuName: "请输入你的姓名",
+        isNameFinished: false,
+      });
+    else {
+      this.setState({
+        stuName: e.target.value,
+        isNameFinished: true,
+      });
+    }
   };
   //使得后面人物放大和缩写可以拿到整体的图片
   changePerImg = (type, activeIndex) => {
@@ -52,7 +59,7 @@ export default class Create extends PureComponent {
   getPic = (part) => {
     const b = [1, 2, 3, 4];
     return b.map((data) => {
-      return `/img/create/${part}/${data}.png`;
+      return `${part}/${data}`;
     });
   };
   letterOut = () => {
@@ -104,6 +111,10 @@ export default class Create extends PureComponent {
                     onChange={this.saveName}
                     onBlur={(e) => {
                       e.target.className = " stuName";
+                      if (e.target.innerHTML === "") {
+                        e.target.placeholder = "请输入姓名";
+                        console.log(456);
+                      }
                     }}
                     onFocus={(e) => {
                       e.target.placeholder = "";

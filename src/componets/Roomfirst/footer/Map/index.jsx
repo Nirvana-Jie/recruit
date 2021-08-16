@@ -136,6 +136,7 @@ class Map extends PureComponent {
                   onClick={this.scale}
                 >
                   <img
+                    alt="123456"
                     src={
                       require(`../../../../assets/img/room/Map/pic.png`).default
                     }

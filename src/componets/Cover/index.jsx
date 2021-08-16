@@ -9,7 +9,7 @@ export default class Cover extends Component {
     return (
       <div
         className="back"
-        onClick={(e) => {
+        onTouchStart={(e) => {
           e.target.style.display = "none";
         }}
       >

@@ -23,12 +23,27 @@ export default class Swip extends PureComponent {
         pagination={type === "popUp" ? true : false}
       >
         {showPic.map((data, index) => {
-          return (
+          return type === "headbox" ||
+            type === "footerbox" ||
+            type === "bodybox" ? (
             <SwiperSlide key={index}>
               <div
                 className={`${type}${index} ${type}`}
                 style={{
-                  backgroundImage: `url(${data})`,
+                  backgroundImage:
+                    "url(" +
+                    require(`../../assets/img/create/${data}.png`).default +
+                    ")",
+                  backgroundSize: "cover",
+                }}
+              ></div>
+            </SwiperSlide>
+          ) : (
+            <SwiperSlide key={index}>
+              <div
+                className={`${type}${index} ${type}`}
+                style={{
+                  backgroundImage: `url(${require(data)})`,
                   backgroundSize: "cover",
                 }}
               ></div>
