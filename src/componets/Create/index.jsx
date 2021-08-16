@@ -56,6 +56,8 @@ export default class Create extends PureComponent {
       return `/cqupt-welcome-2021/img/create/${part}/${data}.png`;
     });
   };
+
+  
   letterOut = () => {
     const { show } = this;
     this.setState({ isLetterout: true });
