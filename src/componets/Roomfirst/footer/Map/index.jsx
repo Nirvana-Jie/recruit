@@ -139,7 +139,7 @@ class Map extends PureComponent {
                     src={
                       require(`../../../../assets/img/room/Map/pic.png`).default
                     }
-                  ></img>
+                   alt='map'></img>
                 </div>
                 <span>点击查看，长按保存</span>
               </div>
