@@ -197,7 +197,7 @@ class Roomfirst extends PureComponent {
                       ")",
                   }}
                 ></div>
-              </div>{" "}
+              </div>
               <span> 恭喜完成新生要素探秘</span>
               <span>正在为你生成专属邀请函</span>
               <span>请稍等......</span>

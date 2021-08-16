@@ -22,12 +22,12 @@ class Map extends PureComponent {
     // let offsetY = (667 - cliH) * (667 / cliH);
     // window.scrollTo((95 / 375) * cliW - offsetX, (600 / 667) * cliH + offsetY);
     //console.log((95 / 375) * cliW, (600 / 667) * cliH);
-    // document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
     const { start } = this;
     setTimeout(() => {
       window.scrollTo(
-        start.offsetLeft - 130,
-        start.offsetTop - (370 / 812) * cliH
+        start.offsetLeft - 155,
+        start.offsetTop - (320 / 812) * cliH
       );
     }, 0);
   }
@@ -94,10 +94,13 @@ class Map extends PureComponent {
   mapMove = (map) => {
     const { topLength } = this.state;
     let a = topLength;
+
     const timer = setInterval(() => {
+      if (a > 2864) {
+        this.setState({ isFinished: true });
+      }
       a = a + 1;
       map.style.top = `${a}px`;
-      console.log(123);
       this.setState({
         timer: timer,
         topLength: a,
@@ -121,7 +124,6 @@ class Map extends PureComponent {
   scale = () => {
     const { Flag } = this.state;
     this.setState({ Flag: !Flag }, () => {
-      console.log(1);
       this.pic.style.transform = Flag ? "scale(2)  " : "scale(1)  ";
     });
   };

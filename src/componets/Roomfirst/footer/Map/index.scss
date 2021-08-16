@@ -7,10 +7,10 @@
 }
 .backMap {
   background-image: url(../../../../assets/img/room/Map/map.png);
-  background-size: 100%, 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  width: 1890px;
-  height: 4096px;
+  width: 1290px;
+  height: 3096px;
   position: absolute;
   @keyframes big {
     from {
@@ -30,9 +30,8 @@
     width: 100px;
     height: 130px;
     position: absolute;
-    background-color: rosybrown;
-    top: 3450px;
-    left: 870px;
+    top: 2550px;
+    left: 650px;
   }
   & > div {
     z-index: 2;
@@ -43,8 +42,8 @@
     height: 80px;
     background-image: url(../../../../assets/img/room/Map/wow.png);
     background-size: cover;
-    bottom: 740px;
-    left: 400px;
+    bottom: 540px;
+    left: 800px;
     animation: big 2s infinite;
   }
   & > div:nth-child(2) {
@@ -53,9 +52,8 @@
     height: 80px;
     background-image: url(../../../../assets/img/room/Map/wow.png);
     background-size: cover;
-    top: 460px;
-    left: 1250px;
-    transform: rotate(90deg);
+    top: 890px;
+    left: 800px;
     animation: big 2s infinite;
   }
   & > div:nth-child(3) {
@@ -64,9 +62,8 @@
     height: 80px;
     background-image: url(../../../../assets/img/room/Map/wow.png);
     background-size: cover;
-    top: 550px;
-    left: 1450px;
-    transform: rotate(90deg);
+    top: 750px;
+    left: 780px;
     animation: big 2s infinite;
   }
   & > div:nth-child(4) {
@@ -75,9 +72,9 @@
     height: 80px;
     background-image: url(../../../../assets/img/room/Map/wow.png);
     background-size: cover;
-    top: 250px;
-    left: 950px;
-    transform: rotate(90deg);
+    top: 1150px;
+    left: 560px;
+    transform: rotate(360deg);
     animation: big 2s infinite;
   }
 }
