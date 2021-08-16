@@ -53,7 +53,7 @@ export default class Create extends PureComponent {
   getPic = (part) => {
     const b = [1, 2, 3, 4];
     return b.map((data) => {
-      return `/img/create/${part}/${data}.png`;
+      return `/cqupt-welcome-2021/img/create/${part}/${data}.png`;
     });
   };
   letterOut = () => {
