@@ -19,7 +19,6 @@ const CustomChildren = (props) => (
         style={{
           fontWeight: "70px",
           fontFamily: "basic",
-          color: "#FFFFFF",
           lineHeight: "46px",
           textAlign: "center",
           fontSize: "12px",
