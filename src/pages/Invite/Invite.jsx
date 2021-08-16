@@ -163,7 +163,7 @@ export default class Invite extends Component {
                     <button onClick={this.getPic} ref={c => this.button = c} className='button1'>点击查看图片</button>
                     <button onClick={this.back} ref={c => this.button2 = c} className='button2'></button>
                 </div>
-                <div className='invite_footer'>@红岩网校工作站出品</div>
+                <div className='invites_footer'>@红岩网校工作站出品</div>
             </div>
             </div>
         )
