@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import QRCode from 'qrcode.react'
 import html2canvas from 'html2canvas';
 import './Invite.scss'
-import PubSub from 'pubsub-js';
+
 
 // import PubSub from 'pubsub-js'
 

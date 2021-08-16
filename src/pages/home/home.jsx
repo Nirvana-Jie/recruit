@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import './home.scss'
 import button from '../../assets/img/Home/button.png'
 import slide from '../../assets/api/slide'
-import PubSub from 'pubsub-js'
+
 
 
 export default class home extends Component {
