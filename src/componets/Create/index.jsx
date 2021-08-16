@@ -35,8 +35,7 @@ export default class Create extends PureComponent {
   };
   submit = () => {
     const { warn, paizi } = this;
-    const { isNameFinished, isSubjectFinished, perImg, stuName, subject } =
-      this.state;
+    const { isNameFinished, isSubjectFinished, perImg } = this.state;
     paizi.className += " paiziActive";
     const timer = setTimeout(() => {
       paizi.className = "paizi";

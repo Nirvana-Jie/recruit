@@ -6,7 +6,7 @@
   background: rgba(0, 0, 0, 0.7);
 }
 .backMap {
-  background-image: url(../../../../assets/img/room/Map/map1.png);
+  background-image: url(../../../../assets/img/room/Map/map.png);
   background-size: 100%, 100%;
   background-repeat: no-repeat;
   width: 1890px;
@@ -25,6 +25,14 @@
       width: 75px;
       height: 80px;
     }
+  }
+  .start {
+    width: 100px;
+    height: 130px;
+    position: absolute;
+    background-color: rosybrown;
+    top: 3450px;
+    left: 870px;
   }
   & > div {
     z-index: 2;

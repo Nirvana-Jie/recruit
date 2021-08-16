@@ -73,8 +73,8 @@
         font-size: 12px;
         line-height: 17px;
         & > span {
-          float: right;
-          margin-top: 11px;
+          position: absolute;
+          top: 330px;
         }
       }
     }

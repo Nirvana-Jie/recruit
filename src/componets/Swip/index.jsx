@@ -43,7 +43,7 @@ export default class Swip extends PureComponent {
               <div
                 className={`${type}${index} ${type}`}
                 style={{
-                  backgroundImage: `url(${require(data)})`,
+                  backgroundImage: `url(${data})`,
                   backgroundSize: "cover",
                 }}
               ></div>

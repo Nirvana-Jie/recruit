@@ -4,14 +4,13 @@ import Popup from "./Popup";
 import { withRouter } from "react-router";
 
 const cliH = document.documentElement.clientHeight;
-const cliW = document.documentElement.clientWidth;
+// const cliW = document.documentElement.clientWidth;
 //console.log(cliH, cliW);
 class Map extends PureComponent {
   state = {
     isEventOut: { state: false, name: "" },
     isRunning: false,
     isFinished: false,
-    rotateDeg: 0,
     topLength: 0,
     timer: "",
     leftLength: 0,
@@ -19,69 +18,89 @@ class Map extends PureComponent {
     Flag: false,
   };
   componentDidMount() {
-    let offsetX = (375 - cliW) * (375 / cliW) * 0.05;
-    let offsetY = (667 - cliH) * (667 / cliH);
-    window.scrollTo((95 / 375) * cliW - offsetX, (600 / 667) * cliH + offsetY);
+    // let offsetX = (375 - cliW) * (375 / cliW) * 0.05;
+    // let offsetY = (667 - cliH) * (667 / cliH);
+    // window.scrollTo((95 / 375) * cliW - offsetX, (600 / 667) * cliH + offsetY);
     //console.log((95 / 375) * cliW, (600 / 667) * cliH);
-    document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
+    const { start } = this;
+    setTimeout(() => {
+      window.scrollTo(
+        start.offsetLeft - 130,
+        start.offsetTop - (370 / 812) * cliH
+      );
+    }, 0);
   }
 
-  mapAnimation = (map) => {
-    const { topLength, rotateDeg, leftLength } = this.state;
+  // mapAnimation = (map) => {
+  //   const { topLength, rotateDeg, leftLength } = this.state;
+  //   let a = topLength;
+  //   let b = rotateDeg;
+  //   let c = leftLength;
+  //   const timer = setInterval(() => {
+  //     if (a <= 230) {
+  //       a = a + 1;
+  //       b = b + 0.01;
+  //     } else if (230 < a && a <= 270) {
+  //       console.log("change1");
+  //       a = a + 0.5;
+  //       b = b + 0.02;
+  //       c = c + 0.1;
+  //     } else if (270 < a && a < 274) {
+  //       console.log("change2");
+  //       a = a + 0.04;
+  //       b = b + 0.14;
+  //       c = c + 0.08;
+  //     } else if (274 < a && a < 279) {
+  //       console.log("change2-1");
+  //       a = a + 0.04;
+  //       b = b + 0.06;
+  //       c = c + 0.08;
+  //     } else if (a > 279 && a < 281) {
+  //       console.log("change3");
+  //       a = a + 0.01;
+  //       b = b + 0.1;
+  //       c = c + 0.6;
+  //     } else if (a > 281 && a < 285) {
+  //       console.log("change4");
+  //       a = a + 0.02;
+  //       b = b + 0.1;
+  //       c = c + 0.5;
+  //     } else if (a > 285 && a < 292) {
+  //       console.log("change5");
+  //       a = a + 0.02;
+  //       b = b + 0.1;
+  //       c = c - 0.03;
+  //     } else if (a > 292 && a < 642) {
+  //       console.log("change6");
+  //       a = a + 1;
+  //       b = b + 0.01;
+  //     } else if (a > 642) {
+  //       clearInterval(timer);
+  //       this.setState({ isFinished: true });
+  //     }
+  //     map.style.top = `${(a / cliH) * 100}vh`;
+  //     map.style.transform = `rotate(-${b}deg)`;
+  //     map.style.left = `-${(c / document.documentElement.clientWidth) * 100}vw`;
+  //     //console.log(map.offsetTop);
+  //     this.setState({
+  //       timer: timer,
+  //       topLength: a,
+  //       rotateDeg: b,
+  //       leftLength: c,
+  //     });
+  //   }, 10);
+  // };
+  mapMove = (map) => {
+    const { topLength } = this.state;
     let a = topLength;
-    let b = rotateDeg;
-    let c = leftLength;
     const timer = setInterval(() => {
-      if (a <= 230) {
-        a = a + 1;
-        b = b + 0.01;
-      } else if (230 < a && a <= 270) {
-        console.log("change1");
-        a = a + 0.5;
-        b = b + 0.02;
-        c = c + 0.1;
-      } else if (270 < a && a < 274) {
-        console.log("change2");
-        a = a + 0.04;
-        b = b + 0.14;
-        c = c + 0.08;
-      } else if (274 < a && a < 279) {
-        console.log("change2-1");
-        a = a + 0.04;
-        b = b + 0.06;
-        c = c + 0.08;
-      } else if (a > 279 && a < 281) {
-        console.log("change3");
-        a = a + 0.01;
-        b = b + 0.1;
-        c = c + 0.6;
-      } else if (a > 281 && a < 285) {
-        console.log("change4");
-        a = a + 0.02;
-        b = b + 0.1;
-        c = c + 0.5;
-      } else if (a > 285 && a < 292) {
-        console.log("change5");
-        a = a + 0.02;
-        b = b + 0.1;
-        c = c - 0.03;
-      } else if (a > 292 && a < 642) {
-        console.log("change6");
-        a = a + 1;
-        b = b + 0.01;
-      } else if (a > 642) {
-        clearInterval(timer);
-        this.setState({ isFinished: true });
-      }
-      map.style.top = `${(a / cliH) * 100}vh`;
-      map.style.transform = `rotate(-${b}deg)`;
-      map.style.left = `-${(c / document.documentElement.clientWidth) * 100}vw`;
-      //console.log(map.offsetTop);
+      a = a + 1;
+      map.style.top = `${a}px`;
+      console.log(123);
       this.setState({
         timer: timer,
         topLength: a,
-        rotateDeg: b,
-        leftLength: c,
       });
     }, 10);
   };
@@ -90,7 +109,8 @@ class Map extends PureComponent {
   };
   move = () => {
     const { mapNode } = this;
-    this.mapAnimation(mapNode);
+    // this.mapAnimation(mapNode);
+    this.mapMove(mapNode);
     this.setState({ isRunning: true });
   };
   stop = () => {
@@ -172,16 +192,12 @@ class Map extends PureComponent {
               this.mapNode = c;
             }}
             className="backMap"
-            style={{
-              translate: `transform: rotate(30deg);`,
-            }}
             onTouchStart={this.move}
             onTouchEnd={this.stop}
           >
             <div
               className="event1"
-              onClick={async () => {
-                console.log(132);
+              onClick={() => {
                 this.setState({
                   isEventOut: { name: "老图书馆", state: true },
                 });
@@ -211,6 +227,12 @@ class Map extends PureComponent {
                 });
               }}
             />
+            <div
+              className="start"
+              ref={(c) => {
+                this.start = c;
+              }}
+            ></div>
           </div>
         }
       </Fragment>
