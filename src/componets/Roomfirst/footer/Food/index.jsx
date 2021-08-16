@@ -82,7 +82,7 @@ export default class Food extends PureComponent {
       },
       {
         id: 7,
-        name: "莘莘美食城",
+        name: "莘莘食堂",
         text: "莘莘美食城是重邮地理位置最高的食堂，也是最好的食堂之一。食堂大而整洁。香辣干锅、掉渣饼、甜品店、还有二楼种类丰富的自选菜，都是邮子们的最爱。",
         comment: "“掉渣饼你不冲？”",
         from: "——评论选自《掌上重邮》",
@@ -138,9 +138,13 @@ export default class Food extends PureComponent {
             </div>
           </div>
           <div className="switch">
-            {infor.map((data) => {
+            {infor.map((data, index) => {
               return (
-                <button className="btn" onClick={this.change(data.id)}>
+                <button
+                  className="btn"
+                  onClick={this.change(data.id)}
+                  key={index}
+                >
                   {data.name}
                 </button>
               );

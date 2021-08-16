@@ -20,11 +20,11 @@ export default class Swip extends PureComponent {
             changePerImg(type, e.activeIndex);
         }}
         navigation={type === "popUp" ? false : true}
-        Pagination={type === "popUp" ? true : false}
+        pagination={type === "popUp" ? true : false}
       >
         {showPic.map((data, index) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={index}>
               <div
                 className={`${type}${index} ${type}`}
                 style={{

@@ -1,15 +1,23 @@
 import React, { PureComponent } from "react";
 import "./index.scss";
-
-export default class Submit extends PureComponent {
+import { withRouter } from "react-router";
+import PubSub from "pubsub-js";
+class Submit extends PureComponent {
   componentDidMount() {
-    const { top, bottom, person } = this;
+    const { person, subject } = this.props;
+    const { top, bottom, personImg } = this;
     const timer = setTimeout(() => {
       top.className += " topActive";
       bottom.className += " bottomActive";
-      person.className += " personActive";
+      personImg.className += " personActive";
       clearTimeout(timer);
     }, 100);
+    const timer1 = setTimeout(() => {
+      this.props.history.push("/room");
+      PubSub.publish("person", person);
+      PubSub.publish("subject", subject);
+      clearTimeout(timer1);
+    }, 3000);
   }
   render() {
     const { person } = this.props;
@@ -26,7 +34,7 @@ export default class Submit extends PureComponent {
         </div>
         <div
           ref={(c) => {
-            this.person = c;
+            this.personImg = c;
           }}
           className="person"
           style={{
@@ -50,3 +58,4 @@ export default class Submit extends PureComponent {
     );
   }
 }
+export default withRouter(Submit);

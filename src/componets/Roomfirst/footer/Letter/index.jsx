@@ -4,12 +4,31 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, EffectFlip } from "swiper";
 import "swiper/components/navigation/navigation.scss";
 import "./index.scss";
+import PubSub from "pubsub-js";
 SwiperCore.use([Navigation, EffectFlip]);
 // Import Swiper styles
 
 export default class Letter extends PureComponent {
+  state = {
+    subject: "",
+  };
+  componentDidMount() {
+    // this.token = PubSub.subscribe('person', (_, data) => {
+    //   console.log(data);
+    //   this.setState({
+    //     headbox: data.headbox,
+    //     bodybox: data.bodybox,
+    //   });
+    // });
+    const subject = localStorage.getItem("subject");
+    this.setState({ subject: subject });
+  }
+  componentWillUnmount() {
+    PubSub.unsubscribe(this.token);
+  }
   render() {
-    const { cancel } = this.props;
+    const { cancel, personImg } = this.props;
+    const profile = personImg.slice(0, 2);
     return (
       <div className="letterback">
         <Swiper
@@ -28,18 +47,18 @@ export default class Letter extends PureComponent {
                   style={{
                     backgroundImage:
                       "url(" +
-                      require("../../../../assets/img/room/letterpop/profile/03.png")
+                      require(`../../../../assets/img/room/letterpop/profile/${profile}.png`)
                         .default +
                       ")",
                   }}
                 ></div>
                 <div>恭喜你被重庆邮电大学</div>
                 <div>
-                  <span>集成电路设计与集成系统</span>专业录取
+                  <span>{this.state.subject}</span>专业录取
                 </div>
                 <div>
                   请于
-                  <span>9月 日- 日</span>
+                  <span>9月9日-10日</span>
                 </div>
                 <div>前往校内风雨操场报道</div>
               </div>

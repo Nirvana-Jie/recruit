@@ -40,7 +40,7 @@ export default class home extends Component {
                 s:lefts
             })
         },1000)
-        slide(this,this.homeNode,`/invite?name=曾闻捷&time=${this.state.date}`)
+        slide(this,this.homeNode,'/create')
         
         }
     componentWillUnmount(){

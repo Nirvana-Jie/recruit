@@ -1,4 +1,9 @@
 .backPop {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,10 +12,7 @@
   height: 419px;
   background-image: url(../../../../../assets/img/room/Map/backPop.png);
   background-size: cover;
-  top: 90px;
-  left: 30px;
   z-index: 1000;
-  display: none;
   .content {
     margin-top: 100px;
     display: flex;
@@ -19,15 +21,27 @@
     width: 283px;
     height: 307px;
     background-size: cover;
+    .shut {
+      transform: rotate(10deg);
+      right: 0;
+      top: 100px;
+      position: absolute;
+      width: 41px;
+      height: 41px;
+      background-image: url(../../../../../assets/img/room/letterpop/shut.png);
+      background-size: cover;
+    }
 
     .title {
-      margin-top: 10px;
+      width: 300px;
+      text-align: center;
+      margin-left: 180px;
+      margin-top: 20px;
       height: 42px;
       font-family: "basic";
       font-style: normal;
       font-weight: bold;
       font-size: 30px;
-      line-height: 42px;
       color: #3e600e;
     }
     .swip {

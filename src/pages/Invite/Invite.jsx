@@ -3,17 +3,22 @@ import QRCode from 'qrcode.react'
 import html2canvas from 'html2canvas';
 import './Invite.scss'
 // import PubSub from 'pubsub-js'
-import model from '../../assets/img/Invite/夹克男(1) 1.png'
 
 
 export default class Invite extends Component {
 
     state = {
-        Flag: true
+        Flag: true,
+        name:'',
+        picUrl:''
     }
 
     componentDidMount() {
-        // let browser = {
+        let stuName =localStorage.getItem('personName')
+        this.setState({name:stuName})
+    }
+
+    // let browser = {
         //     versions: function () {
         //         let u = navigator.userAgent;
         //         return {
@@ -45,9 +50,9 @@ export default class Invite extends Component {
         //     // 如果是ios系统就执行
            
         // }
-    }
+    
 
-    componentDidUpdate() {
+    componentDidUpdate(){
         const { button, button2 } = this;
         button.disabled = false
         button2.disabled = false
@@ -103,6 +108,8 @@ export default class Invite extends Component {
         });
     }
     render() {
+        const {name} =this.state
+        let pic =localStorage.getItem("picture")
         return (
             <div className='hidden'><div className='inviter' >
                 <div className='shadow' ref={c => this.hidebg = c} style={{ display: 'none' }}></div>
@@ -113,7 +120,7 @@ export default class Invite extends Component {
                     <h2>重邮邀请函</h2>
                     <div className='invite_header'>
                         <div>亲爱的</div>
-                        <span className='name'>迪丽热巴.迪力木拉提</span>
+                        <span className='name'>{name}</span>
                         <span className='student'>同学</span>
                     </div>
                     <div className='invite_body'>
@@ -123,8 +130,13 @@ export default class Invite extends Component {
                             <div className='cqupt'>重庆邮电大学</div>
                             <div>红岩网校工作站</div>
                         </div>
-                        <div className='model'>
-                            <img alt='模型' src={model}></img>
+                        <div className='model' style={{
+                             background:
+                                "url(" +
+                                require(`../../assets/img/create/persons/${pic}.png`)
+                                    .default +
+                                ")",backgroundRepeat:'no-repeat',backgroundSize:'contain'
+                         }}>
                         </div>
 
                         <div className='border'>
@@ -145,10 +157,10 @@ export default class Invite extends Component {
                     </div>
                 </div>
                 <div className='underButton'>
-                    <button onClick={this.getPic} ref={c => this.button = c} className='button1'>一键保存到相册</button>
+                    <button onClick={this.getPic} ref={c => this.button = c} className='button1'>点击查看图片</button>
                     <button onClick={this.back} ref={c => this.button2 = c} className='button2'></button>
                 </div>
-                <div className='footer'>@红岩网校工作站出品</div>
+                <div className='invite_footer'>@红岩网校工作站出品</div>
             </div>
             </div>
         )

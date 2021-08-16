@@ -209,6 +209,15 @@
   flex-direction: column;
   align-items: center;
   position: relative !important;
+  & > div:nth-child(1) {
+    width: 41px;
+    height: 41px;
+    background-image: url(../../../../assets/img/room/letterpop/shut.png);
+    background-size: cover;
+    position: absolute;
+    right: 20px;
+    top: 40px;
+  }
   .action_header {
     font-family: "basic";
     font-style: normal;
@@ -292,29 +301,29 @@
   right: 0;
   bottom: 0;
   margin: auto auto;
-}
-.swiper-button-next {
-  top: 470px !important;
-  right: 40px !important;
-  background: url(../../../../assets/img/room/diarypop/button_right.png);
-  background-size: cover;
-  width: 35px !important;
-  height: 35px !important;
-  content: none !important;
-  &::after {
+  .swiper-button-next {
+    top: 470px !important;
+    right: 40px !important;
+    background: url(../../../../assets/img/room/diarypop/button_right.png);
+    background-size: cover;
+    width: 35px !important;
+    height: 35px !important;
     content: none !important;
+    &::after {
+      content: none !important;
+    }
   }
-}
 
-.swiper-button-prev {
-  top: 470px !important;
-  left: 30px !important;
-  background: url(../../../../assets/img/room/diarypop/button_left.png);
-  background-size: cover;
-  width: 35px !important;
-  height: 35px !important;
-  content: none !important;
-  &::after {
+  .swiper-button-prev {
+    top: 470px !important;
+    left: 30px !important;
+    background: url(../../../../assets/img/room/diarypop/button_left.png);
+    background-size: cover;
+    width: 35px !important;
+    height: 35px !important;
     content: none !important;
+    &::after {
+      content: none !important;
+    }
   }
 }

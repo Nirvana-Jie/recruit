@@ -36,7 +36,7 @@ class App extends PureComponent {
   }
 
   render() {
-    const { key } = this.props.location
+    // const { key } = this.props.location
     return (
       <div  style={{
         position:"relative" 
@@ -46,16 +46,16 @@ class App extends PureComponent {
           <CSSTransition
             classNames={this.state.classNames}
             timeout={1500}
-            key={key}>
+            key={Math.random()}>
             <Switch location={this.props.location}>
               <Route exact path='/' component={Waiting}></Route>
               <Route exact path='/waiting' component={Waiting}></Route>
               <Route exact path='/home' component={Home}></Route>
+              <Route exact path="/create" component={Create} />
+              <Route exact path="/room" component={Roomfirst} />
+              <Route exact path="/map" component={Map} />
+              <Route exact path="/submit" component={Submit} />
               <Route exact ptah='/invite' component={Invite}></Route>
-              <Route path="/create" component={Create} />
-              <Route path="/room" component={Roomfirst} />
-              <Route path="/map" component={Map} />
-              <Route path="/submit" component={Submit} />
             </Switch>
           </CSSTransition>
         </TransitionGroup>  
