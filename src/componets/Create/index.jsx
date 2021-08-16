@@ -48,8 +48,6 @@ export default class Create extends PureComponent {
         isSubmit: true,
       });
       PubSub.publish("person", perImg);
-      PubSub.publish("name", stuName);
-      PubSub.publish("subject", subject);
     }
     localStorage.setItem(
       "picture",
@@ -75,9 +73,7 @@ export default class Create extends PureComponent {
     show.className = "select";
   };
   componentDidMount() {
-    PubSub.subscribe("picker", (msg, v) => {
-      this.setState({ subject: v.subject, isSubjectFinished: true });
-    });
+    localStorage.clear();
   }
 
   render() {
@@ -113,7 +109,6 @@ export default class Create extends PureComponent {
                       e.target.className = " stuName";
                       if (e.target.innerHTML === "") {
                         e.target.placeholder = "请输入姓名";
-                        console.log(456);
                       }
                     }}
                     onFocus={(e) => {

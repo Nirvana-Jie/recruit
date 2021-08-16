@@ -8,10 +8,26 @@ export default class Popup extends PureComponent {
         name: "八教",
         img: [],
         tag: ["教学楼", "自习室", "学院办公室"],
+        time: "7:00-22:30",
+      },
+      {
+        name: "信科大楼",
+        img: [],
+        tag: ["办公楼", " 重邮地标"],
         time: "7:00-12:00",
       },
-      { name: "信科大楼", img: [], tag: [], time: "7:00-12:00" },
-      { name: "老图书馆", img: [], tag: [], time: "7:00-12:00" },
+      {
+        name: "老图书馆",
+        img: [""],
+        tag: ["图书馆"],
+        time: "8:00-23:00",
+      },
+      {
+        name: "数字图书馆",
+        img: [],
+        tag: ["图书馆", "提供电脑查阅"],
+        time: "8:00-23:00",
+      },
     ],
   };
   render() {

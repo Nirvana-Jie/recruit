@@ -7,10 +7,10 @@
 }
 .backMap {
   background-image: url(../../../../assets/img/room/Map/map1.png);
-  background-size: 100%, 120%;
+  background-size: 100%, 100%;
   background-repeat: no-repeat;
-  width: 1900px;
-  height: 1600px;
+  width: 1890px;
+  height: 4096px;
   position: absolute;
   @keyframes big {
     from {
@@ -146,22 +146,22 @@
     align-items: center;
     .pic {
       img {
+        z-index: 5;
         width: 169px;
         height: 115px;
         transform: scale(1);
       }
     }
-    span {
-      bottom: 75px;
-      position: absolute;
-      font-family: "basic";
-      font-style: normal;
-      font-weight: normal;
-      font-size: 10px;
-      line-height: 14px;
-      text-align: center;
-      color: #93c39c;
-    }
+  }
+  p {
+    margin-top: 5px;
+    font-family: "basic";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+    color: #93c39c;
   }
   & > div:nth-child(6) {
     margin-top: 25px;
@@ -177,6 +177,16 @@
     }
   }
   & > div:nth-child(7) {
+    margin-top: 7px;
+    font-family: "basic";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #4d7711;
+  }
+  & > div:nth-child(8) {
     font-family: "basic";
     font-style: normal;
     font-weight: bold;

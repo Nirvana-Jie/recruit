@@ -136,14 +136,14 @@ class Map extends PureComponent {
                   onClick={this.scale}
                 >
                   <img
-                    alt="123456"
+                    alt="网络出现错误"
                     src={
                       require(`../../../../assets/img/room/Map/pic.png`).default
                     }
                   ></img>
                 </div>
-                <span>点击查看，长按保存</span>
               </div>
+              <p>点击查看，长按保存</p>
               <div>
                 我们的<span>掌上重邮</span>也有最好用的
               </div>
@@ -207,7 +207,7 @@ class Map extends PureComponent {
               className="event4"
               onClick={() => {
                 this.setState({
-                  isEventOut: { name: "新图书馆", state: true },
+                  isEventOut: { name: "数字图书馆", state: true },
                 });
               }}
             />
