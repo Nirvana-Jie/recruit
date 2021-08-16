@@ -32,9 +32,7 @@ class Music extends PureComponent {
     this.setState({Flag:!Flag},()=>{
       music.style.animation =Flag?'rotate 20s linear infinite':'rotate 20s linear infinite paused';
       if(Flag){
-        if(this.props.location.pathname==='/create'){
           this.state.audio.play()
-        }
       }else{
         this.state.audio.pause()
       }
