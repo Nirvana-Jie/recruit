@@ -1,8 +1,6 @@
 import React, { PureComponent } from "react";
 import "./index.scss";
 import { withRouter } from "react-router";
-import PubSub from "pubsub-js";
-
 class MapPop extends PureComponent {
   render() {
     const { letter, food, diary } = this.props;

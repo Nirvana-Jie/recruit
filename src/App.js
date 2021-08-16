@@ -26,7 +26,7 @@ export default class App extends PureComponent {
         <Route path="/cover" component={Cover} />
         <Route path="/diary" component={Diary} />
         <Route path="/mappop" component={MapPop} />
-        <Redirect to="/map"></Redirect>
+        <Redirect to="/create"></Redirect>
       </div>
     );
   }
