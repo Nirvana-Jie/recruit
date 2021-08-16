@@ -27,7 +27,6 @@ class Waiting extends Component {
         this.loaing2 = setTimeout(() => {
             //路由自动跳转
             this.props.history.push('/home')
-
         }, 2700)
     };
     //清除定时器
@@ -46,7 +45,7 @@ class Waiting extends Component {
                             <img alt='山' src={mountain} className='mountain'></img>
                             <img alt='❀' src={lefttFlower} className='leftFlower'></img>
                             <img alt='❀' src={rightFlower} className='rightFlower'></img>
-                            <img alt='卷卷' src={juanjuan} className='juanjuan'></img>
+                            <img alt='卷卷' src={juanjuan} className='waiting_juanjuan'></img>
                             <div className='pro'>
                                 <img alt='风车' src={windmill} ></img>
                                <div className='pro2'></div>
@@ -58,7 +57,7 @@ class Waiting extends Component {
                         <img alt='蘑菇'src={mushroom}></img>
                         <span>卷卷正在火速赶来迎接你</span>
                     </div>
-                    <div className='footer'>@红岩网校工作站出品</div>
+                    <div className='waiting_footer'>@红岩网校工作站出品</div>
                 </div>
 
             </div>

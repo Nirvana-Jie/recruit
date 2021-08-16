@@ -1,0 +1,92 @@
+.submitBack {
+  width: 375px;
+  height: 812px;
+  background-image: url(../../../assets/img/create/submit/background2.png);
+  background-size: cover;
+  .top {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 293px;
+    height: 63.72px;
+    background-image: url(../../../assets/img/create/submit/top.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 1s ease-in all;
+    transform: translate(0, -63.72px);
+    & > div {
+      font-family: "basic";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 25px;
+      color: #ffffff;
+    }
+  }
+  .topActive {
+    transform: translate(0, 71px);
+  }
+  .person {
+    top: 130px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    background-image: url(../../../assets/img/create/persons/000.png);
+    width: 250px;
+    height: 500px;
+    background-size: cover;
+    margin-top: 40px;
+    transition: 1s linear all;
+  }
+  .personActive {
+    width: 287.5px;
+    height: 575px;
+  }
+  .bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 640px;
+    width: 289px;
+    height: 105px;
+    background-image: url(../../../assets/img/create/submit/bottom.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 1s ease-in all;
+    transform: translate(0, 170px);
+    & > div:nth-child(1) {
+      margin-top: 18px;
+      height: 35px;
+      font-family: "basic";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 25px;
+      line-height: 35px;
+      /* identical to box height */
+
+      color: #ffffff;
+    }
+    & > div:nth-child(2) {
+      height: 49px;
+      font-family: "basic";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 25px;
+
+      color: #ffffff;
+    }
+  }
+  .bottomActive {
+    transform: translate(0, 0px);
+  }
+}

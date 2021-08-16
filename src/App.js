@@ -1,7 +1,6 @@
-import React, { Component, createRef } from 'react'
+import React, { PureComponent} from 'react'
 import { Switch, Route, withRouter } from "react-router-dom"
 import Waiting from './pages/Waiting/Waiting';
-import Create from './pages/Create/create';
 import Music from './pages/components/Music/Music.jsx';
 import Invite from './pages/Invite/Invite';
 import './App.css';
@@ -9,9 +8,22 @@ import "./Animation.scss"
 import  './assets/styles/font.scss'
 import Home from './pages/home/home';
 import { TransitionGroup, CSSTransition } from "react-transition-group"
+import Create from "./componets/Create";
+import Roomfirst from "./componets/Roomfirst/index.jsx";
+import Map from "./componets/Roomfirst/footer/Map";
+import "./assets/styles/font.scss";
+import Submit from "./componets/Create/Submit";
+//import "antd-mobile/dist/antd-mobile.css"; // or 'antd-mobile/dist/antd-mobile.less'
+// import TestWrapper from "./componets/HT";
 
 
-class App extends Component {
+
+
+  
+
+
+class App extends PureComponent {
+
   state = {
     classNames: "",
   }
@@ -23,11 +35,8 @@ class App extends Component {
     })
   }
 
-  controlMusic =createRef()
-
-  
   render() {
-    const { key } = this.props.location
+    // const { key } = this.props.location
     return (
       <div  style={{
         position:"relative" 
@@ -37,19 +46,21 @@ class App extends Component {
           <CSSTransition
             classNames={this.state.classNames}
             timeout={1500}
-            key={key}>
+            key={Math.random()}>
             <Switch location={this.props.location}>
               <Route exact path='/' component={Waiting}></Route>
               <Route exact path='/waiting' component={Waiting}></Route>
               <Route exact path='/home' component={Home}></Route>
-              <Route exact path='/create' component={Create}></Route>
+              <Route exact path="/create" component={Create} />
+              <Route exact path="/room" component={Roomfirst} />
+              <Route exact path="/map" component={Map} />
+              <Route exact path="/submit" component={Submit} />
               <Route exact ptah='/invite' component={Invite}></Route>
             </Switch>
           </CSSTransition>
-        </TransitionGroup>
+        </TransitionGroup>  
       </div>
-    )
+    );
   }
 }
-
 export default withRouter(App)

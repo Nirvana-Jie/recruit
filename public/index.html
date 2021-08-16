@@ -4,10 +4,45 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- antd-mobile引入 -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
+    <script>
+      if ("addEventListener" in document) {
+        document.addEventListener(
+          "DOMContentLoaded",
+          function () {
+            FastClick.attach(document.body);
+          },
+          false
+        );
+      }
+      if (!window.Promise) {
+        document.writeln(
+          '<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"' +
+            ">" +
+            "<" +
+            "/" +
+            "script>"
+        );
+      }
+      
+    </script>
+    <!--  -->
+    <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <title>React App</title>
+
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>招新H5页面</title>
   </head>
