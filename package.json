@@ -173,6 +173,6 @@
   "devDependencies": {
     "node-sass": "^6.0.1"
   },
-  "homepage": "https://fe-prod.redrock.cqupt.edu.cn/cqupt-welcome-2021/",
+  "homepage": "./cqupt-welcome-2021",
   "babel-plugin-import": "^1.13.3"
 }
