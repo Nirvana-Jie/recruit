@@ -1,5 +1,14 @@
 $border-radius:20px;
 
+element.style{
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 107px;
+    height: 241px;
+    top: 290px;
+    left: 70px;
+}
 .hidden {
     width: 100vw;
     height: 100vh;
@@ -66,8 +75,8 @@ $border-radius:20px;
             color: #306627;
         }
         .invite_header {
-            padding-right: 65px;
             padding-top: 15px;
+            width: 52%;
             div,
             .student {
                 font-family: 'basic';
@@ -121,12 +130,12 @@ $border-radius:20px;
                     padding-left: 5px;
                 }
             }
-            img {
+            .model {
                 position: absolute;
-                width: 107px;
-                height: 241px;
+                width: 140px;
+                height: 270px;
                 top: 290px;
-                left: 70px;
+                left: 60px;
             }
 
             .border {
@@ -232,4 +241,14 @@ $border-radius:20px;
         }
 
     }
+    .invites_footer{
+        margin-top: 20px;
+        font-family: 'basic';
+        font-weight: normal;
+        font-size: 9px;
+        line-height: 13px;
+        text-align: center;
+        color: #784469;
+    }
+    
 }
