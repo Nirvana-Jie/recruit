@@ -155,7 +155,6 @@ class Roomfirst extends PureComponent {
       });
     });
     // let b = JSON.parse(localStorage.getItem("active"));
-    console.log(localStorage);
     const letter1 = localStorage.getItem("letterActive");
     if (letter1 === "true") this.setState({ isLetterActive: true });
     const food1 = localStorage.getItem("foodActive");
@@ -203,7 +202,7 @@ class Roomfirst extends PureComponent {
               <span>请稍等......</span>
             </div>
           ) : (
-            console.log(789)
+            console.log()
           )}
           <div className="room">
             {isPopOut ? (

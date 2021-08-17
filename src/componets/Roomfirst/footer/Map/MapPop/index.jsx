@@ -8,7 +8,7 @@ class MapPop extends PureComponent {
       <div className="mapBack">
         <div className="content">
           <div>重邮地图等你探索</div>
-          <div>1.长按屏幕控制人物前行，不按即 可停止人物观赏重邮周围建筑</div>
+          <div>1.长按屏幕控制人物前行，不按即可停止人物,观赏重邮周围建筑</div>
           <div>
             2.探索请小心翼翼的喔，某些场景 可以点击触发一定的事件彩蛋喔~
           </div>

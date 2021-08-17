@@ -43,6 +43,15 @@
         height: 157px;
         border-radius: 16px;
         overflow: hidden;
+        .swiper-pagination {
+          bottom: 0px;
+        }
+        .swiper-pagination-bullet {
+          color: #e3eeb6;
+        }
+        .swiper-pagination-bullet-active {
+          background: #40653a;
+        }
       }
       .popUp {
         width: 254px;
@@ -106,6 +115,9 @@
       display: flex;
       justify-content: flex-start;
       flex-wrap: wrap;
+      & > .btn:nth-child(1) {
+        background-color: rgb(255, 163, 0);
+      }
       & > .btn {
         margin-left: 10px;
         width: 56px;

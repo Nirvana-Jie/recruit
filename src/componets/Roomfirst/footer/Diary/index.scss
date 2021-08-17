@@ -301,6 +301,9 @@
   right: 0;
   bottom: 0;
   margin: auto auto;
+  .swiper-button-disabled {
+    display: none;
+  }
   .swiper-button-next {
     top: 470px !important;
     right: 40px !important;

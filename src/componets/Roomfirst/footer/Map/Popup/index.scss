@@ -52,11 +52,24 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      & > div {
+      .swipback {
         width: 238px;
         height: 114px;
         background-image: url(../../../../../assets/img/room/Map/swipborder.png);
         background-size: cover;
+        .swiper-pagination {
+          bottom: 0px;
+        }
+        .swiper-pagination-bullet {
+          color: #e3eeb6;
+        }
+        .swiper-pagination-bullet-active {
+          background: #40653a;
+        }
+        .mapPop {
+          width: 238px;
+          height: 114px;
+        }
       }
     }
     .tag {

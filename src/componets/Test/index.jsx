@@ -1,8 +1,6 @@
 import { Picker } from "antd-mobile";
 import React, { PureComponent } from "react";
 import "./index.scss";
-import "antd-mobile/lib/picker/style/css";
-import PubSub from "pubsub-js";
 //自定义选择器列
 const CustomChildren = (props) => (
   <div onClick={props.onClick}>
@@ -106,10 +104,8 @@ class Test extends PureComponent {
   };
   // this.setState({ subject: v[0], color: "#000" });
   changeBack = (e) => {
-    const { subject } = this.state;
     setTimeout(() => {
       const { letterIn } = this.props;
-      PubSub.publish("picker", { subject });
       localStorage.setItem("subject", this.state.subject);
       letterIn();
     }, 0);

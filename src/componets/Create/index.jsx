@@ -68,7 +68,6 @@ export default class Create extends PureComponent {
   letterIn = () => {
     const { show } = this;
     this.setState({ isLetterout: false, isSubjectFinished: true });
-    console.log(show);
     show.className = "select";
   };
   componentDidMount() {
