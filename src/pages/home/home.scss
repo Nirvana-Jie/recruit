@@ -35,6 +35,7 @@
         position: absolute;
         top:293px;
         left: 97px;
+        display: flex;
         span:nth-child(odd){
             font-family:'basic';
             font-style: normal;
@@ -43,11 +44,12 @@
             letter-spacing: 0.18em;
             font-weight: lighter;
             color: #FFA302;
+            display: inline-block;
             text-align: center;
             width:29px
         };
         span:nth-child(even){
-            margin-top: 1px;
+            margin-top: 4px;
             font-family:'basic';
             font-style: normal;
             font-weight: lighter;
@@ -55,6 +57,7 @@
             line-height: 21px;
             letter-spacing: 0.18em;
             color: #50783B;
+            display: inline-block;
         }
     }
     img{
