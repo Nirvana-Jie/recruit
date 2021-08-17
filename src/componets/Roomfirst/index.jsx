@@ -4,7 +4,6 @@ import Cover from "../Cover";
 import Letter from "./footer/Letter";
 import Food from "./footer/Food";
 import Diary from "./footer/Diary";
-import PubSub from "pubsub-js";
 import MapPop from "./footer/Map/MapPop";
 import { withRouter } from "react-router";
 class Roomfirst extends PureComponent {
@@ -157,11 +156,9 @@ class Roomfirst extends PureComponent {
   componentDidMount() {
     const { view } = this;
     view.style.overflow = "auto";
-    PubSub.subscribe("person", (msg, data) => {
-      this.setState({
-        personImg: `${data.headbox}${data.bodybox}${data.footerbox}`,
-      });
-    });
+    const personImg = localStorage.getItem("picture");
+    this.setState({ personImg });
+
     // let b = JSON.parse(localStorage.getItem("active"));
     const first = localStorage.getItem("first");
     if (first === null) console.log();
@@ -248,6 +245,7 @@ class Roomfirst extends PureComponent {
                     food={isFoodActive}
                     diary={isDiaryActive}
                     first={firstClick}
+                    personImg={personImg}
                   />
                 )}
               </div>

@@ -1,7 +1,6 @@
 import React, { PureComponent } from "react";
 import "./index.scss";
 import { withRouter } from "react-router";
-import PubSub from "pubsub-js";
 class Submit extends PureComponent {
   componentDidMount() {
     const { person, subject } = this.props;
@@ -14,8 +13,6 @@ class Submit extends PureComponent {
     }, 100);
     const timer1 = setTimeout(() => {
       this.props.history.push("/room");
-      PubSub.publish("person", person);
-      PubSub.publish("subject", subject);
       clearTimeout(timer1);
     }, 3000);
   }

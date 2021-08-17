@@ -1,7 +1,6 @@
 import React, { Fragment, PureComponent } from "react";
 import Test from "../Test";
 import "./index.scss";
-import PubSub from "pubsub-js";
 import Swip from "../Swip";
 import Submit from "./Submit";
 export default class Create extends PureComponent {
@@ -55,13 +54,12 @@ export default class Create extends PureComponent {
       this.setState({
         isSubmit: true,
       });
-      PubSub.publish("person", perImg);
     }
     localStorage.setItem(
       "picture",
       `${perImg.headbox}${perImg.bodybox}${perImg.footerbox}`
     );
-    localStorage.setItem('personName',this.state.stuName)
+    localStorage.setItem("personName", this.state.stuName);
   };
   getPic = (part) => {
     const b = [1, 2, 3, 4];

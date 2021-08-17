@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, EffectFlip } from "swiper";
 import "swiper/components/navigation/navigation.scss";
 import "./index.scss";
-import PubSub from "pubsub-js";
 SwiperCore.use([Navigation, EffectFlip]);
 // Import Swiper styles
 
@@ -23,9 +22,7 @@ export default class Letter extends PureComponent {
     const subject = localStorage.getItem("subject");
     this.setState({ subject: subject });
   }
-  componentWillUnmount() {
-    PubSub.unsubscribe(this.token);
-  }
+  componentWillUnmount() {}
   render() {
     const { cancel, personImg } = this.props;
     const profile = personImg.slice(0, 2);

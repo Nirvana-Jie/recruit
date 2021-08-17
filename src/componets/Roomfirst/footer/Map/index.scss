@@ -44,7 +44,7 @@
     background-size: cover;
     bottom: 540px;
     left: 800px;
-    animation: big 2s infinite;
+    animation: big 1s infinite;
   }
   & > div:nth-child(2) {
     position: absolute;
@@ -54,7 +54,7 @@
     background-size: cover;
     top: 890px;
     left: 800px;
-    animation: big 2s infinite;
+    animation: big 1s infinite;
   }
   & > div:nth-child(3) {
     position: absolute;
@@ -64,7 +64,7 @@
     background-size: cover;
     top: 750px;
     left: 780px;
-    animation: big 2s infinite;
+    animation: big 1s infinite;
   }
   & > div:nth-child(4) {
     position: absolute;
@@ -75,7 +75,7 @@
     top: 1150px;
     left: 560px;
     transform: rotate(360deg);
-    animation: big 2s infinite;
+    animation: big 1s infinite;
   }
 }
 .result {

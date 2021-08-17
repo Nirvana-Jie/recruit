@@ -23,7 +23,7 @@ class Map extends PureComponent {
     // window.scrollTo((95 / 375) * cliW - offsetX, (600 / 667) * cliH + offsetY);
     //console.log((95 / 375) * cliW, (600 / 667) * cliH);
     // document.body.style.overflow = "hidden";
-    window.scrollTo(550, 3900 - (600 / 812) * cliH);
+    window.scrollTo(560, 3900 - (1550 / 812) * cliH);
   }
 
   // mapAnimation = (map) => {
