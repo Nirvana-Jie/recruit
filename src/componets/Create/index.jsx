@@ -61,6 +61,7 @@ export default class Create extends PureComponent {
       "picture",
       `${perImg.headbox}${perImg.bodybox}${perImg.footerbox}`
     );
+    localStorage.setItem('personName',this.state.stuName)
   };
   getPic = (part) => {
     const b = [1, 2, 3, 4];

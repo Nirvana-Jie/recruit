@@ -57,6 +57,7 @@ element.style{
     #upDiv {
         background: url('../../assets/img/Invite/信封.png');
         height: 640px;
+        width: 100vw;
         background-size: cover;
         position: relative;
         display: flex;
@@ -150,36 +151,31 @@ element.style{
                     padding: 5px
                 }
             }
-            .more {
-                position: absolute;
-                left: 220px;
-                top: 490px;
-                div {
-                    font-size: 5px;
+        }
+        .more {
+            margin-top: 230px;
+            margin-left: 160px;
+            div {
+                font-family: 'basic';
+                font-style: normal;
+                font-weight: lighter;
+                font-size: 6px;
+                line-height: 11px;
+                text-align: center;
+                color: #3A6D32;
+                span {
                     font-family: 'basic';
                     font-style: normal;
                     font-weight: lighter;
                     font-size: 6px;
-                    line-height: 11px;
+                    line-height: 6px;
                     text-align: center;
-                    color: #3A6D32;
-                    span {
-                        font-family: 'basic';
-                        font-style: normal;
-                        font-weight: lighter;
-                        font-size: 1px;
-                        line-height: 6px;
-                        text-align: center;
-                        color: #8D7E41;
-                    }
+                    color: #8D7E41;
                 }
             }
         }
-
         .invite_footer {
-            position: absolute;
-            top: 560px;
-            left: 60px;
+            margin-top: 50px;
             .motto {
                 width: 150px;
                 font-family: 'basic';
@@ -192,7 +188,6 @@ element.style{
                 color: #C3BB74;
                 padding-left: 60px;
             }
-
             .wechat {
                 font-family: 'basic';
                 font-style: normal;
@@ -202,7 +197,7 @@ element.style{
                 line-height: 14px;
                 text-align: center;
                 color: #8BA582;
-                padding-left: 20px;
+                padding-left: 25px;
             }
 
         }

@@ -9,6 +9,8 @@ import MapPop from "./footer/Map/MapPop";
 import { withRouter } from "react-router";
 class Roomfirst extends PureComponent {
   state = {
+    name:'',
+    time:new Date().getTime(),
     isMapActive: false,
     isFoodActive: false,
     isLetterActive: false,
@@ -110,13 +112,13 @@ class Roomfirst extends PureComponent {
     }
   };
   isFinished = () => {
-    const { isMapActive, isFoodActive, isLetterActive, isDiaryActive } =
+    const { isMapActive, isFoodActive, isLetterActive, isDiaryActive,name,time } =
       this.state;
     if (isMapActive && isFoodActive && isLetterActive && isDiaryActive) {
       const timer = setTimeout(() => {
-        this.props.history.push("/invite");
+        this.props.history.push(`/invite?name=${name}&time=${time}`);
         clearTimeout(timer);
-      }, 4000);
+      }, 3000);
     }
   };
   moveItem = (type) => {
@@ -163,6 +165,7 @@ class Roomfirst extends PureComponent {
     if (diary1 === "true") this.setState({ isDiaryActive: true });
     const map1 = localStorage.getItem("mapActive");
     if (map1 === "true") this.selectAction("map");
+    this.setState({name:localStorage.getItem('personName')})
   }
   render() {
     const {

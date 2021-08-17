@@ -45,7 +45,7 @@ export default class Diary extends Component {
               <div className="show">
                 <div className="show2"></div>
               </div>
-              <div className="title">战术</div>
+              <div className="title2">战术</div>
               <div className="show">
                 <div className="show3"></div>
               </div>
@@ -58,7 +58,7 @@ export default class Diary extends Component {
               <div className="show">
                 <div className="show4"></div>
               </div>
-              <div className="title">防爆</div>
+              <div className="title2">防爆</div>
               <div className="show">
                 <div className="show5"></div>
               </div>

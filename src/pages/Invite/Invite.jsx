@@ -11,51 +11,51 @@ export default class Invite extends Component {
 
     state = {
         Flag: true,
-        name:'',
-        picUrl:''
+        name: '',
+        picUrl: ''
     }
-       
 
-    componentDidMount(){
-        let stuName =localStorage.getItem('personName')
-        this.setState({name:stuName})
+
+    componentDidMount() {
+        let stuName = localStorage.getItem('personName')
+        this.setState({ name: stuName })
     }
 
     // let browser = {
-        //     versions: function () {
-        //         let u = navigator.userAgent;
-        //         return {
-        //             trident: u.indexOf('Trident') > -1, //IE内核
-        //             presto: u.indexOf('Presto') > -1, //opera内核
-        //             webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-        //             gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') === -1, //火狐内核
-        //             mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), //是否为移动终端
-        //             ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-        //             android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-        //             iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者QQHD浏览器
-        //             iPad: u.indexOf('iPad') > -1, //是否iPad
-        //             webApp: u.indexOf('Safari') === -1 //是否web应该程序，没有头部与底部
-        //         };
-        //     }(),
-        //     language: (navigator.browserLanguage || navigator.language).toLowerCase()
-        // }
-        // let ua = navigator.userAgent.toLowerCase();
-        // if (ua.match(/MicroMessenger/i) === "micromessenger") {
-        //     console.log('这是微信浏览器')
-           
-            
-        // } else {
-        //     console.log('这不是微信浏览器');
-        // }
+    //     versions: function () {
+    //         let u = navigator.userAgent;
+    //         return {
+    //             trident: u.indexOf('Trident') > -1, //IE内核
+    //             presto: u.indexOf('Presto') > -1, //opera内核
+    //             webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+    //             gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') === -1, //火狐内核
+    //             mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), //是否为移动终端
+    //             ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+    //             android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+    //             iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者QQHD浏览器
+    //             iPad: u.indexOf('iPad') > -1, //是否iPad
+    //             webApp: u.indexOf('Safari') === -1 //是否web应该程序，没有头部与底部
+    //         };
+    //     }(),
+    //     language: (navigator.browserLanguage || navigator.language).toLowerCase()
+    // }
+    // let ua = navigator.userAgent.toLowerCase();
+    // if (ua.match(/MicroMessenger/i) === "micromessenger") {
+    //     console.log('这是微信浏览器')
 
 
-        // if (browser.versions.ios || browser.versions.iPhone || browser.versions.iPad) {
-        //     // 如果是ios系统就执行
-           
-        // }
-    
+    // } else {
+    //     console.log('这不是微信浏览器');
+    // }
 
-    componentDidUpdate(){
+
+    // if (browser.versions.ios || browser.versions.iPhone || browser.versions.iPad) {
+    //     // 如果是ios系统就执行
+
+    // }
+
+
+    componentDidUpdate() {
         const { button, button2 } = this;
         button.disabled = false
         button2.disabled = false
@@ -100,19 +100,19 @@ export default class Invite extends Component {
         this.inviter.style.display = 'block';
         window.addEventListener('touchend', () => {
             this.setState({ Flag: !Flag })
-            if(this.props.location.pathname==='/invite'){
+            if (this.props.location.pathname === '/invite') {
                 this.hidebg.style.display = 'none';
                 this.inviter.style.display = 'none';
                 this.hidebg.addEventListener('touchstart', function (e) {
                     e.preventDefault()
                 })
             }
-           
+
         });
     }
     render() {
-        const {name} =this.state
-        let pic =localStorage.getItem("picture")
+        const { name } = this.state
+        let pic = localStorage.getItem("picture")
         return (
             <div className='hidden'><div className='inviter' >
                 <div className='shadow' ref={c => this.hidebg = c} style={{ display: 'none' }}></div>
@@ -134,12 +134,12 @@ export default class Invite extends Component {
                             <div>红岩网校工作站</div>
                         </div>
                         <div className='model' style={{
-                             background:
+                            background:
                                 "url(" +
                                 require(`../../assets/img/create/persons/${pic}.png`)
                                     .default +
-                                ")",backgroundRepeat:'no-repeat',backgroundSize:'contain'
-                         }}>
+                                ")", backgroundRepeat: 'no-repeat', backgroundSize: 'contain'
+                        }}>
                         </div>
 
                         <div className='border'>
@@ -149,10 +149,10 @@ export default class Invite extends Component {
                                 fgColor='#306627'
                             ></QRCode>
                         </div>
-                        <div className='more'>
-                            <div>凭二维码线下领重邮纪念品</div>
-                            <div className='more2'>更多内容关注<span>"重邮小帮手"</span></div>
-                        </div>
+                    </div>
+                    <div className='more'>
+                        <div>凭二维码线下领重邮纪念品</div>
+                        <div className='more2'>更多内容关注<span>"重邮小帮手"</span></div>
                     </div>
                     <div className='invite_footer'>
                         <div className='motto'>#&nbsp;修德&nbsp;博学&nbsp;求实&nbsp;创新&nbsp;#</div>
