@@ -52,7 +52,7 @@ export default class Letter extends PureComponent {
                 ></div>
                 <div>恭喜你被重庆邮电大学</div>
                 <div>
-                  <span>{this.state.subject}</span>专业录取
+                  <span>{this.state.subject}</span>录取
                 </div>
                 <div>
                   请于
