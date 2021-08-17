@@ -114,12 +114,10 @@ class Test extends PureComponent {
     subject: "请选择你的学院",
     color: "#FFFFFF",
   };
-  // this.setState({ subject: v[0], color: "#000" });
   changeBack = (e) => {
     setTimeout(() => {
       const { letterIn } = this.props;
-      localStorage.setItem("subject", this.state.subject);
-      letterIn();
+      letterIn(this.state.subject);
     }, 0);
   };
   render() {

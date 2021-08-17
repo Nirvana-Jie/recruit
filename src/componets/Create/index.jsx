@@ -74,9 +74,12 @@ export default class Create extends PureComponent {
     show.className += " subActive";
   };
 
-  letterIn = () => {
+  letterIn = (subject) => {
     const { show } = this;
-    this.setState({ isLetterout: false, isSubjectFinished: true });
+    if (subject !== "请选择你的专业") {
+      this.setState({ isLetterout: false, isSubjectFinished: true });
+      localStorage.setItem("subject", subject);
+    }
     show.className = "select";
   };
   componentDidMount() {
@@ -197,7 +200,7 @@ export default class Create extends PureComponent {
                     ? console.log()
                     : isNameError === "toolong"
                     ? "你输入的姓名太长了"
-                    : isNameFinished || isSubjectFinished
+                    : isNameFinished && isSubjectFinished
                     ? console.log()
                     : "请先填写信息哦"}
                 </span>
