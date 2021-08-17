@@ -28,7 +28,7 @@ export default class Swip extends PureComponent {
             ? {
                 delay: 3000,
                 stopOnLastSlide: false,
-                disableOnInteraction: true,
+                disableOnInteraction: false,
               }
             : false
         }

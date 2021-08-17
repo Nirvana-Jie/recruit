@@ -48,7 +48,7 @@ input::-webkit-input-placeholder {
       margin-top: 5px;
     }
     .foot {
-      margin-top: -25px;
+      margin-top: -35px;
       width: $c-width;
       z-index: 1;
     }
@@ -228,7 +228,7 @@ input::-webkit-input-placeholder {
 .bodybox2 {
   width: 130.67px;
   height: 98px;
-  transform: translate(1px, 2px);
+  transform: translate(1px, 0px);
 }
 .bodybox3 {
   width: 160px;
@@ -244,22 +244,22 @@ input::-webkit-input-placeholder {
 .footerbox0 {
   width: 102px;
   height: 158.67px;
-  transform: translate(3.5px, 1px);
+  transform: translate(2px, 6px);
 }
 .footerbox1 {
   width: 97.19px;
   height: 157px;
-  transform: translate(1px, 0px);
+  transform: translate(1px, 6px);
 }
 .footerbox2 {
   width: 95px;
   height: 155px;
-  transform: translate(1px, 0px);
+  transform: translate(1px, 3px);
 }
 .footerbox3 {
   width: 104px;
   height: 163.23px;
-  transform: translate(2px, -2px);
+  transform: translate(2px, 3px);
 }
 .swiper-slide {
   display: flex;

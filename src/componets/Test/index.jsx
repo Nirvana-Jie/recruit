@@ -44,62 +44,74 @@ const CustomChildren = (props) => (
 );
 const seasons = [
   {
-    label: "软件工程",
-    value: "软件工程",
+    label: "通信与信息工程学院",
+    value: "通信与信息工程学院",
   },
   {
-    label: "计算机科学与技术",
-    value: "计算机科学与技术",
+    label: "计算机科学与技术学院",
+    value: "计算机科学与技术学院",
   },
   {
-    label: "光电工程",
-    value: "光电工程",
+    label: "自动化学院",
+    value: "自动化学院",
   },
   {
-    label: "软件工程1",
-    value: "软件工程1",
+    label: "先进制造工程学院",
+    value: "先进制造工程学院",
   },
   {
-    label: "软件工程2",
-    value: "软件工程2",
+    label: "光电工程学院",
+    value: "光电工程学院",
   },
   {
-    label: "软件工程3",
-    value: "软件工程3",
+    label: "生物信息学院",
+    value: "生物信息学院",
   },
   {
-    label: "软件工程4",
-    value: "软件工程4",
+    label: "软件工程学院",
+    value: "软件工程学院",
   },
   {
-    label: "软件工程5",
-    value: "软件工程5",
+    label: "理学院",
+    value: "理学院",
   },
   {
-    label: "软件工程6",
-    value: "软件工程6",
+    label: "经济管理学院",
+    value: "经济管理学院",
   },
   {
-    label: "软件工程7",
-    value: "软件工程7",
+    label: "现代邮政学院",
+    value: "现代邮政学院",
   },
   {
-    label: "软件工程8",
-    value: "软件工程8",
+    label: "传媒艺术学院",
+    value: "传媒艺术学院",
   },
   {
-    label: "软件工程9",
-    value: "软件工程9",
+    label: "外国语学院",
+    value: "外国语学院",
   },
   {
-    label: "软件工程10",
-    value: "软件工程10",
+    label: "国际学院",
+    value: "国际学院",
+  },
+  {
+    label: "网络空间与信息法学院",
+    value: "网络空间与信息法学院",
+  },
+  {
+    label: "马克思主义学院",
+    value: "马克思主义学院",
+  },
+  {
+    label: "体育学院",
+    value: "体育学院",
   },
 ];
 
 class Test extends PureComponent {
   state = {
-    subject: "请选择你的专业",
+    subject: "请选择你的学院",
     color: "#FFFFFF",
   };
   // this.setState({ subject: v[0], color: "#000" });

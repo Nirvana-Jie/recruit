@@ -15,15 +15,23 @@ export default class Create extends PureComponent {
     isLetterout: false,
     submitChange: true,
   };
-  blur = () => {};
   saveName = (e) => {
-    if (e.target.value === "")
+    if (e.target.value === "") {
       this.setState({
         stuName: "请输入你的姓名",
         isNameFinished: false,
+        isNameError: "void",
       });
-    else {
+    }
+    if (e.target.value.length > 8) {
       this.setState({
+        isNameFinished: false,
+        isNameError: "toolong",
+      });
+    }
+    if (e.target.value.length <= 8 && e.target.value.length > 0) {
+      this.setState({
+        isNameError: "none",
         stuName: e.target.value,
         isNameFinished: true,
       });
@@ -35,14 +43,15 @@ export default class Create extends PureComponent {
   };
   submit = () => {
     const { warn, paizi } = this;
-    const { isNameFinished, isSubjectFinished, perImg } = this.state;
+    const { isNameFinished, isSubjectFinished, perImg, isNameError } =
+      this.state;
     paizi.className += " paiziActive";
     const timer = setTimeout(() => {
       paizi.className = "paizi";
       clearTimeout(timer);
     }, 100);
     warn.style.display = isNameFinished && isSubjectFinished ? "none" : "block";
-    if (isNameFinished && isSubjectFinished) {
+    if (isNameFinished && isSubjectFinished && isNameError === "none") {
       this.setState({
         isSubmit: true,
       });
@@ -75,7 +84,14 @@ export default class Create extends PureComponent {
   }
 
   render() {
-    const { isSubmit, perImg, subject } = this.state;
+    const {
+      isSubmit,
+      perImg,
+      subject,
+      isNameError,
+      isSubjectFinished,
+      isNameFinished,
+    } = this.state;
     return (
       <div className="hidden">
         {isSubmit ? (
@@ -105,7 +121,7 @@ export default class Create extends PureComponent {
                     onChange={this.saveName}
                     onBlur={(e) => {
                       e.target.className = " stuName";
-                      if (e.target.innerHTML === "") {
+                      if (e.target.value === "") {
                         e.target.placeholder = "请输入姓名";
                       }
                     }}
@@ -117,7 +133,7 @@ export default class Create extends PureComponent {
                 </div>
               </div>
               <div className="sub">
-                <p>我的专业</p>
+                <p>我的学院</p>
                 <div
                   className="select"
                   ref={(c) => {
@@ -177,7 +193,13 @@ export default class Create extends PureComponent {
                     this.warn = c;
                   }}
                 >
-                  请先填写信息哦
+                  {isNameError === "none"
+                    ? console.log()
+                    : isNameError === "toolong"
+                    ? "你输入的姓名太长了"
+                    : isNameFinished || isSubjectFinished
+                    ? console.log()
+                    : "请先填写信息哦"}
                 </span>
               </div>
             </div>
