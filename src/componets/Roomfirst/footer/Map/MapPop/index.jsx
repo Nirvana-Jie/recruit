@@ -8,11 +8,18 @@ class MapPop extends PureComponent {
       <div className="mapBack">
         <div className="content">
           <div>重邮地图等你探索</div>
-          <div>1.长按屏幕控制人物前行，不按即可停止人物,观赏重邮周围建筑</div>
           <div>
-            2.探索请小心翼翼的喔，某些场景 可以点击触发一定的事件彩蛋喔~
+            <span style={{ display: "inline-block", width: "14px" }}>1.</span>
+            长按屏幕控制人物前行，不按即可停止人物，观赏重邮周围建筑
           </div>
-          <div>3.探索完成后还有惊喜等你</div>
+          <div>
+            <span style={{ display: "inline-block", width: "14px" }}>2.</span>
+            探索请小心翼翼的喔，某些场景 可以点击触发一定的事件彩蛋喔~
+          </div>
+          <div>
+            <span style={{ display: "inline-block", width: "14px" }}>3.</span>
+            探索完成后还有惊喜等你
+          </div>
           <p
             className="link"
             onClick={() => {

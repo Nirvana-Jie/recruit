@@ -20,7 +20,7 @@ export default class Food extends PureComponent {
       {
         id: 2,
         name: "中心食堂",
-        text: "中心食堂与雨红莲广场相邻。位于学校的中心且菜式整体价格较低,种类繁多，3元小面深受同学们的喜爱。",
+        text: "中心食堂与雨红莲广场相邻。位于学校的中心且菜式整体价格较低，种类繁多，三元小面深受同学们的喜爱。",
         comment: "“小面分量真足”",
         from: "——评论选自《掌上重邮》",
         showPic: [
@@ -33,7 +33,7 @@ export default class Food extends PureComponent {
       {
         id: 3,
         name: "大西北",
-        text: "大西北食堂在中心食堂的背面,食堂空间较少, 提供的菜式以清真食物为主。如果你想品尝西北美食，大西北是一个不错的选择。",
+        text: "大西北食堂在中心食堂的背面，食堂空间较少， 提供的菜式以清真食物为主。如果你想品尝西北美食，大西北是一个不错的选择。",
         comment: "“炒刀削我来了”",
         from: "——评论选自《掌上重邮》",
         showPic: [
@@ -45,7 +45,7 @@ export default class Food extends PureComponent {
       {
         id: 4,
         name: "千喜鹤",
-        text: "千喜鹤食堂是知名的网红食堂,食堂装修豪华而富有文艺气息,提供的美食种类很多且独特:蛋糕，奶茶，烧腊，渔粉。",
+        text: "千喜鹤食堂是知名的网红食堂，食堂装修豪华而富有文艺气息，提供的美食种类很多且独特：蛋糕，奶茶，烧腊，渔粉。",
         comment: "“瓦香鸡~永远的神”",
         from: "——评论选自《掌上重邮》",
         showPic: [
@@ -57,7 +57,7 @@ export default class Food extends PureComponent {
       {
         id: 5,
         name: "延生食堂",
-        text: "延生食堂在学校的口碑很好，食物很有特色:新疆炒米粉、饺子抄手、螺蛳粉等深受同学们的好评。",
+        text: "延生食堂在学校的口碑很好，食物很有特色：新疆炒米粉、饺子抄手、螺蛳粉等深受同学们的好评。",
         comment: "“椒麻混沌 人间值得”",
         from: "——评论选自《掌上重邮》",
         showPic: [
