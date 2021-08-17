@@ -22,14 +22,8 @@ class Map extends PureComponent {
     // let offsetY = (667 - cliH) * (667 / cliH);
     // window.scrollTo((95 / 375) * cliW - offsetX, (600 / 667) * cliH + offsetY);
     //console.log((95 / 375) * cliW, (600 / 667) * cliH);
-    document.body.style.overflow = "hidden";
-    const { start } = this;
-    setTimeout(() => {
-      window.scrollTo(
-        start.offsetLeft - 155,
-        start.offsetTop - (320 / 812) * cliH
-      );
-    }, 0);
+    // document.body.style.overflow = "hidden";
+    window.scrollTo(550, 3900 - (600 / 812) * cliH);
   }
 
   // mapAnimation = (map) => {
@@ -96,7 +90,7 @@ class Map extends PureComponent {
     let a = topLength;
 
     const timer = setInterval(() => {
-      if (a > 2864) {
+      if (a > 2320) {
         this.setState({ isFinished: true });
       }
       a = a + 1;

@@ -26,7 +26,7 @@ export default class Swip extends PureComponent {
         autoplay={
           type === "popUp" || type === "mapPop"
             ? {
-                delay: 3000,
+                delay: 2000,
                 stopOnLastSlide: false,
                 disableOnInteraction: false,
               }

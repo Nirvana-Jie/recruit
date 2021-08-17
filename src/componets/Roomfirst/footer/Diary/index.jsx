@@ -11,13 +11,7 @@ export default class Diary extends Component {
     const { cancel } = this.props;
     return (
       <div className="swiper_background">
-        <Swiper
-          spaceBetween={50}
-          slidesPerView={1}
-          navigation={true}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
-        >
+        <Swiper spaceBetween={50} slidesPerView={1} navigation={true}>
           <SwiperSlide>
             <div className=" diary_bg">
               <div className="diary_header">军训日记</div>
@@ -81,13 +75,13 @@ export default class Diary extends Component {
               <div className="action1">
                 <div className="action_header">防晒</div>
                 <div className="action_body">
-                  为了不被变成“煤老板”一定要涂好防晒霜或者喷雾及时补涂。
+                  为了不被变成“煤老板”一定要涂好防晒霜或者喷雾,及时补涂。
                 </div>
               </div>
               <div className="action2">
                 <div className="action_header">晒伤修复</div>
                 <div className="action_body">
-                  宿舍常备芦荟胶等晒后修复霜，妈妈再也不用担心我的皮肤晒伤了。
+                  宿舍常备晒后修复霜，妈妈再也不用担心我的皮肤晒伤了。
                 </div>
               </div>
               <div className="action3">
@@ -99,7 +93,7 @@ export default class Diary extends Component {
               <div className="action4">
                 <div className="action_header">多喝水啊</div>
                 <div className="action_body">
-                  在烈日下的训练105度，补水是非常重要的，记得携带水杯，及时补充水分，盐分最佳。
+                  在烈日下的训练105度，补水是非常重要的，记得携带水杯，及时补充水分，盐水最佳。
                 </div>
               </div>
             </div>

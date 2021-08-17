@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Switch, Route, withRouter, Redirect } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 import Waiting from "./pages/Waiting/Waiting";
 import Music from "./pages/components/Music/Music.jsx";
 import Invite from "./pages/Invite/Invite";
@@ -52,7 +52,6 @@ class App extends PureComponent {
               <Route exact path="/map" component={Map} />
               <Route exact path="/submit" component={Submit} />
               <Route exact ptah="/invite" component={Invite}></Route>
-              <Redirect to="/create"></Redirect>
             </Switch>
           </CSSTransition>
         </TransitionGroup>

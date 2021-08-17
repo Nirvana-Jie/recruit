@@ -56,7 +56,7 @@ export default class Letter extends PureComponent {
                 </div>
                 <div>
                   请于
-                  <span>9月 日- 日</span>
+                  <span>9月9日-10日</span>
                 </div>
                 <div>前往校内风雨操场报道</div>
               </div>
