@@ -3,7 +3,7 @@ import "./index.scss";
 import { withRouter } from "react-router";
 class MapPop extends PureComponent {
   render() {
-    const { letter, food, diary } = this.props;
+    const { letter, food, diary, first } = this.props;
     return (
       <div className="mapBack">
         <div className="content">
@@ -27,6 +27,7 @@ class MapPop extends PureComponent {
               localStorage.setItem("diaryActive", `${diary}`);
               localStorage.setItem("letterActive", `${letter}`);
               localStorage.setItem("mapActive", `true`);
+              localStorage.setItem("first", `${first}`);
               this.props.history.push("/map");
             }}
           >

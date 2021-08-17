@@ -46,6 +46,12 @@ input::-webkit-input-placeholder {
       z-index: 2;
       width: $c-width;
       margin-top: 5px;
+      .swiper-button-next {
+        top: 30%;
+      }
+      .swiper-button-prev {
+        top: 30%;
+      }
     }
     .foot {
       margin-top: -35px;
@@ -85,7 +91,7 @@ input::-webkit-input-placeholder {
       }
 
       .stuName {
-        font-family: 'basic';
+        font-family: "basic";
         font-style: normal;
         font-weight: lighter;
         font-size: 11.0311px;
@@ -189,9 +195,9 @@ input::-webkit-input-placeholder {
   align-items: center;
 }
 .headbox0 {
-  width: 185px;
+  width: 190px;
   height: 210px;
-  transform: translate(10px, 11px);
+  transform: translate(13px, 11px);
 }
 .headbox1 {
   width: 160px;
@@ -216,8 +222,8 @@ input::-webkit-input-placeholder {
   align-items: center;
 }
 .bodybox0 {
-  width: 122px;
-  height: 100px;
+  width: 116px;
+  height: 95px;
   transform: translate(2px, 2px);
 }
 .bodybox1 {
@@ -242,19 +248,19 @@ input::-webkit-input-placeholder {
   justify-content: center;
 }
 .footerbox0 {
-  width: 102px;
+  width: 100px;
   height: 158.67px;
   transform: translate(2px, 3px);
 }
 .footerbox1 {
   width: 97.19px;
   height: 157px;
-  transform: translate(1px, 6px);
+  transform: translate(2px, 7px);
 }
 .footerbox2 {
   width: 95px;
   height: 155px;
-  transform: translate(1px, 3px);
+  transform: translate(2px, 3px);
 }
 .footerbox3 {
   width: 104px;

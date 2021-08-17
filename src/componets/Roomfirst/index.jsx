@@ -9,8 +9,8 @@ import MapPop from "./footer/Map/MapPop";
 import { withRouter } from "react-router";
 class Roomfirst extends PureComponent {
   state = {
-    name:'',
-    time:new Date().getTime(),
+    name: "",
+    time: new Date().getTime(),
     isMapActive: false,
     isFoodActive: false,
     isLetterActive: false,
@@ -112,8 +112,14 @@ class Roomfirst extends PureComponent {
     }
   };
   isFinished = () => {
-    const { isMapActive, isFoodActive, isLetterActive, isDiaryActive,name,time } =
-      this.state;
+    const {
+      isMapActive,
+      isFoodActive,
+      isLetterActive,
+      isDiaryActive,
+      name,
+      time,
+    } = this.state;
     if (isMapActive && isFoodActive && isLetterActive && isDiaryActive) {
       const timer = setTimeout(() => {
         this.props.history.push(`/invite?name=${name}&time=${time}`);
@@ -157,6 +163,16 @@ class Roomfirst extends PureComponent {
       });
     });
     // let b = JSON.parse(localStorage.getItem("active"));
+    const first = localStorage.getItem("first");
+    if (first === null) console.log();
+    else {
+      const firstClick = first.split(",").map((data) => {
+        if (data === "true") return true;
+        else return false;
+      });
+      this.setState({ firstClick });
+    }
+
     const letter1 = localStorage.getItem("letterActive");
     if (letter1 === "true") this.setState({ isLetterActive: true });
     const food1 = localStorage.getItem("foodActive");
@@ -165,7 +181,7 @@ class Roomfirst extends PureComponent {
     if (diary1 === "true") this.setState({ isDiaryActive: true });
     const map1 = localStorage.getItem("mapActive");
     if (map1 === "true") this.selectAction("map");
-    this.setState({name:localStorage.getItem('personName')})
+    this.setState({ name: localStorage.getItem("personName") });
   }
   render() {
     const {
@@ -176,6 +192,7 @@ class Roomfirst extends PureComponent {
       isPopOut,
       type,
       personImg,
+      firstClick,
     } = this.state;
     return (
       <Fragment>
@@ -230,6 +247,7 @@ class Roomfirst extends PureComponent {
                     letter={isLetterActive}
                     food={isFoodActive}
                     diary={isDiaryActive}
+                    first={firstClick}
                   />
                 )}
               </div>
