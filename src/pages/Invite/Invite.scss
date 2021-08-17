@@ -153,8 +153,10 @@ element.style{
             }
         }
         .more {
-            margin-top: 230px;
-            margin-left: 160px;
+            position: absolute;
+            top: 490px;
+            right: 40px;
+
             div {
                 font-family: 'basic';
                 font-style: normal;
