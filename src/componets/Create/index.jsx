@@ -76,9 +76,11 @@ export default class Create extends PureComponent {
 
   letterIn = (subject) => {
     const { show } = this;
-    if (subject !== "请选择你的专业") {
+    if (subject !== "请选择你的学院") {
       this.setState({ isLetterout: false, isSubjectFinished: true });
       localStorage.setItem("subject", subject);
+    } else {
+      this.setState({ isLetterout: false });
     }
     show.className = "select";
   };
