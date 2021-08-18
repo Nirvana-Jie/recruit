@@ -12,6 +12,7 @@
   width: 1290px;
   height: 3096px;
   position: absolute;
+  transform: translate3d(0, 0, 0);
   @keyframes big {
     from {
       width: 75px;
@@ -150,10 +151,10 @@
     justify-content: center;
     align-items: center;
     .pic {
+      margin-top: 4px;
       img {
-        z-index: 5;
-        width: 169px;
-        height: 115px;
+        width: 160px;
+        height: 115.25px;
         transform: scale(1);
       }
     }
