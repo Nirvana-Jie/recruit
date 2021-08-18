@@ -155,8 +155,6 @@ class Roomfirst extends PureComponent {
     });
   };
   componentDidMount() {
-    const { view } = this;
-    view.style.overflow = "auto";
     const personImg = localStorage.getItem("picture");
     this.setState({ personImg });
     // let b = JSON.parse(localStorage.getItem("active"));
