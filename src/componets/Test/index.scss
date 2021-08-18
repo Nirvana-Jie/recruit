@@ -41,7 +41,7 @@
   font-family: "basic";
   font-style: normal;
   font-weight: lighter;
-  font-size: 24px;
+  font-size: 15px;
   color: #ffffff;
 }
 .am-picker-col-mask {
@@ -71,6 +71,8 @@
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   transform: translateY(-10px);
+  background-color: #ffffff;
+  opacity: 0.1;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
   html:not([data-scale]) .am-picker-col-indicator {
@@ -193,6 +195,7 @@
   top: 0;
   width: 375px;
   align-items: center;
+  margin-top: 19px;
 }
 @media (min-resolution: 2dppx) {
   html:not([data-scale]) .am-picker-popup-header {
@@ -233,10 +236,10 @@
   margin-right: 20px;
   background-image: url(../../assets/img/create/minbtn1.png);
   z-index: 4;
+  margin-right: 3px;
 }
 .am-picker-popup-header .am-picker-popup-header-left {
   z-index: 4;
-  margin-left: 20px;
   width: 60px;
   height: 30px;
   color: #efc35d;
@@ -248,6 +251,7 @@
   text-align: right;
   background-size: cover;
   background-image: url(../../assets/img/create/minbtn1.png);
+  margin-left: 5px;
 }
 .am-picker-popup-item {
   padding: 9px 15px;

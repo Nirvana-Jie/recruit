@@ -13,6 +13,12 @@
   height: 3096px;
   position: absolute;
   transform: translate3d(0, 0, 0);
+  @keyframes mapmove {
+    from {
+    }
+    to {
+    }
+  }
   @keyframes big {
     from {
       width: 75px;
@@ -153,9 +159,8 @@
     .pic {
       margin-top: 4px;
       img {
-        width: 160px;
-        height: 115.25px;
-        transform: scale(1);
+        width: 169px;
+        height: 121.76px;
       }
     }
   }
