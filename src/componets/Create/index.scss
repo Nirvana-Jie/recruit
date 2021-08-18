@@ -9,12 +9,12 @@ input::-webkit-input-placeholder {
 .hidden {
   width: 100vw;
   height: 100vh;
-  overflow: auto;
+  overflow:hidden;
 }
 .backGround {
   width: 375px;
   height: 812px;
-  background-size: 100%, 100%;
+  background-size: contain;
   background-repeat: no-repeat;
   background-image: url("../../assets/img/create/background.png");
   margin-top: 0;

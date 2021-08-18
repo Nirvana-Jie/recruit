@@ -98,4 +98,15 @@
 
     color: #ffffff;
   }
+  & > div:nth-child(5) {
+    position: relative;
+    height: 18px;
+    font-family: "basic";
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 13px;
+    line-height: 18px;
+
+    color: #ffffff;
+  }
 }
