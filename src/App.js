@@ -28,15 +28,6 @@ class App extends PureComponent {
         classNames: "up",
       });
     });
-    window.onbeforeunload = function (e) {
-      let event = e || window.event;
-      // 兼容IE8和Firefox 4之前的版本
-      if (event) {
-      event.returnValue = "确定要关闭窗口吗？";
-      }
-      // Chrome, Safari, Firefox 4+, Opera 12+ , IE 9+
-      return '确定要关闭窗口吗>现代浏览器？';
-      }
   }
   render() {
     return (
