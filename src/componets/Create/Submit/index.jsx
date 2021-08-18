@@ -11,7 +11,7 @@ class Submit extends PureComponent {
       clearTimeout(timer);
     }, 100);
     const timer1 = setTimeout(() => {
-      // this.props.history.replace("/room");
+      this.props.history.replace("/room");
       clearTimeout(timer1);
     }, 3000);
   }
