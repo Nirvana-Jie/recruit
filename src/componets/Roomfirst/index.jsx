@@ -121,7 +121,7 @@ class Roomfirst extends PureComponent {
     } = this.state;
     if (isMapActive && isFoodActive && isLetterActive && isDiaryActive) {
       const timer = setTimeout(() => {
-        this.props.history.push(`/invite?name=${name}&time=${time}`);
+        this.props.history.replace(`/invite?name=${name}&time=${time}`);
         clearTimeout(timer);
       }, 3000);
     }

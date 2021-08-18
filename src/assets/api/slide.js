@@ -17,7 +17,7 @@ export default function slide(instance,domNode,routeAddress){
        if(Math.abs(moveY)>75){
            //moveY是正值时，路由跳转
            if(moveY<0){
-            instance.props.history.push(routeAddress);
+            instance.props.history.replace(routeAddress);
            }
        }
     })

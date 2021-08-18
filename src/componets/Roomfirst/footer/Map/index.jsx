@@ -137,7 +137,7 @@ class Map extends PureComponent {
               <div
                 className="cancel"
                 onClick={() => {
-                  this.props.history.push("/room");
+                  this.props.history.replace("/room");
                 }}
               ></div>
               <div>恭喜你完成地图冒险</div>

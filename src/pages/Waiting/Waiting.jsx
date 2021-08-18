@@ -26,7 +26,7 @@ class Waiting extends Component {
         }, 25);
         this.loaing2 = setTimeout(() => {
             //路由自动跳转
-            this.props.history.push('/home')
+            this.props.history.replace('/home')
         }, 4200)
     };
     //清除定时器
