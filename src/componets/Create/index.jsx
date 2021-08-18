@@ -49,11 +49,8 @@ export default class Create extends PureComponent {
       paizi.className = "paizi";
       clearTimeout(timer);
     }, 100);
-    warn.style.display =
-      isNameFinished && isSubjectFinished && isNameError === "none"
-        ? "none"
-        : "block";
     if (isNameFinished && isSubjectFinished && isNameError === "none") {
+      warn.style.display = "none";
       this.setState({
         isSubmit: true,
       });

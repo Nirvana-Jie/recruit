@@ -8,6 +8,7 @@ import MapPop from "./footer/Map/MapPop";
 import { withRouter } from "react-router";
 class Roomfirst extends PureComponent {
   state = {
+    isFooterout: false,
     name: "",
     time: new Date().getTime(),
     isMapActive: false,
@@ -158,7 +159,6 @@ class Roomfirst extends PureComponent {
     view.style.overflow = "auto";
     const personImg = localStorage.getItem("picture");
     this.setState({ personImg });
-
     // let b = JSON.parse(localStorage.getItem("active"));
     const first = localStorage.getItem("first");
     if (first === null) console.log();
@@ -169,7 +169,6 @@ class Roomfirst extends PureComponent {
       });
       this.setState({ firstClick });
     }
-
     const letter1 = localStorage.getItem("letterActive");
     if (letter1 === "true") this.setState({ isLetterActive: true });
     const food1 = localStorage.getItem("foodActive");
@@ -179,6 +178,10 @@ class Roomfirst extends PureComponent {
     const map1 = localStorage.getItem("mapActive");
     if (map1 === "true") this.selectAction("map");
     this.setState({ name: localStorage.getItem("personName") });
+    const timer = setTimeout(() => {
+      this.setState({ isFooterout: true });
+      clearTimeout(timer);
+    }, 1500);
   }
   render() {
     const {
@@ -190,6 +193,7 @@ class Roomfirst extends PureComponent {
       type,
       personImg,
       firstClick,
+      isFooterout,
     } = this.state;
     return (
       <Fragment>
@@ -276,73 +280,76 @@ class Roomfirst extends PureComponent {
             ></div>
           </div>
         </div>
+        {isFooterout ? (
+          <div className="footer">
+            <div
+              className="tip"
+              ref={(c) => {
+                this.tip = c;
+              }}
+            ></div>
+            {isMapActive ? (
+              <div className="active" onClick={this.tipOut("map")}>
+                <div className="map mapActive"></div>
+              </div>
+            ) : (
+              <div onClick={this.tipOut("map")}>
+                <div
+                  className="map"
+                  ref={(c) => {
+                    this.mapNode = c;
+                  }}
+                ></div>
+              </div>
+            )}
+            {isFoodActive ? (
+              <div className="active" onClick={this.tipOut("food")}>
+                <div className="food foodActive"></div>
+              </div>
+            ) : (
+              <div onClick={this.tipOut("food")}>
+                <div
+                  className="food"
+                  ref={(c) => {
+                    this.foodNode = c;
+                  }}
+                ></div>
+              </div>
+            )}
 
-        <div className="footer">
-          <div
-            className="tip"
-            ref={(c) => {
-              this.tip = c;
-            }}
-          ></div>
-          {isMapActive ? (
-            <div className="active" onClick={this.tipOut("map")}>
-              <div className="map mapActive"></div>
-            </div>
-          ) : (
-            <div onClick={this.tipOut("map")}>
-              <div
-                className="map"
-                ref={(c) => {
-                  this.mapNode = c;
-                }}
-              ></div>
-            </div>
-          )}
-          {isFoodActive ? (
-            <div className="active" onClick={this.tipOut("food")}>
-              <div className="food foodActive"></div>
-            </div>
-          ) : (
-            <div onClick={this.tipOut("food")}>
-              <div
-                className="food"
-                ref={(c) => {
-                  this.foodNode = c;
-                }}
-              ></div>
-            </div>
-          )}
+            {isLetterActive ? (
+              <div className="active" onClick={this.tipOut("letter")}>
+                <div className="letter letterActive"></div>
+              </div>
+            ) : (
+              <div onClick={this.tipOut("letter")}>
+                <div
+                  className="letter"
+                  ref={(c) => {
+                    this.letterNode = c;
+                  }}
+                ></div>
+              </div>
+            )}
 
-          {isLetterActive ? (
-            <div className="active" onClick={this.tipOut("letter")}>
-              <div className="letter letterActive"></div>
-            </div>
-          ) : (
-            <div onClick={this.tipOut("letter")}>
-              <div
-                className="letter"
-                ref={(c) => {
-                  this.letterNode = c;
-                }}
-              ></div>
-            </div>
-          )}
-
-          {isDiaryActive ? (
-            <div className="active" onClick={this.tipOut("diary")}>
-              <div className="diary diaryActive"></div>
-            </div>
-          ) : (
-            <div onClick={this.tipOut("diary")}>
-              <div
-                className="diary"
-                ref={(c) => {
-                  this.diaryNode = c;
-                }}
-              ></div>
-            </div>
-          )}
-        </div>
+            {isDiaryActive ? (
+              <div className="active" onClick={this.tipOut("diary")}>
+                <div className="diary diaryActive"></div>
+              </div>
+            ) : (
+              <div onClick={this.tipOut("diary")}>
+                <div
+                  className="diary"
+                  ref={(c) => {
+                    this.diaryNode = c;
+                  }}
+                ></div>
+              </div>
+            )}
+          </div>
+        ) : (
+          console.log()
+        )}
       </Fragment>
     );
   }
