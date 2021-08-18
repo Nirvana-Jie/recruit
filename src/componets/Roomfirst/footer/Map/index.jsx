@@ -1,4 +1,4 @@
-import React, { Fragment, PureComponent } from "react";
+import React, { PureComponent } from "react";
 import "./index.scss";
 import Popup from "./Popup";
 import { withRouter } from "react-router";
@@ -20,13 +20,16 @@ class Map extends PureComponent {
     if (cliH >= "823") this.setState({ topLength: -1900 });
     else if (cliH >= "812") this.setState({ topLength: -1820 });
     else if (cliH >= "731") this.setState({ topLength: -2300 });
+    else if (cliH >= "667") this.setState({ topLength: -2300 });
     else if (cliH >= "568") this.setState({ topLength: -1980 });
     else this.setState({ topLength: -1500 });
+
     // let offsetX = (375 - cliW) * (375 / cliW) * 0.05;
     // let offsetY = (667 - cliH) * (667 / cliH);
     // window.scrollTo((95 / 375) * cliW - offsetX, (600 / 667) * cliH + offsetY);
     //console.log((95 / 375) * cliW, (600 / 667) * cliH);
-    document.body.style.overflow = "hidden";
+    // const root = document.getElementById("root");
+    // root.style.overflow = "hidden";
   }
 
   // mapAnimation = (map) => {
@@ -127,7 +130,7 @@ class Map extends PureComponent {
   render() {
     const { isEventOut, isFinished, topLength } = this.state;
     return (
-      <Fragment>
+      <div className="mapView">
         {isEventOut.state ? (
           <Popup buildingName={isEventOut.name} cancel={this.cancel} />
         ) : (
@@ -238,7 +241,7 @@ class Map extends PureComponent {
             />
           </div>
         }
-      </Fragment>
+      </div>
     );
   }
 }

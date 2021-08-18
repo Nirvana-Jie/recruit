@@ -13,7 +13,7 @@ import Roomfirst from "./componets/Roomfirst/index.jsx";
 import Map from "./componets/Roomfirst/footer/Map";
 import "./assets/styles/font.scss";
 import Submit from "./componets/Create/Submit";
-import './assets/img/room/Map/map.png'
+import "./assets/img/room/Map/map.png";
 //import "antd-mobile/dist/antd-mobile.css"; // or 'antd-mobile/dist/antd-mobile.less'
 // import TestWrapper from "./componets/HT";
 

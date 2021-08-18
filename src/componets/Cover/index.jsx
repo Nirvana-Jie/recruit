@@ -22,7 +22,7 @@ export default class Cover extends Component {
         <div>解锁新生四要素，收获专属邀请函</div>
         <div>自由滑动，探索更多</div>
         <div className="leftArrow"></div>
-        <div className="rightArrow"></div>
+        <div className="rightArrow"></div>   
       </div>
     );
   }
