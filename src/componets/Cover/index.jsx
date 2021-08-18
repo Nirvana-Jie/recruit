@@ -13,6 +13,8 @@ export default class Cover extends Component {
         onTouchStart={(e) => {
           e.target.style.display = "none";
           cancel();
+          // e.preventDefault();
+          // e.stopPropagation();
         }}
       >
         <div>探索房间</div>
