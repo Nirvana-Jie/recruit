@@ -73,7 +73,7 @@ class Roomfirst extends PureComponent {
     };
   };
   selectAction = (type, node) => {
-    const { letterNode, mapNode, foodNode, diaryNode } = this;
+    const { letterNode, foodNode, diaryNode } = this;
     switch (type) {
       case "food":
         foodNode.className += " move";
@@ -84,7 +84,6 @@ class Roomfirst extends PureComponent {
         }, 500);
         break;
       case "map":
-        mapNode.className += " move";
         const timer1 = setTimeout(() => {
           this.setState({ isMapActive: true });
           this.isFinished();
