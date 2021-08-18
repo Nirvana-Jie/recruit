@@ -13,7 +13,7 @@ import Roomfirst from "./componets/Roomfirst/index.jsx";
 import Map from "./componets/Roomfirst/footer/Map";
 import "./assets/styles/font.scss";
 import Submit from "./componets/Create/Submit";
-import "./assets/img/room/Map/map.png";
+import map from "./assets/img/room/Map/map.png";
 //import "antd-mobile/dist/antd-mobile.css"; // or 'antd-mobile/dist/antd-mobile.less'
 // import TestWrapper from "./componets/HT";
 
@@ -36,6 +36,7 @@ class App extends PureComponent {
           position: "relative",
         }}
       >
+        <img alt="预加载" src={map} style={{ display: "none" }}></img>
         <Music />
         <TransitionGroup>
           <CSSTransition
