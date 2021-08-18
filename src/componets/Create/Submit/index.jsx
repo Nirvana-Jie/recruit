@@ -3,7 +3,6 @@ import "./index.scss";
 import { withRouter } from "react-router";
 class Submit extends PureComponent {
   componentDidMount() {
-    const { person, subject } = this.props;
     const { top, bottom, personImg } = this;
     const timer = setTimeout(() => {
       top.className += " topActive";

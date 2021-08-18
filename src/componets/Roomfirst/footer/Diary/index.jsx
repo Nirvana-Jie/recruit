@@ -75,7 +75,7 @@ export default class Diary extends Component {
               <div className="action1">
                 <div className="action_header">防晒</div>
                 <div className="action_body">
-                  为了不被变成“煤老板”一定要涂好防晒霜或者喷雾,及时补涂。
+                  为了不变成“煤老板”一定要涂好防晒霜或者喷雾,及时补涂。
                 </div>
               </div>
               <div className="action2">

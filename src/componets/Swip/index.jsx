@@ -13,6 +13,7 @@ export default class Swip extends PureComponent {
     const { showPic, showNum, type, changePerImg, between } = this.props;
     return (
       <Swiper
+        loop={type === "popUp" || type === "mapPop" ? true : false}
         spaceBetween={between}
         slidesPerView={showNum}
         onSlideChange={(e) => {
