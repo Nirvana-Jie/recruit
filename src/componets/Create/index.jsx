@@ -24,7 +24,7 @@ export default class Create extends PureComponent {
     }
     if (e.target.value.length > 8) {
       this.setState({
-        isNameFinished: false,
+        isNameFinished: true,
         isNameError: "toolong",
       });
     }
@@ -49,7 +49,10 @@ export default class Create extends PureComponent {
       paizi.className = "paizi";
       clearTimeout(timer);
     }, 100);
-    warn.style.display = isNameFinished && isSubjectFinished ? "none" : "block";
+    warn.style.display =
+      isNameFinished && isSubjectFinished && isNameError === "none"
+        ? "none"
+        : "block";
     if (isNameFinished && isSubjectFinished && isNameError === "none") {
       this.setState({
         isSubmit: true,
@@ -197,13 +200,20 @@ export default class Create extends PureComponent {
                     this.warn = c;
                   }}
                 >
-                  {isNameError === "none"
+                  {isNameFinished && isSubjectFinished
+                    ? isNameError === "toolong"
+                      ? "你输入的姓名太长了"
+                      : isNameError === "none"
+                      ? console.log()
+                      : console.log()
+                    : "请先填写信息哦"}
+                  {/* {isNameError === "none"
                     ? console.log()
                     : isNameError === "toolong"
                     ? "你输入的姓名太长了"
                     : isNameFinished && isSubjectFinished
                     ? console.log()
-                    : "请先填写信息哦"}
+                    : "请先填写信息哦"} */}
                 </span>
               </div>
             </div>

@@ -147,7 +147,7 @@ input::-webkit-input-placeholder {
       }
       position: relative;
       width: 164px;
-      height: 100px;
+      height: 60px;
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
@@ -170,7 +170,7 @@ input::-webkit-input-placeholder {
         background-color: rgb(22, 155, 213);
         border: none;
         width: 164px;
-        height: 50px;
+        height: 60px;
         border-radius: 5px;
         font-size: 12px;
         opacity: 0;
@@ -182,7 +182,8 @@ input::-webkit-input-placeholder {
   }
 
   .warn {
-    margin-top: 18px;
+    position: absolute;
+    top: 70px;
     font-size: 12px;
     color: #fff;
     display: none;

@@ -62,7 +62,7 @@ export default class Popup extends PureComponent {
             </div>
           </div>
           <div className="time">
-            <p>开放时间</p>
+            {time === "" ? console.log() : <p>开放时间</p>}
             <div>{time}</div>
           </div>
         </div>
