@@ -7,12 +7,13 @@
 }
 .backMap {
   background-image: url(../../../../assets/img/room/Map/map.png);
-  background-size: cover;
   background-repeat: no-repeat;
   width: 1290px;
   height: 3096px;
   position: absolute;
-  transform: translate3d(0, 0, 0);
+  left: 50%;
+  background-size: cover;
+  // transform: translateX(-700px) translateY(-2296px);
   @keyframes mapmove {
     from {
     }
@@ -209,6 +210,7 @@
   }
 }
 .juanjuan {
+  -webkit-touch-callout: none;
   pointer-events: none;
   position: fixed;
   z-index: 500;
