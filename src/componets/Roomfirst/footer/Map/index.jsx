@@ -22,7 +22,7 @@ class Map extends PureComponent {
     // let offsetY = (667 - cliH) * (667 / cliH);
     // window.scrollTo((95 / 375) * cliW - offsetX, (600 / 667) * cliH + offsetY);
     //console.log((95 / 375) * cliW, (600 / 667) * cliH);
-    // document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
     window.scrollTo(560, 3900 - (1550 / 812) * cliH);
   }
 
@@ -86,20 +86,19 @@ class Map extends PureComponent {
   //   }, 10);
   // };
   mapMove = (map) => {
-    const { topLength } = this.state;
-    let a = topLength;
-
-    const timer = setInterval(() => {
-      if (a > 2320) {
-        this.setState({ isFinished: true });
-      }
-      a = a + 1;
-      map.style.top = `${a}px`;
-      this.setState({
-        timer: timer,
-        topLength: a,
-      });
-    }, 10);
+    // const { topLength } = this.state;
+    // let a = topLength;
+    // const timer = setInterval(() => {
+    //   if (a > 2320) {
+    //     this.setState({ isFinished: true });
+    //   }
+    //   a = a + 1;
+    //   map.style.top = `${a}px`;
+    //   this.setState({
+    //     timer: timer,
+    //     topLength: a,
+    //   });
+    // }, 10);
   };
   cancel = () => {
     this.setState({ isEventOut: { name: "", state: false } });
@@ -149,13 +148,14 @@ class Map extends PureComponent {
                   ref={(c) => {
                     this.pic = c;
                   }}
-                  onClick={this.scale}
                 >
                   <img
                     alt="网络出现错误"
                     src={
-                      require(`../../../../assets/img/room/Map/pic.png`).default
+                      require(`../../../../assets/img/room/Map/pic.jpeg`)
+                        .default
                     }
+                    onClick={this.scale}
                   ></img>
                 </div>
               </div>
@@ -163,7 +163,7 @@ class Map extends PureComponent {
               <div>
                 我们的<span>掌上重邮</span>也有最好用的
               </div>
-              <div>地图快去下载使用吧</div>
+              <div>地图，快去下载使用吧</div>
             </div>
           </div>
         ) : (

@@ -28,10 +28,10 @@ class Roomfirst extends PureComponent {
       },
       {
         type: "map",
-        slogan: "新生入学，怎么能没有地图",
+        slogan: "重邮地图很大，你忍一下",
       },
-      { type: "diary", slogan: "迷彩军训，青春无悔" },
-      { type: "letter", slogan: "新生入校，快来报道" },
+      { type: "diary", slogan: "桌上有本日记，快去看看" },
+      { type: "letter", slogan: "信件可能在墙上" },
     ],
   };
   mapMove = (e) => {
