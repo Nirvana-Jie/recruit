@@ -6,11 +6,13 @@ export default class Cover extends Component {
     document.body.parentNode.style.overflow = "hidden"; //隐藏且禁用
   }
   render() {
+    const { cancel } = this.props;
     return (
       <div
         className="back"
         onTouchStart={(e) => {
           e.target.style.display = "none";
+          cancel();
         }}
       >
         <div>探索房间</div>

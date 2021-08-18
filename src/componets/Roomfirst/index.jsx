@@ -21,6 +21,7 @@ class Roomfirst extends PureComponent {
     elementNodes: [],
     firstClick: [true, true, true, true],
     personImg: "000",
+    isCoverFirst: true,
     tips: [
       {
         type: "food",
@@ -181,6 +182,10 @@ class Roomfirst extends PureComponent {
       this.setState({ isFooterout: true });
       clearTimeout(timer);
     }, 1500);
+    const isCoverFirst = localStorage.getItem("isCoverFirst");
+    if (isCoverFirst === "false") {
+      this.setState({ isCoverFirst: false });
+    } else console.log();
   }
   render() {
     const {
@@ -193,6 +198,7 @@ class Roomfirst extends PureComponent {
       personImg,
       firstClick,
       isFooterout,
+      isCoverFirst,
     } = this.state;
     return (
       <Fragment>
@@ -202,7 +208,15 @@ class Roomfirst extends PureComponent {
             this.view = c;
           }}
         >
-          <Cover />
+          {isCoverFirst ? (
+            <Cover
+              cancel={() => {
+                this.setState({ isCoverFirst: false });
+              }}
+            />
+          ) : (
+            console.log()
+          )}
           {isMapActive && isFoodActive && isLetterActive && isDiaryActive ? (
             <div className="finished">
               <div className="personback">
@@ -249,6 +263,7 @@ class Roomfirst extends PureComponent {
                     diary={isDiaryActive}
                     first={firstClick}
                     personImg={personImg}
+                    isCoverFirst={isCoverFirst}
                   />
                 )}
               </div>

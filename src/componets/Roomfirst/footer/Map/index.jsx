@@ -2,7 +2,7 @@ import React, { Fragment, PureComponent } from "react";
 import "./index.scss";
 import Popup from "./Popup";
 import { withRouter } from "react-router";
-
+import blank from "../../../../assets/img/blank.png";
 const cliH = document.documentElement.clientHeight;
 // const cliW = document.documentElement.clientWidth;
 //console.log(cliH, cliW);
@@ -11,19 +11,22 @@ class Map extends PureComponent {
     isEventOut: { state: false, name: "" },
     isRunning: false,
     isFinished: false,
-    topLength: 0,
+    topLength: -1820,
     timer: "",
-    leftLength: 0,
     mapNode: "",
     Flag: false,
   };
   componentDidMount() {
+    if (cliH >= "823") this.setState({ topLength: -1900 });
+    else if (cliH >= "812") this.setState({ topLength: -1820 });
+    else if (cliH >= "731") this.setState({ topLength: -2300 });
+    else if (cliH >= "568") this.setState({ topLength: -1980 });
+    else this.setState({ topLength: -1500 });
     // let offsetX = (375 - cliW) * (375 / cliW) * 0.05;
     // let offsetY = (667 - cliH) * (667 / cliH);
     // window.scrollTo((95 / 375) * cliW - offsetX, (600 / 667) * cliH + offsetY);
     //console.log((95 / 375) * cliW, (600 / 667) * cliH);
     document.body.style.overflow = "hidden";
-    window.scrollTo(560, 3900 - (1550 / 812) * cliH);
   }
 
   // mapAnimation = (map) => {
@@ -86,19 +89,20 @@ class Map extends PureComponent {
   //   }, 10);
   // };
   mapMove = (map) => {
-    // const { topLength } = this.state;
-    // let a = topLength;
-    // const timer = setInterval(() => {
-    //   if (a > 2320) {
-    //     this.setState({ isFinished: true });
-    //   }
-    //   a = a + 1;
-    //   map.style.top = `${a}px`;
-    //   this.setState({
-    //     timer: timer,
-    //     topLength: a,
-    //   });
-    // }, 10);
+    const { topLength } = this.state;
+    let a = topLength;
+    const timer = setInterval(() => {
+      if (a > -300) {
+        this.setState({ isFinished: true });
+        return;
+      }
+      a = a + 1;
+      //map.style.top = `${a}px`;
+      this.setState({
+        timer: timer,
+        topLength: a,
+      });
+    }, 10);
   };
   cancel = () => {
     this.setState({ isEventOut: { name: "", state: false } });
@@ -121,7 +125,7 @@ class Map extends PureComponent {
     });
   };
   render() {
-    const { isEventOut, isFinished } = this.state;
+    const { isEventOut, isFinished, topLength } = this.state;
     return (
       <Fragment>
         {isEventOut.state ? (
@@ -170,13 +174,17 @@ class Map extends PureComponent {
           console.log()
         )}
         {this.state.isRunning ? (
-          <div
+          <img
+            alt="您的网络有问题"
+            src={blank}
             className="juanjuan running"
             onTouchStart={this.move}
             onTouchEnd={this.stop}
           />
         ) : (
-          <div
+          <img
+            alt="您的网络有问题"
+            src={blank}
             className="juanjuan paused"
             onTouchStart={this.move}
             onTouchEnd={this.stop}
@@ -188,6 +196,11 @@ class Map extends PureComponent {
               this.mapNode = c;
             }}
             className="backMap"
+            style={{
+              transform: `translateX(${(-700 / 375) * 100}vw) translateY(${
+                (topLength / 667) * 100
+              }vh)`,
+            }}
             onTouchStart={this.move}
             onTouchEnd={this.stop}
           >

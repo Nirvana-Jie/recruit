@@ -22,7 +22,7 @@ export default class Create extends PureComponent {
         isNameError: "void",
       });
     }
-    if (e.target.value.length > 8) {
+    if (e.target.value.length > 10) {
       this.setState({
         isNameFinished: true,
         isNameError: "toolong",
