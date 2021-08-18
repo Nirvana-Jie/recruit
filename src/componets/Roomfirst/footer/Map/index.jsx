@@ -236,12 +236,6 @@ class Map extends PureComponent {
                 });
               }}
             />
-            <div
-              className="start"
-              ref={(c) => {
-                this.start = c;
-              }}
-            ></div>
           </div>
         }
       </Fragment>

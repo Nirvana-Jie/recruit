@@ -10,11 +10,10 @@ export default class Cover extends Component {
     return (
       <div
         className="back"
-        onTouchStart={(e) => {
+        onTouchEnd={(e) => {
+          e.preventDefault();
           e.target.style.display = "none";
           cancel();
-          // e.preventDefault();
-          // e.stopPropagation();
         }}
       >
         <div>探索房间</div>
