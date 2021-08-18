@@ -2,7 +2,9 @@
   width: 375px;
   height: 812px;
   background-image: url(../../../assets/img/create/submit/background2.png);
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: hidden;
   .top {
     position: absolute;
     left: 0;
@@ -28,10 +30,10 @@
     }
   }
   .topActive {
-    transform: translate(0, 71px);
+    transform: translate(0, 15px);
   }
   .person {
-    top: 130px;
+    top: 90px;
     left: 0;
     right: 0;
     margin: auto;
@@ -40,19 +42,18 @@
     width: 250px;
     height: 500px;
     background-size: cover;
-    margin-top: 40px;
     transition: 1s linear all;
   }
   .personActive {
-    width: 287.5px;
-    height: 575px;
+    width: 247.5px;
+    height: 495px;
   }
   .bottom {
     position: absolute;
     left: 0;
     right: 0;
     margin: auto;
-    top: 640px;
+    top: 545px;
     width: 289px;
     height: 105px;
     background-image: url(../../../assets/img/create/submit/bottom.png);
