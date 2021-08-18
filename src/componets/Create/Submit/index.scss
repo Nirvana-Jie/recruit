@@ -2,7 +2,8 @@
   width: 375px;
   height: 667px;
   background-image: url(../../../assets/img/create/submit/background2.png);
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   overflow: hidden;
   .top {
     position: absolute;
