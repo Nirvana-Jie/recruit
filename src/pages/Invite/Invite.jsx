@@ -54,7 +54,7 @@ export default class Invite extends Component {
 
   back = () => {
     console.log(this.props);
-    this.props.history.push("/home");
+    this.props.history.replace("/home");
   };
   getPic = () => {
     const { button, button2 } = this;

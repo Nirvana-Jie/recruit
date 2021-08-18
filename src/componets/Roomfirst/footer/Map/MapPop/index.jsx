@@ -29,7 +29,7 @@ class MapPop extends PureComponent {
               localStorage.setItem("mapActive", `true`);
               localStorage.setItem("first", `${first}`);
               localStorage.setItem("personImg", `${personImg}`);
-              this.props.history.push("/map");
+              this.props.history.replace("/map");
             }}
           >
             立即探索
