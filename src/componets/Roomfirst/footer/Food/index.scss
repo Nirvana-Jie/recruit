@@ -118,9 +118,7 @@
       display: flex;
       justify-content: flex-start;
       flex-wrap: wrap;
-      & > .btn:nth-child(1) {
-        background-color: rgb(255, 163, 0);
-      }
+
       & > .btn {
         margin-left: 10px;
         width: 56px;
@@ -137,6 +135,9 @@
         /* identical to box height */
 
         color: #ffffff;
+      }
+      & > .btnActive {
+        background-color: rgb(255, 163, 0);
       }
     }
   }
