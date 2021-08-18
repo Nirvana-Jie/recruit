@@ -39,12 +39,12 @@ input::-webkit-input-placeholder {
     }
     .header {
       width: $c-width;
-      margin-top: 55px;
+      margin-top: -19px;
     }
     .body {
       z-index: 2;
       width: $c-width;
-      margin-top: 5px;
+      margin-top: 1px;
       .swiper-button-next {
         top: 30%;
       }
@@ -53,7 +53,8 @@ input::-webkit-input-placeholder {
       }
     }
     .foot {
-      margin-top: -35px;
+      margin-top: -29px;
+      margin-left: -0.5px;
       width: $c-width;
       z-index: 1;
     }
@@ -125,7 +126,7 @@ input::-webkit-input-placeholder {
   }
 
   .submit {
-    margin-top: 130px;
+    margin-top: 70px;
     width: 375px;
     height: 100px;
     display: flex;
@@ -136,7 +137,7 @@ input::-webkit-input-placeholder {
       .word {
         color: #ffffff;
         position: absolute;
-        left: 26px;
+        left: 30px;
         top: 16px;
         font-family: "basic";
         font-style: normal;
