@@ -28,7 +28,7 @@ class Roomfirst extends PureComponent {
       },
       {
         type: "map",
-        slogan: "重邮地图很大，你忍一下",
+        slogan: "注意信件下面哦",
       },
       { type: "diary", slogan: "桌上有本日记，快去看看" },
       { type: "letter", slogan: "信件可能在墙上" },
