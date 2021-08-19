@@ -7,26 +7,26 @@ export default class Popup extends PureComponent {
     buildings: [
       {
         name: "八教",
-        img: ["第八教学楼/0", "第八教学楼/1", "第八教学楼/2", "第八教学楼/3"],
-        tag: ["教学楼", "自习室", "学院办公室"],
+        img: ["第八教学楼/0", "第八教学楼/1", "第八教学楼/2"],
+        tag: ["传媒教学楼", "重邮三原色", "天梯","自习室"],
         time: "7:00-22:30",
       },
       {
         name: "信科大楼",
         img: ["信科大楼/0", "信科大楼/1", "信科大楼/2"],
-        tag: ["办公楼", " 重邮地标"],
+        tag: ["办公楼", "实验室","重邮地标","会议厅"],
         time: "",
       },
       {
         name: "老图书馆",
         img: ["老图书馆/0", "老图书馆/1", "老图书馆/2"],
-        tag: ["图书馆"],
+        tag: ["图书馆","人脸识别","考研自习","藏书最多"],
         time: "8:00-23:00",
       },
       {
         name: "数字图书馆",
         img: ["数字图书馆/0", "数字图书馆/1", "数字图书馆/2"],
-        tag: ["图书馆", "提供电脑查阅"],
+        tag: ["图书馆", "数字阅读","一卡通中心","新生借阅办理"],
         time: "8:00-23:00",
       },
     ],
@@ -36,7 +36,7 @@ export default class Popup extends PureComponent {
     const building = this.state.buildings.filter((data) => {
       return data.name === buildingName;
     });
-    const { name, img, tag, time } = building[0];
+    const { name, img, tag } = building[0];
 
     return (
       <div className="backPop">
@@ -60,10 +60,6 @@ export default class Popup extends PureComponent {
                 return <div>{data}</div>;
               })}
             </div>
-          </div>
-          <div className="time">
-            {time === "" ? console.log() : <p>开放时间</p>}
-            <div>{time}</div>
           </div>
         </div>
       </div>

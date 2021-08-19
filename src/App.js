@@ -15,7 +15,12 @@ import "./assets/styles/font.scss";
 import Submit from "./componets/Create/Submit";
 import map from './assets/img/room/Map/map.png'
 import pic from './assets/img/room/Map/pic.jpeg'
-
+import mapback from './assets/img/room/mapopo/mapback.png'
+import eight from './assets/img/room/mapopo/第八教学楼/0.jpg'
+import old from './assets/img/room/mapopo/老图书馆/0.jpg'
+import number from './assets/img/room/mapopo/数字图书馆/0.jpg'
+import xinKe from './assets/img/room/mapopo/信科大楼/0.jpg'
+ 
 //import "antd-mobile/dist/antd-mobile.css"; // or 'antd-mobile/dist/antd-mobile.less'
 // import TestWrapper from "./componets/HT";
 
@@ -39,6 +44,11 @@ class App extends PureComponent {
         }}
       >
       <img alt='预加载' src={map} style={{display:'none'}}></img>
+      <img alt='八教' src={eight} style={{display:'none'}}></img>
+      <img alt='老图' src={old} style={{display:'none'}}></img>
+      <img alt='数图' src={number} style={{display:'none'}}></img>
+      <img alt='信科' src={xinKe} style={{display:'none'}}></img>
+      <img alt='mapback' src={mapback} style={{display:'none'}}></img>
       <img alt='重邮地图' src={pic} style={{display:'none'}}></img>
         <Music/>
         <TransitionGroup>

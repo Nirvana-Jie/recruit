@@ -88,12 +88,15 @@
         color: #2e4240;
       }
       & > div {
+        margin-top: 5px;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
         padding: 0px;
-        width: 190px;
-        height: 22px;
+        width: 250px;
+        height: 60px;
         & > div {
           // 控制文字不换行
           white-space: nowrap;
@@ -116,33 +119,6 @@
           color: #579d6b;
           /* Inside Auto Layout */
         }
-      }
-    }
-    .time {
-      margin-top: 3px;
-      margin-left: 28px;
-      width: 283px;
-      & > p {
-        width: 56px;
-        height: 20px;
-        font-family: "basic";
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 20px;
-        color: #2e4240;
-      }
-      & > div {
-        white-space: nowrap;
-        margin-top: 2px;
-        width: 57px;
-        height: 17px;
-        font-family: "basic";
-        font-style: normal;
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 17px;
-        color: #2c5d3a;
       }
     }
   }
