@@ -38,9 +38,14 @@ class App extends PureComponent {
           position: "relative",
         }}
       >
+<<<<<<< HEAD
       <img alt='预加载' src={map} style={{display:'none'}}></img>
       <img alt='重邮地图' src={pic} style={{display:'none'}}></img>
         <Music/>
+=======
+        <img alt="预加载" src={map} style={{ display: "none" }}></img>
+        <Music />
+>>>>>>> f41aed19bc88c114c050f839a04ebebf6a9ba3b5
         <TransitionGroup>
           <CSSTransition
             classNames={this.state.classNames}

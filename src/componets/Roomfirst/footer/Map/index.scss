@@ -5,19 +5,26 @@
   width: 100vw;
   background: rgba(0, 0, 0, 0.7);
 }
+.mapView {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+}
 .backMap {
   background-image: url(../../../../assets/img/room/Map/map.png);
   background-repeat: no-repeat;
   width: 1290px;
   height: 3096px;
   position: absolute;
-  left: 50%;
   background-size: cover;
   // transform: translateX(-700px) translateY(-2296px);
-  @keyframes mapmove {
+  animation: mapMove 12s linear forwards;
+  @keyframes mapMove {
     from {
     }
     to {
+      transform: translate(0, -300px);
     }
   }
   @keyframes big {
@@ -85,6 +92,12 @@
     transform: rotate(360deg);
     animation: big 1s infinite;
   }
+}
+.mapActive {
+  animation-play-state: running;
+}
+.mapPaused {
+  animation-play-state: paused;
 }
 .result {
   z-index: 502;
@@ -164,6 +177,11 @@
         width: 169px;
         height: 121.76px;
         border-radius: 10px;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -o-crisp-edges;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+        -ms-interpolation-mode: nearest-neighbor;
       }
     }
   }
