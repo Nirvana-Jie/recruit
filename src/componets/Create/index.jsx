@@ -200,7 +200,7 @@ export default class Create extends PureComponent {
                 >
                   {isNameFinished && isSubjectFinished
                     ? isNameError === "toolong"
-                      ? "你输入的姓名太长了"
+                      ? "名字要在十个字之内呦"
                       : isNameError === "none"
                       ? console.log()
                       : console.log()

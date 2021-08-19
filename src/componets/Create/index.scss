@@ -187,6 +187,7 @@ input::-webkit-input-placeholder {
     font-size: 12px;
     color: #fff;
     display: none;
+    width: 120px;
   }
 }
 //head微调
@@ -251,22 +252,22 @@ input::-webkit-input-placeholder {
 .footerbox0 {
   width: 100px;
   height: 158.67px;
-  transform: translate(2px, 3px);
+  transform: translate(-2px, 3px);
 }
 .footerbox1 {
   width: 97.19px;
   height: 157.48px;
-  transform: translate(2px, 7px);
+  transform: translate(-2px, 7px);
 }
 .footerbox2 {
   width: 95px;
   height: 155px;
-  transform: translate(2px, 5px);
+  transform: translate(-1.3px, 5px);
 }
 .footerbox3 {
   width: 104px;
   height: 163.93px;
-  transform: translate(2px, 1px);
+  transform: translate(-1px, 1px);
 }
 .swiper-slide {
   display: flex;

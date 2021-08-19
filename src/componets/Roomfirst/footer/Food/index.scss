@@ -63,13 +63,14 @@
     }
     .infor {
       margin-top: 25px;
+      margin-left: 5px;
       font-family: "basic";
       font-style: normal;
       font-weight: lighter;
       font-size: 13px;
       line-height: 18px;
       color: #666666;
-      width: 268px;
+      width: 272px;
       height: 54px;
       padding: 0;
 
@@ -119,7 +120,7 @@
       flex-wrap: wrap;
 
       & > .btn {
-        margin-left: 8px;
+        margin-right: 10px;
         width: 56px;
         height: 25px;
         background: #fdd482;
