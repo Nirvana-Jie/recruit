@@ -93,6 +93,14 @@ export default class Food extends PureComponent {
           "http://cdn.redrock.team/hello-student_xxmsc3.jpg",
         ],
       },
+      {
+        id: 7,
+        name: "江南分院",
+        text: "江南分院是2021年新增的研究生新校区。该食堂尚未开放，全新体验，敬请期待！",
+        comment: "新校区 爱了爱了",
+        from: "——评论选自《掌上重邮》",
+        showPic: ["https://z3.ax1x.com/2021/08/19/fqdjk8.png"],
+      },
     ],
   };
   change = (num) => {
