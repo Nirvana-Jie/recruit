@@ -149,7 +149,7 @@
   position: relative !important;
   .essay {
     margin-top: 10px;
-    width: 290px;
+    width: 268px;
     height: 126px;
     font-family: "basic";
     font-style: normal;
@@ -158,16 +158,6 @@
     line-height: 18px;
     letter-spacing: 0.05em;
     color: #666666;
-  }
-  .title {
-    margin-top: 40px;
-    margin-right: 200px;
-    font-family: "basic";
-    font-style: normal;
-    font-weight: lighter;
-    font-size: 15px;
-    line-height: 21px;
-    color: #3e660e;
   }
   .title {
     margin-top: 40px;
@@ -325,12 +315,12 @@
     display: none;
   }
   .swiper-button-next {
-    top: 470px !important;
-    right: 40px !important;
+    top: 471px !important;
+    right: 42px !important;
     background: url(../../../../assets/img/room/diarypop/button_right.png);
     background-size: cover;
-    width: 35px !important;
-    height: 35px !important;
+    width: 38px !important;
+    height: 38px !important;
     content: none !important;
     &::after {
       content: none !important;
@@ -338,12 +328,12 @@
   }
 
   .swiper-button-prev {
-    top: 470px !important;
-    left: 30px !important;
+    top: 471px !important;
+    left: 32px !important;
     background: url(../../../../assets/img/room/diarypop/button_left.png);
     background-size: cover;
-    width: 35px !important;
-    height: 35px !important;
+    width: 39px !important;
+    height: 39px !important;
     content: none !important;
     &::after {
       content: none !important;

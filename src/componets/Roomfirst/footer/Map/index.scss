@@ -33,7 +33,7 @@
       height: 80px;
     }
     50% {
-      width: 90px;
+      width: 95px;
       height: 100px;
     }
     to {
@@ -68,7 +68,7 @@
     background-image: url(../../../../assets/img/room/Map/wow.png);
     background-size: cover;
     top: 890px;
-    left: 800px;
+    left: 790px;
     animation: big 1s infinite;
   }
   & > div:nth-child(3) {
@@ -88,7 +88,7 @@
     background-image: url(../../../../assets/img/room/Map/wow.png);
     background-size: cover;
     top: 1150px;
-    left: 560px;
+    left: 550px;
     transform: rotate(360deg);
     animation: big 1s infinite;
   }
