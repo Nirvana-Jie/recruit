@@ -19,7 +19,7 @@
   position: absolute;
   background-size: cover;
   // transform: translateX(-700px) translateY(-2296px);
-  animation: mapMove 12s linear forwards;
+  animation: mapMove 18s linear forwards;
   @keyframes mapMove {
     from {
     }
@@ -176,6 +176,7 @@
       img {
         width: 169px;
         height: 121.76px;
+        border-radius: 10px;
         image-rendering: -moz-crisp-edges;
         image-rendering: -o-crisp-edges;
         image-rendering: -webkit-optimize-contrast;

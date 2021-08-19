@@ -53,7 +53,6 @@ export default class Invite extends Component {
   }
 
   back = () => {
-    console.log(this.props);
     this.props.history.replace("/home");
   };
   getPic = () => {
@@ -72,24 +71,10 @@ export default class Invite extends Component {
       this.pic.src = imgsrc;
       button.disabled = Flag;
       button2.disabled = Flag;
-      // image.onload = function () {
-      //     let canvas = document.createElement("canvas");
-      //     canvas.width = image.width;
-      //     canvas.height = image.height;
-      //     let context = canvas.getContext("2d");
-      //     context.drawImage(image, 0, 0, image.width, image.height);
-      //     // let url = canvas.toDataURL("image/png"); //得到图片的base64编码数据
-      //     // let a = document.createElement("a"); // 生成一个a元素
-      //     // let event = new MouseEvent("click"); // 创建一个单击事件
-      //     // a.download = "专属二维码"; // 设置图片名称
-      //     // a.href = url; // 将生成的URL设置为a.href属性
-      //     // a.dispatchEvent(event); // 触发a的单击事件
-      // };
-      // image.src = imgsrc;
     });
     this.hidebg.style.display = "block";
     this.inviter.style.display = "block";
-    window.addEventListener("touchend", () => {
+    this.bg.addEventListener("touchend", () => {
       this.setState({ Flag: !Flag });
       if (this.props.location.pathname === "/invite") {
         this.hidebg.style.display = "none";
@@ -105,7 +90,7 @@ export default class Invite extends Component {
     let pic = localStorage.getItem("picture");
     return (
       <div className="hidden">
-        <div className="inviter">
+        <div className="inviter" ref={c=>this.bg=c}>
           <div
             className="shadow"
             ref={(c) => (this.hidebg = c)}
