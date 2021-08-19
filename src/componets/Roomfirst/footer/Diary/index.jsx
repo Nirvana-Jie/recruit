@@ -25,12 +25,7 @@ export default class Diary extends Component {
             <div className="diary1">
               <div className="diary_header">军训风采</div>
               <div className="essay">
-                “你若军训，便是晴天”，九月份，烈日当空，
-                重邮一定少不了萌新们汗水的挥洒。比直的军
-                姿、响彻的口号、嘹亮的军歌，分列式的齐整、
-                军体拳的嘶吼、战术的热血、队列操的灵动和
-                防爆的正义，满眼都是军绿色。快来睹一睹军
-                训风采，看看军训的萌新有多潇洒！
+                “你若军训，便是晴天”，九月份，烈日当空，重邮一定少不了萌新们汗水的挥洒。比直的军姿、响彻的口号、嘹亮的军歌，分列式的齐整、军体拳的嘶吼、战术的热血、队列操的灵动和防爆的正义，满眼都是军绿色。快来睹一睹军训风采，看看军训的萌新有多潇洒！
               </div>
               <div className="title">分列式</div>
               <div className="show">
