@@ -17,12 +17,19 @@ class Map extends PureComponent {
     Flag: false,
   };
   componentDidMount() {
-    if (cliH >= "823") this.setState({ topLength: -1900 });
+    if (cliH >= "823") this.setState({ topLength: -1950 });
     else if (cliH >= "812") this.setState({ topLength: -1820 });
-    else if (cliH >= "731") this.setState({ topLength: -2300 });
+    else if (cliH >= "731") this.setState({ topLength: -2070 });
     else if (cliH >= "667") this.setState({ topLength: -2300 });
     else if (cliH >= "568") this.setState({ topLength: -1980 });
-    else this.setState({ topLength: -1500 });
+    else this.setState({ topLength: -1700 });
+    setTimeout(() => {
+      const { mapNode } = this;
+      mapNode.style.left = `${(-510 / 375) * 100}vw`;
+      mapNode.addEventListener("animationend", () => {
+        this.setState({ isFinished: true });
+      });
+    });
 
     // let offsetX = (375 - cliW) * (375 / cliW) * 0.05;
     // let offsetY = (667 - cliH) * (667 / cliH);
@@ -92,34 +99,36 @@ class Map extends PureComponent {
   //   }, 10);
   // };
   mapMove = (map) => {
-    const { topLength } = this.state;
-    let a = topLength;
-    const timer = setInterval(() => {
-      if (a > -300) {
-        this.setState({ isFinished: true });
-        return;
-      }
-      a = a + 1;
-      //map.style.top = `${a}px`;
-      this.setState({
-        timer: timer,
-        topLength: a,
-      });
-    }, 10);
+    // const { topLength } = this.state;
+    // let a = topLength;
+    // const timer = setInterval(() => {
+    //   if (a > -300) {
+    //     this.setState({ isFinished: true });
+    //     return;
+    //   }
+    //   a = a + 1;
+    //   //map.style.top = `${a}px`;
+    //   this.setState({
+    //     timer: timer,
+    //     topLength: a,
+    //   });
+    // }, 5);
+    map.className = "backMap mapActive";
   };
   cancel = () => {
     this.setState({ isEventOut: { name: "", state: false } });
   };
   move = () => {
     const { mapNode } = this;
-    // this.mapAnimation(mapNode);
     this.mapMove(mapNode);
     this.setState({ isRunning: true });
   };
   stop = () => {
     this.setState({ isRunning: false });
-    const { timer } = this.state;
-    clearInterval(timer);
+    const { mapNode } = this;
+    mapNode.className = "backMap mapPaused";
+    // const { timer } = this.state;
+    // clearInterval(timer);
   };
   scale = () => {
     const { Flag } = this.state;
@@ -198,11 +207,12 @@ class Map extends PureComponent {
             ref={(c) => {
               this.mapNode = c;
             }}
-            className="backMap"
+            className="backMap mapPaused"
             style={{
-              transform: `translateX(${(-700 / 375) * 100}vw) translateY(${
-                (topLength / 667) * 100
-              }vh)`,
+              transform: ` translateY(${(topLength / 667) * 100}vh) `,
+            }}
+            onClick={(e) => {
+              console.log(e.target.style.transform);
             }}
             onTouchStart={this.move}
             onTouchEnd={this.stop}
