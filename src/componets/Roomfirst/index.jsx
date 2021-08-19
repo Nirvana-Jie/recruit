@@ -25,14 +25,14 @@ class Roomfirst extends PureComponent {
     tips: [
       {
         type: "food",
-        slogan: "天大地大，吃饭最大",
+        slogan: "吃饭要在桌子上吃",
       },
       {
         type: "map",
-        slogan: "注意信件下面哦",
+        slogan: "地图一般都挂起来",
       },
       { type: "diary", slogan: "桌上有本日记，快去看看" },
-      { type: "letter", slogan: "信件可能在墙上" },
+      { type: "letter", slogan: "看看墙上有什么哟~" },
     ],
   };
   mapMove = (e) => {

@@ -10,8 +10,8 @@
   height: 120px;
   overflow: hidden;
   width: 100%;
-  margin-bottom: 20px;
   margin-left: 5px;
+  margin-bottom: -20px;
 }
 .am-picker-col-content {
   position: absolute;
@@ -72,7 +72,7 @@
   border-bottom: 1px solid #ddd;
   transform: translateY(-10px);
   background-color: #ffffff;
-  opacity: 0.2;
+  opacity: 0.3;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
   html:not([data-scale]) .am-picker-col-indicator {
