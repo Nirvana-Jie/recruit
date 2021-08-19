@@ -20,7 +20,7 @@ class Map extends PureComponent {
     if (cliH >= "823") this.setState({ topLength: -1950 });
     else if (cliH >= "812") this.setState({ topLength: -1820 });
     else if (cliH >= "731") this.setState({ topLength: -2070 });
-    else if (cliH >= "667") this.setState({ topLength: -2300 });
+    else if (cliH >= "667") this.setState({ topLength: -2010 });
     else if (cliH >= "568") this.setState({ topLength: -1980 });
     else this.setState({ topLength: -1700 });
     setTimeout(() => {

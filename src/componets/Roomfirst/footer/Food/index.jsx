@@ -58,7 +58,7 @@ export default class Food extends PureComponent {
         id: 4,
         name: "延生食堂",
         text: "延生食堂在学校的口碑很好，食物很有特色：新疆炒米粉、饺子抄手、螺蛳粉等深受同学们的好评。",
-        comment: "“椒麻混沌 人间值得”",
+        comment: "“椒麻馄饨 人间值得”",
         from: "——评论选自《掌上重邮》",
         showPic: [
           "http://cdn.redrock.team/hello-student_ysst0.jpg",
