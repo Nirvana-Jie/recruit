@@ -12,5 +12,9 @@ body {
   outline: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
+<<<<<<< HEAD
   -webkit-touch-callout: none;
+=======
+  -webkit-touch-callout:none;
+>>>>>>> eec21d85509bde81a3f54ee7f8cd63fca711d33f
 }
