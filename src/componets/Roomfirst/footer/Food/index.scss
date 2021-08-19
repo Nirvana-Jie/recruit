@@ -91,8 +91,8 @@
       }
     }
     .title {
-      margin-right: 65px;
-      width: 180px;
+      margin-right: 10px;
+      width: 254px;
       height: 28px;
       font-family: "basic";
       font-style: normal;
@@ -116,11 +116,10 @@
       width: 267px;
       height: 60px;
       display: flex;
-      justify-content: flex-start;
       flex-wrap: wrap;
 
       & > .btn {
-        margin-left: 10px;
+        margin-left: 8px;
         width: 56px;
         height: 25px;
         background: #fdd482;

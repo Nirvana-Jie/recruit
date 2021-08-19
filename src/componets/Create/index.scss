@@ -9,7 +9,7 @@ input::-webkit-input-placeholder {
 .hidden {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
 }
 .backGround {
   width: 375px;
@@ -55,7 +55,7 @@ input::-webkit-input-placeholder {
     .foot {
       margin-top: -29px;
       margin-left: -0.5px;
-      width: $c-width;
+      width: 380px;
       z-index: 1;
     }
   }
@@ -255,17 +255,17 @@ input::-webkit-input-placeholder {
 }
 .footerbox1 {
   width: 97.19px;
-  height: 157px;
+  height: 157.48px;
   transform: translate(2px, 7px);
 }
 .footerbox2 {
   width: 95px;
   height: 155px;
-  transform: translate(2px, 3px);
+  transform: translate(2px, 5px);
 }
 .footerbox3 {
   width: 104px;
-  height: 163.23px;
+  height: 163.93px;
   transform: translate(2px, 1px);
 }
 .swiper-slide {
