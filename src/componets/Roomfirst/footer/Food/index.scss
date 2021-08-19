@@ -47,10 +47,10 @@
           bottom: 0px;
         }
         .swiper-pagination-bullet {
-          color: #e3eeb6;
+          background: #ffffff;
         }
         .swiper-pagination-bullet-active {
-          background: #40653a;
+          background: rgb(255, 163, 0);
         }
       }
       .popUp {
@@ -87,7 +87,7 @@
         & > span {
           position: absolute;
           top: 330px;
-          right: 10px;
+          right: 20px;
         }
       }
     }
