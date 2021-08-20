@@ -22,7 +22,6 @@ class Map extends PureComponent {
     //动画进程监听
     const { mapNode } = this;
     const { Flag2 } = this.state;
-    console.log(mapNode.getAnimations()[0].currentTime);
     if (Flag2 === 0 && mapNode.getAnimations()[0].currentTime > 600) {
       this.setState({
         isEventOut: { name: "老图书馆", state: true },
@@ -30,31 +29,34 @@ class Map extends PureComponent {
       });
       mapNode.className = "backMap mapPaused";
       mapNode.style.pointerEvents = "none";
-    } else if (Flag2 === 1 && mapNode.getAnimations()[0].currentTime > 10500) {
+    } else if (Flag2 === 1 && mapNode.getAnimations()[0].currentTime > 4450) {
       this.setState({
-        isEventOut: { name: "运动场", state: true },
-        Flag2: 1.5,
-      });
-      mapNode.className = "backMap mapPaused";
-    } else if (
-      Flag2 === 1.5 &&
-      mapNode.getAnimations()[0].currentTime > 13050
-    ) {
-      this.setState({
-        isEventOut: { name: "数字图书馆", state: true },
+        isEventOut: { name: "重邮的猫", state: true },
         Flag2: 2,
       });
       mapNode.className = "backMap mapPaused";
-    } else if (Flag2 === 2 && mapNode.getAnimations()[0].currentTime > 15900) {
+    } else if (Flag2 === 2 && mapNode.getAnimations()[0].currentTime > 10500) {
       this.setState({
-        isEventOut: { name: "八教", state: true },
+        isEventOut: { name: "运动场", state: true },
         Flag2: 3,
       });
       mapNode.className = "backMap mapPaused";
-    } else if (Flag2 === 3 && mapNode.getAnimations()[0].currentTime > 17000) {
+    } else if (Flag2 === 3 && mapNode.getAnimations()[0].currentTime > 13050) {
+      this.setState({
+        isEventOut: { name: "数字图书馆", state: true },
+        Flag2: 4,
+      });
+      mapNode.className = "backMap mapPaused";
+    } else if (Flag2 === 4 && mapNode.getAnimations()[0].currentTime > 15900) {
+      this.setState({
+        isEventOut: { name: "八教", state: true },
+        Flag2: 5,
+      });
+      mapNode.className = "backMap mapPaused";
+    } else if (Flag2 === 5 && mapNode.getAnimations()[0].currentTime > 17000) {
       this.setState({
         isEventOut: { name: "信科大楼", state: true },
-        Flag2: 4,
+        Flag2: 6,
       });
       mapNode.className = "backMap mapPaused";
     }
