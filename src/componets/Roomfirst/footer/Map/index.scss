@@ -10,12 +10,12 @@
   height: 100vh;
   overflow: hidden;
   position: absolute;
-  -webkit-touch-callout:none;
-  -webkit-user-select:none;
-  -khtml-user-select:none;
-  -moz-user-select:none;
-  -ms-user-select:none;
-  user-select:none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .backMap {
   background-image: url(../../../../assets/img/room/Map/map.png);
@@ -88,6 +88,17 @@
     animation: big 1s infinite;
   }
   & > div:nth-child(4) {
+    position: absolute;
+    width: 75px;
+    height: 80px;
+    background-image: url(../../../../assets/img/room/Map/wow.png);
+    background-size: cover;
+    top: 1150px;
+    left: 550px;
+    transform: rotate(360deg);
+    animation: big 1s infinite;
+  }
+  & > div:nth-child(5) {
     position: absolute;
     width: 75px;
     height: 80px;
