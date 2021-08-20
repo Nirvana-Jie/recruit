@@ -99,7 +99,12 @@ export default class Food extends PureComponent {
         text: "江南分院是2021年新增的研究生新校区。该食堂尚未开放，全新体验，敬请期待！",
         comment: "新校区 爱了爱了",
         from: "——评论选自《掌上重邮》",
-        showPic: ["https://z3.ax1x.com/2021/08/19/fqdjk8.png"],
+        showPic: [
+          "https://z3.ax1x.com/2021/08/19/fqdjk8.png",
+          "https://z3.ax1x.com/2021/08/20/fORjhj.jpg",
+          "https://z3.ax1x.com/2021/08/20/fOWnjx.jpg",
+          "https://z3.ax1x.com/2021/08/20/fOW3Ue.jpg",
+        ],
       },
     ],
   };
