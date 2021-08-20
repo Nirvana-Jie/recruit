@@ -25,12 +25,86 @@
   position: absolute;
   background-size: cover;
   // transform: translateX(-700px) translateY(-2296px);
-  animation: mapMove 18s linear forwards;
-  @keyframes mapMove {
+  animation: mapMove1 1s linear forwards;
+  $cliH: 667;
+  $top_array: -2400, -1950, -1250, -950, -610, -510, -300;
+  // @for $i from 1 through 7 {
+  //   @if $i == 1 {
+  //     @keyframes mapMove#{i} {
+  //       from {
+  //       }
+  //       to {
+  //         transform: translate(0, #{top_array($i - 1) / $$cliH * 100}vh);
+  //       }
+  //     }
+  //   }
+  //   @if $i > 1 {
+  //     @keyframes mapMove#{i} {
+  //       from {
+  //         transform: translate(0, #{top_array($i - 2) / $$cliH * 100}vh);
+  //       }
+  //       to {
+  //         transform: translate(0, #{top_array($i - 1) / $$cliH * 100}vh);
+  //       }
+  //     }
+  //   }
+  // }
+  @keyframes mapMove1 {
     from {
     }
     to {
-      transform: translate(0, -300px);
+      transform: translate(0, #{-2100 / $cliH * 100}vh);
+    }
+  }
+  @keyframes mapMove2 {
+    from {
+      transform: translate(0, #{-2100 / $cliH * 100}vh);
+    }
+    to {
+      transform: translate(0, #{-1750 / $cliH * 100}vh);
+    }
+  }
+  @keyframes mapMove3 {
+    from {
+      transform: translate(0, #{-1750 / $cliH * 100}vh);
+    }
+    to {
+      transform: translate(0, #{-1150 / $cliH * 100}vh);
+    }
+  }
+  @keyframes mapMove4 {
+    from {
+      transform: translate(0, #{-1150 / $cliH * 100}vh);
+    }
+    to {
+      transform: translate(0, #{-850 / $cliH * 100}vh);
+    }
+  }
+  @keyframes mapMove5 {
+    from {
+      transform: translate(0, #{-850 / $cliH * 100}vh);
+    }
+
+    to {
+      transform: translate(0, #{-560 / $cliH * 100}vh);
+    }
+  }
+  @keyframes mapMove6 {
+    from {
+      transform: translate(0, #{-560 / $cliH * 100}vh);
+    }
+
+    to {
+      transform: translate(0, #{-460 / $cliH * 100}vh);
+    }
+  }
+  @keyframes mapMove7 {
+    from {
+      transform: translate(0, #{-460 / $cliH * 100}vh);
+    }
+
+    to {
+      transform: translate(0, #{-300 / $cliH * 100}vh);
     }
   }
   @keyframes big {
@@ -120,10 +194,10 @@
   }
 }
 .mapActive {
-  animation-play-state: running;
+  animation-play-state: running !important;
 }
 .mapPaused {
-  animation-play-state: paused;
+  animation-play-state: paused !important;
 }
 .result {
   z-index: 502;

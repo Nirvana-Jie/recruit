@@ -18,68 +18,117 @@ class Map extends PureComponent {
     num: 0,
     Flag2: 0,
   };
-  componentDidUpdate() {
-    //动画进程监听
-    const { mapNode } = this;
-    const { Flag2 } = this.state;
-    if (Flag2 === 0 && mapNode.getAnimations()[0].currentTime > 600) {
-      this.setState({
-        isEventOut: { name: "老图书馆", state: true },
-        Flag2: 1,
-      });
-      mapNode.className = "backMap mapPaused";
-      mapNode.style.pointerEvents = "none";
-    } else if (Flag2 === 1 && mapNode.getAnimations()[0].currentTime > 4450) {
-      this.setState({
-        isEventOut: { name: "重邮的猫", state: true },
-        Flag2: 2,
-      });
-      mapNode.className = "backMap mapPaused";
-    } else if (Flag2 === 2 && mapNode.getAnimations()[0].currentTime > 10500) {
-      this.setState({
-        isEventOut: { name: "运动场", state: true },
-        Flag2: 3,
-      });
-      mapNode.className = "backMap mapPaused";
-    } else if (Flag2 === 3 && mapNode.getAnimations()[0].currentTime > 13050) {
-      this.setState({
-        isEventOut: { name: "数字图书馆", state: true },
-        Flag2: 4,
-      });
-      mapNode.className = "backMap mapPaused";
-    } else if (Flag2 === 4 && mapNode.getAnimations()[0].currentTime > 15900) {
-      this.setState({
-        isEventOut: { name: "八教", state: true },
-        Flag2: 5,
-      });
-      mapNode.className = "backMap mapPaused";
-    } else if (Flag2 === 5 && mapNode.getAnimations()[0].currentTime > 17000) {
-      this.setState({
-        isEventOut: { name: "信科大楼", state: true },
-        Flag2: 6,
-      });
-      mapNode.className = "backMap mapPaused";
-    }
-  }
+  // componentDidUpdate() {
+  //   //动画进程监听
+  //   const { mapNode } = this;
+  //   const { Flag2 } = this.state;
+  //   if (Flag2 === 0 && mapNode.getAnimations()[0].currentTime > 600) {
+  //     this.setState({
+  //       isEventOut: { name: "老图书馆", state: true },
+  //       Flag2: 1,
+  //     });
+  //     mapNode.className = "backMap mapPaused";
+  //     mapNode.style.pointerEvents = "none";
+  //   } else if (Flag2 === 1 && mapNode.getAnimations()[0].currentTime > 4450) {
+  //     this.setState({
+  //       isEventOut: { name: "重邮的猫", state: true },
+  //       Flag2: 2,
+  //     });
+  //     mapNode.className = "backMap mapPaused";
+  //   } else if (Flag2 === 2 && mapNode.getAnimations()[0].currentTime > 10500) {
+  //     this.setState({
+  //       isEventOut: { name: "运动场", state: true },
+  //       Flag2: 3,
+  //     });
+  //     mapNode.className = "backMap mapPaused";
+  //   } else if (Flag2 === 3 && mapNode.getAnimations()[0].currentTime > 13050) {
+  //     this.setState({
+  //       isEventOut: { name: "数字图书馆", state: true },
+  //       Flag2: 4,
+  //     });
+  //     mapNode.className = "backMap mapPaused";
+  //   } else if (Flag2 === 4 && mapNode.getAnimations()[0].currentTime > 15900) {
+  //     this.setState({
+  //       isEventOut: { name: "八教", state: true },
+  //       Flag2: 5,
+  //     });
+  //     mapNode.className = "backMap mapPaused";
+  //   } else if (Flag2 === 5 && mapNode.getAnimations()[0].currentTime > 17000) {
+  //     this.setState({
+  //       isEventOut: { name: "信科大楼", state: true },
+  //       Flag2: 6,
+  //     });
+  //     mapNode.className = "backMap mapPaused";
+  //   }
+  // }
   componentDidMount() {
     if (cliH >= "823") this.setState({ topLength: -1950 });
     else if (cliH >= "812") this.setState({ topLength: -1820 });
     else if (cliH >= "731") this.setState({ topLength: -2070 });
-    else if (cliH >= "667") this.setState({ topLength: -2010 });
+    else if (cliH >= "667") this.setState({ topLength: -2180 });
     else if (cliH >= "568") this.setState({ topLength: -1980 });
     else this.setState({ topLength: -1700 });
     setTimeout(() => {
       const { mapNode } = this;
       mapNode.style.left = `${(-510 / 375) * 100}vw`;
       mapNode.addEventListener("animationend", () => {
-        this.setState({ isFinished: true });
+        const { Flag2 } = this.state;
+        if (Flag2 === 0) {
+          this.setState({
+            isEventOut: { name: "老图书馆", state: true },
+            Flag2: 1,
+          });
+          mapNode.style.animation = "mapMove2 5s linear forwards";
+          mapNode.className = "backMap mapPaused";
+        } else if (Flag2 === 1) {
+          this.setState({
+            isEventOut: { name: "重邮的猫", state: true },
+            Flag2: 2,
+          });
+          mapNode.style.animation = "mapMove3 8s linear forwards";
+          mapNode.className = "backMap mapPaused";
+        } else if (Flag2 === 2) {
+          this.setState({
+            isEventOut: { name: "运动场", state: true },
+            Flag2: 3,
+          });
+          mapNode.style.animation = "mapMove4 2.5s linear forwards";
+          mapNode.className = "backMap mapPaused";
+        } else if (Flag2 === 3) {
+          this.setState({
+            isEventOut: { name: "数字图书馆", state: true },
+            Flag2: 4,
+          });
+          mapNode.style.animation = "mapMove5 4s linear forwards";
+          mapNode.className = "backMap mapPaused";
+        } else if (Flag2 === 4) {
+          this.setState({
+            isEventOut: { name: "八教", state: true },
+            Flag2: 5,
+          });
+          mapNode.style.animation = "mapMove6 1s linear forwards";
+          mapNode.className = "backMap mapPaused";
+        } else if (Flag2 === 5) {
+          this.setState({
+            isEventOut: { name: "信科大楼", state: true },
+            Flag2: 6,
+          });
+          mapNode.style.animation = "mapMove7 2s linear forwards";
+          mapNode.className = "backMap mapPaused";
+        } else if (Flag2 === 6) {
+          this.setState({
+            isFinished: true,
+            Flag2: 7,
+          });
+          mapNode.className = "backMap mapPaused";
+        }
       });
     }, 0);
     //启用state监听动画进程
-    setInterval(() => {
-      const { num } = this.state;
-      this.setState({ num: num + 1 });
-    }, 100);
+    // setInterval(() => {
+    //   const { num } = this.state;
+    //   this.setState({ num: num + 1 });
+    // }, 100);
 
     // let offsetX = (375 - cliW) * (375 / cliW) * 0.05;
     // let offsetY = (667 - cliH) * (667 / cliH);
@@ -89,80 +138,7 @@ class Map extends PureComponent {
     // root.style.overflow = "hidden";
   }
 
-  // mapAnimation = (map) => {
-  //   const { topLength, rotateDeg, leftLength } = this.state;
-  //   let a = topLength;
-  //   let b = rotateDeg;
-  //   let c = leftLength;
-  //   const timer = setInterval(() => {
-  //     if (a <= 230) {
-  //       a = a + 1;
-  //       b = b + 0.01;
-  //     } else if (230 < a && a <= 270) {
-  //       console.log("change1");
-  //       a = a + 0.5;
-  //       b = b + 0.02;
-  //       c = c + 0.1;
-  //     } else if (270 < a && a < 274) {
-  //       console.log("change2");
-  //       a = a + 0.04;
-  //       b = b + 0.14;
-  //       c = c + 0.08;
-  //     } else if (274 < a && a < 279) {
-  //       console.log("change2-1");
-  //       a = a + 0.04;
-  //       b = b + 0.06;
-  //       c = c + 0.08;
-  //     } else if (a > 279 && a < 281) {
-  //       console.log("change3");
-  //       a = a + 0.01;
-  //       b = b + 0.1;
-  //       c = c + 0.6;
-  //     } else if (a > 281 && a < 285) {
-  //       console.log("change4");
-  //       a = a + 0.02;
-  //       b = b + 0.1;
-  //       c = c + 0.5;
-  //     } else if (a > 285 && a < 292) {
-  //       console.log("change5");
-  //       a = a + 0.02;
-  //       b = b + 0.1;
-  //       c = c - 0.03;
-  //     } else if (a > 292 && a < 642) {
-  //       console.log("change6");
-  //       a = a + 1;
-  //       b = b + 0.01;
-  //     } else if (a > 642) {
-  //       clearInterval(timer);
-  //       this.setState({ isFinished: true });
-  //     }
-  //     map.style.top = `${(a / cliH) * 100}vh`;
-  //     map.style.transform = `rotate(-${b}deg)`;
-  //     map.style.left = `-${(c / document.documentElement.clientWidth) * 100}vw`;
-  //     //console.log(map.offsetTop);
-  //     this.setState({
-  //       timer: timer,
-  //       topLength: a,
-  //       rotateDeg: b,
-  //       leftLength: c,
-  //     });
-  //   }, 10);
-  // };
   mapMove = (map) => {
-    // const { topLength } = this.state;
-    // let a = topLength;
-    // const timer = setInterval(() => {
-    //   if (a > -300) {
-    //     this.setState({ isFinished: true });
-    //     return;
-    //   }
-    //   a = a + 1;
-    //   //map.style.top = `${a}px`;
-    //   this.setState({
-    //     timer: timer,
-    //     topLength: a,
-    //   });
-    // }, 5);
     map.className = "backMap mapActive";
   };
   cancel = () => {
