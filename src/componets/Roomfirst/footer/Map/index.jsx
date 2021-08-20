@@ -22,6 +22,7 @@ class Map extends PureComponent {
     //动画进程监听
     const { mapNode } = this;
     const { Flag2 } = this.state;
+    console.log(mapNode.getAnimations()[0].currentTime);
     if (Flag2 === 0 && mapNode.getAnimations()[0].currentTime > 600) {
       this.setState({
         isEventOut: { name: "老图书馆", state: true },
@@ -29,7 +30,16 @@ class Map extends PureComponent {
       });
       mapNode.className = "backMap mapPaused";
       mapNode.style.pointerEvents = "none";
-    } else if (Flag2 === 1 && mapNode.getAnimations()[0].currentTime > 13050) {
+    } else if (Flag2 === 1 && mapNode.getAnimations()[0].currentTime > 10500) {
+      this.setState({
+        isEventOut: { name: "运动场", state: true },
+        Flag2: 1.5,
+      });
+      mapNode.className = "backMap mapPaused";
+    } else if (
+      Flag2 === 1.5 &&
+      mapNode.getAnimations()[0].currentTime > 13050
+    ) {
       this.setState({
         isEventOut: { name: "数字图书馆", state: true },
         Flag2: 2,
@@ -291,7 +301,15 @@ class Map extends PureComponent {
             className="event5"
             onClick={() => {
               this.setState({
-                isEventOut: { name: " 风华运动场", state: true },
+                isEventOut: { name: "运动场", state: true },
+              });
+            }}
+          />
+          <div
+            className="event6"
+            onClick={() => {
+              this.setState({
+                isEventOut: { name: "重邮的猫", state: true },
               });
             }}
           />

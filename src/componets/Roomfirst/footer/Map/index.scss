@@ -104,9 +104,18 @@
     height: 80px;
     background-image: url(../../../../assets/img/room/Map/wow.png);
     background-size: cover;
-    top: 1150px;
-    left: 550px;
-    transform: rotate(360deg);
+    bottom: 1540px;
+    left: 800px;
+    animation: big 1s infinite;
+  }
+  & > div:nth-child(6) {
+    position: absolute;
+    width: 75px;
+    height: 80px;
+    background-image: url(../../../../assets/img/room/Map/wow.png);
+    background-size: cover;
+    bottom: 890px;
+    left: 540px;
     animation: big 1s infinite;
   }
 }
