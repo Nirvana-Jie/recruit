@@ -165,7 +165,7 @@ export default class Invite extends Component {
               ref={(c) => (this.button = c)}
               className="button1"
             >
-              点击查看图片
+              查看保存图片
             </button>
             <button
               onClick={this.back}
