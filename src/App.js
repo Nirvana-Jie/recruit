@@ -53,7 +53,7 @@ class App extends PureComponent {
       <img alt='mapback' src={mapback} style={{display:'none'}}></img>
       <img alt='重邮地图' src={pic} style={{display:'none'}}></img>
       <img alt='猫猫' src={cat} style={{display:'none'}}></img>
-      <img alt='江南分校食堂' src='https://z3.ax1x.com/2021/08/19/fqdjk8.png' style={{display:'none'}}></img>
+      <img alt='江南分校食堂' src='https://z3.ax1x.com/2021/08/20/fORjhj.jpg' style={{display:'none'}}></img>
         <Music/>
         <TransitionGroup>
           <CSSTransition
