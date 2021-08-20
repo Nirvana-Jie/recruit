@@ -12,7 +12,7 @@ export default class home extends Component {
         startY:0,
         moveY:0,
         time:'0',
-        deadline:new Date('2021/9/14 00:00:00'),
+        deadline:new Date('2021/9/9 00:00:00'),
         d:'00',
         h:'00',
         m:'00',
