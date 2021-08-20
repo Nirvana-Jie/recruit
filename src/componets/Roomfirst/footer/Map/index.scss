@@ -24,89 +24,312 @@
   height: 3096px;
   position: absolute;
   background-size: cover;
-  // transform: translateX(-700px) translateY(-2296px);
   animation: mapMove1 1s linear forwards;
-  $cliH: 667;
-  $top_array: -2400, -1950, -1250, -950, -610, -510, -300;
-  // @for $i from 1 through 7 {
-  //   @if $i == 1 {
-  //     @keyframes mapMove#{i} {
-  //       from {
-  //       }
-  //       to {
-  //         transform: translate(0, #{top_array($i - 1) / $$cliH * 100}vh);
-  //       }
+
+  @media screen and (min-height: 568px) and (max-height: 667px) {
+    @keyframes mapMove1 {
+      from {
+      }
+      to {
+        transform: translate(0, -2300px);
+      }
+    }
+    @keyframes mapMove2 {
+      from {
+        transform: translate(0, -2300px);
+      }
+      to {
+        transform: translate(0, -2000px);
+      }
+    }
+    @keyframes mapMove3 {
+      from {
+        transform: translate(0);
+      }
+      to {
+        transform: translate(0);
+      }
+    }
+    @keyframes mapMove4 {
+      from {
+        transform: translate(0);
+      }
+      to {
+        transform: translate(0);
+      }
+    }
+    @keyframes mapMove5 {
+      from {
+        transform: translate(0);
+      }
+
+      to {
+        transform: translate(0);
+      }
+    }
+    @keyframes mapMove6 {
+      from {
+        transform: translate(0);
+      }
+
+      to {
+        transform: translate(0);
+      }
+    }
+    @keyframes mapMove7 {
+      from {
+        transform: translate(0);
+      }
+
+      to {
+        transform: translate(0);
+      }
+    }
+  }
+  // @media screen and (min-height: 667px) and (max-height: 731px) {
+  //   @keyframes mapMove1 {
+  //     from {
+  //       transform: translate(0, #{-2300 / 731 * 100}vw);
+  //     }
+  //     to {
+  //       transform: translate(0, #{-2000 / 731 * 100}vw);
   //     }
   //   }
-  //   @if $i > 1 {
-  //     @keyframes mapMove#{i} {
-  //       from {
-  //         transform: translate(0, #{top_array($i - 2) / $$cliH * 100}vh);
-  //       }
-  //       to {
-  //         transform: translate(0, #{top_array($i - 1) / $$cliH * 100}vh);
-  //       }
+  //   @keyframes mapMove2 {
+  //     from {
+  //       transform: translate(0, #{-2000 / 731 * 100}vh);
+  //     }
+  //     to {
+  //       transform: translate(0, #{-1750 / 731 * 100}vh);
+  //     }
+  //   }
+  //   @keyframes mapMove3 {
+  //     from {
+  //       transform: translate(0, #{-1750 / 731 * 100}vh);
+  //     }
+  //     to {
+  //       transform: translate(0, #{-1150 / 731 * 100}vh);
+  //     }
+  //   }
+  //   @keyframes mapMove4 {
+  //     from {
+  //       transform: translate(0, #{-1150 / 731 * 100}vh);
+  //     }
+  //     to {
+  //       transform: translate(0, #{-850 / 731 * 100}vh);
+  //     }
+  //   }
+  //   @keyframes mapMove5 {
+  //     from {
+  //       transform: translate(0, #{-850 / 731 * 100}vh);
+  //     }
+
+  //     to {
+  //       transform: translate(0, #{-560 / 731 * 100}vh);
+  //     }
+  //   }
+  //   @keyframes mapMove6 {
+  //     from {
+  //       transform: translate(0, #{-560 / 731 * 100}vh);
+  //     }
+
+  //     to {
+  //       transform: translate(0, #{-460 / 731 * 100}vh);
+  //     }
+  //   }
+  //   @keyframes mapMove7 {
+  //     from {
+  //       transform: translate(0, #{-460 / 731 * 100}vh);
+  //     }
+
+  //     to {
+  //       transform: translate(0, #{-300 / 731 * 100}vh);
   //     }
   //   }
   // }
-  @keyframes mapMove1 {
-    from {
-    }
-    to {
-      transform: translate(0, #{-2100 / $cliH * 100}vh);
-    }
-  }
-  @keyframes mapMove2 {
-    from {
-      transform: translate(0, #{-2100 / $cliH * 100}vh);
-    }
-    to {
-      transform: translate(0, #{-1750 / $cliH * 100}vh);
-    }
-  }
-  @keyframes mapMove3 {
-    from {
-      transform: translate(0, #{-1750 / $cliH * 100}vh);
-    }
-    to {
-      transform: translate(0, #{-1150 / $cliH * 100}vh);
-    }
-  }
-  @keyframes mapMove4 {
-    from {
-      transform: translate(0, #{-1150 / $cliH * 100}vh);
-    }
-    to {
-      transform: translate(0, #{-850 / $cliH * 100}vh);
-    }
-  }
-  @keyframes mapMove5 {
-    from {
-      transform: translate(0, #{-850 / $cliH * 100}vh);
-    }
+  // @media screen and (min-height: 731px) and (max-height: 812px) {
+  //   @keyframes mapMove1 {
+  //     from {
+  //       transform: translate(0, #{-2300 / $cliH * 100}vw);
+  //     }
+  //     to {
+  //       transform: translate(0, #{-2000 / $cliH * 100}vw);
+  //     }
+  //   }
+  //   @keyframes mapMove2 {
+  //     from {
+  //       transform: translate(0, #{-2000 / $cliH * 100}vh);
+  //     }
+  //     to {
+  //       transform: translate(0, #{-1750 / $cliH * 100}vh);
+  //     }
+  //   }
+  //   @keyframes mapMove3 {
+  //     from {
+  //       transform: translate(0, #{-1750 / $cliH * 100}vh);
+  //     }
+  //     to {
+  //       transform: translate(0, #{-1150 / $cliH * 100}vh);
+  //     }
+  //   }
+  //   @keyframes mapMove4 {
+  //     from {
+  //       transform: translate(0, #{-1150 / $cliH * 100}vh);
+  //     }
+  //     to {
+  //       transform: translate(0, #{-850 / $cliH * 100}vh);
+  //     }
+  //   }
+  //   @keyframes mapMove5 {
+  //     from {
+  //       transform: translate(0, #{-850 / $cliH * 100}vh);
+  //     }
 
-    to {
-      transform: translate(0, #{-560 / $cliH * 100}vh);
-    }
-  }
-  @keyframes mapMove6 {
-    from {
-      transform: translate(0, #{-560 / $cliH * 100}vh);
-    }
+  //     to {
+  //       transform: translate(0, #{-560 / $cliH * 100}vh);
+  //     }
+  //   }
+  //   @keyframes mapMove6 {
+  //     from {
+  //       transform: translate(0, #{-560 / $cliH * 100}vh);
+  //     }
 
-    to {
-      transform: translate(0, #{-460 / $cliH * 100}vh);
-    }
-  }
-  @keyframes mapMove7 {
-    from {
-      transform: translate(0, #{-460 / $cliH * 100}vh);
-    }
+  //     to {
+  //       transform: translate(0, #{-460 / $cliH * 100}vh);
+  //     }
+  //   }
+  //   @keyframes mapMove7 {
+  //     from {
+  //       transform: translate(0, #{-460 / $cliH * 100}vh);
+  //     }
 
-    to {
-      transform: translate(0, #{-300 / $cliH * 100}vh);
-    }
-  }
+  //     to {
+  //       transform: translate(0, #{-300 / $cliH * 100}vh);
+  //     }
+  //   }
+  // }
+  // @media screen and (min-height: 812px) and (max-height: 823px) {
+  //   @keyframes mapMove1 {
+  //     from {
+  //       transform: translate(0, #{-2300 / $cliH * 100}vw);
+  //     }
+  //     to {
+  //       transform: translate(0, #{-2000 / $cliH * 100}vw);
+  //     }
+  //   }
+  //   @keyframes mapMove2 {
+  //     from {
+  //       transform: translate(0, #{-2000 / $cliH * 100}vh);
+  //     }
+  //     to {
+  //       transform: translate(0, #{-1750 / $cliH * 100}vh);
+  //     }
+  //   }
+  //   @keyframes mapMove3 {
+  //     from {
+  //       transform: translate(0, #{-1750 / $cliH * 100}vh);
+  //     }
+  //     to {
+  //       transform: translate(0, #{-1150 / $cliH * 100}vh);
+  //     }
+  //   }
+  //   @keyframes mapMove4 {
+  //     from {
+  //       transform: translate(0, #{-1150 / $cliH * 100}vh);
+  //     }
+  //     to {
+  //       transform: translate(0, #{-850 / $cliH * 100}vh);
+  //     }
+  //   }
+  //   @keyframes mapMove5 {
+  //     from {
+  //       transform: translate(0, #{-850 / $cliH * 100}vh);
+  //     }
+
+  //     to {
+  //       transform: translate(0, #{-560 / $cliH * 100}vh);
+  //     }
+  //   }
+  //   @keyframes mapMove6 {
+  //     from {
+  //       transform: translate(0, #{-560 / $cliH * 100}vh);
+  //     }
+
+  //     to {
+  //       transform: translate(0, #{-460 / $cliH * 100}vh);
+  //     }
+  //   }
+  //   @keyframes mapMove7 {
+  //     from {
+  //       transform: translate(0, #{-460 / $cliH * 100}vh);
+  //     }
+
+  //     to {
+  //       transform: translate(0, #{-300 / $cliH * 100}vh);
+  //     }
+  //   }
+  // }
+  // @media screen and (min-height: 823px) {
+  //   @keyframes mapMove1 {
+  //     from {
+  //       transform: translate(0, #{-2300 / $cliH * 100}vw);
+  //     }
+  //     to {
+  //       transform: translate(0, #{-2000 / $cliH * 100}vw);
+  //     }
+  //   }
+  //   @keyframes mapMove2 {
+  //     from {
+  //       transform: translate(0, #{-2000 / $cliH * 100}vh);
+  //     }
+  //     to {
+  //       transform: translate(0, #{-1750 / $cliH * 100}vh);
+  //     }
+  //   }
+  //   @keyframes mapMove3 {
+  //     from {
+  //       transform: translate(0, #{-1750 / $cliH * 100}vh);
+  //     }
+  //     to {
+  //       transform: translate(0, #{-1150 / $cliH * 100}vh);
+  //     }
+  //   }
+  //   @keyframes mapMove4 {
+  //     from {
+  //       transform: translate(0, #{-1150 / $cliH * 100}vh);
+  //     }
+  //     to {
+  //       transform: translate(0, #{-850 / $cliH * 100}vh);
+  //     }
+  //   }
+  //   @keyframes mapMove5 {
+  //     from {
+  //       transform: translate(0, #{-850 / $cliH * 100}vh);
+  //     }
+
+  //     to {
+  //       transform: translate(0, #{-560 / $cliH * 100}vh);
+  //     }
+  //   }
+  //   @keyframes mapMove6 {
+  //     from {
+  //       transform: translate(0, #{-560 / $cliH * 100}vh);
+  //     }
+
+  //     to {
+  //       transform: translate(0, #{-460 / $cliH * 100}vh);
+  //     }
+  //   }
+  //   @keyframes mapMove7 {
+  //     from {
+  //       transform: translate(0, #{-460 / $cliH * 100}vh);
+  //     }
+
+  //     to {
+  //       transform: translate(0, #{-300 / $cliH * 100}vh);
+  //     }
+  //   }
+  // }
   @keyframes big {
     from {
       width: 75px;
