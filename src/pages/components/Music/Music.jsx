@@ -30,7 +30,7 @@ class Music extends PureComponent {
     audio.autoplay =Flag;
     audio.loop = Flag;
     this.setState({Flag:!Flag},()=>{
-      music.style.animation =Flag?'rotate 15s linear infinite':'rotate 15s linear infinite paused';
+      music.style.animation =Flag?'rotate 20s linear infinite':'rotate 20s linear infinite paused';
       if(Flag){
           this.state.audio.play()
       }else{

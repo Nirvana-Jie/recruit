@@ -24,7 +24,7 @@ element.style{
     background-repeat: no-repeat;
     z-index: 1;
     .shadow {
-        position: absolute;
+        position: fixed;
         left: 0px;
         top: 0px;
         background-color: #000;
@@ -36,7 +36,7 @@ element.style{
         z-Index: 50;
     }
     .invitePic {
-        position: absolute;
+        position: fixed;
         top: 50vh;
         left: 50vw;
         transform: translate(-150px, -250px);
