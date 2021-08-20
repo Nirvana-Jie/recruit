@@ -15,7 +15,40 @@ class Map extends PureComponent {
     timer: "",
     mapNode: "",
     Flag: false,
+    num: 0,
+    Flag2: 0,
   };
+  componentDidUpdate() {
+    //动画进程监听
+    const { mapNode } = this;
+    const { Flag2 } = this.state;
+    if (Flag2 === 0 && mapNode.getAnimations()[0].currentTime > 600) {
+      this.setState({
+        isEventOut: { name: "老图书馆", state: true },
+        Flag2: 1,
+      });
+      mapNode.className = "backMap mapPaused";
+      mapNode.style.pointerEvents = "none";
+    } else if (Flag2 === 1 && mapNode.getAnimations()[0].currentTime > 13050) {
+      this.setState({
+        isEventOut: { name: "数字图书馆", state: true },
+        Flag2: 2,
+      });
+      mapNode.className = "backMap mapPaused";
+    } else if (Flag2 === 2 && mapNode.getAnimations()[0].currentTime > 15900) {
+      this.setState({
+        isEventOut: { name: "八教", state: true },
+        Flag2: 3,
+      });
+      mapNode.className = "backMap mapPaused";
+    } else if (Flag2 === 3 && mapNode.getAnimations()[0].currentTime > 17000) {
+      this.setState({
+        isEventOut: { name: "信科大楼", state: true },
+        Flag2: 4,
+      });
+      mapNode.className = "backMap mapPaused";
+    }
+  }
   componentDidMount() {
     if (cliH >= "823") this.setState({ topLength: -1950 });
     else if (cliH >= "812") this.setState({ topLength: -1820 });
@@ -29,7 +62,12 @@ class Map extends PureComponent {
       mapNode.addEventListener("animationend", () => {
         this.setState({ isFinished: true });
       });
-    });
+    }, 0);
+    //启用state监听动画进程
+    setInterval(() => {
+      const { num } = this.state;
+      this.setState({ num: num + 1 });
+    }, 100);
 
     // let offsetX = (375 - cliW) * (375 / cliW) * 0.05;
     // let offsetY = (667 - cliH) * (667 / cliH);
@@ -116,7 +154,9 @@ class Map extends PureComponent {
     map.className = "backMap mapActive";
   };
   cancel = () => {
+    const { mapNode } = this;
     this.setState({ isEventOut: { name: "", state: false } });
+    mapNode.style.pointerEvents = "auto";
   };
   move = () => {
     const { mapNode } = this;
@@ -211,9 +251,7 @@ class Map extends PureComponent {
             style={{
               transform: ` translateY(${(topLength / 667) * 100}vh) `,
             }}
-            onClick={(e) => {
-              console.log(e.target.style.transform);
-            }}
+            onClick={(e) => {}}
             onTouchStart={this.move}
             onTouchEnd={this.stop}
           >
