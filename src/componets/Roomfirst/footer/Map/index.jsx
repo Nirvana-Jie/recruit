@@ -242,53 +242,60 @@ class Map extends PureComponent {
             onTouchEnd={this.stop}
           />
         )}
-        {
+
+        <div
+          ref={(c) => {
+            this.mapNode = c;
+          }}
+          className="backMap mapPaused"
+          style={{
+            transform: ` translateY(${(topLength / 667) * 100}vh) `,
+          }}
+          onClick={(e) => {}}
+          onTouchStart={this.move}
+          onTouchEnd={this.stop}
+        >
           <div
-            ref={(c) => {
-              this.mapNode = c;
+            className="event1"
+            onClick={() => {
+              this.setState({
+                isEventOut: { name: "老图书馆", state: true },
+              });
             }}
-            className="backMap mapPaused"
-            style={{
-              transform: ` translateY(${(topLength / 667) * 100}vh) `,
+          />
+          <div
+            className="event2"
+            onClick={(e) => {
+              this.setState({
+                isEventOut: { name: "八教", state: true },
+              });
             }}
-            onClick={(e) => {}}
-            onTouchStart={this.move}
-            onTouchEnd={this.stop}
-          >
-            <div
-              className="event1"
-              onClick={() => {
-                this.setState({
-                  isEventOut: { name: "老图书馆", state: true },
-                });
-              }}
-            />
-            <div
-              className="event2"
-              onClick={(e) => {
-                this.setState({
-                  isEventOut: { name: "八教", state: true },
-                });
-              }}
-            />
-            <div
-              className="event3"
-              onClick={() => {
-                this.setState({
-                  isEventOut: { name: "信科大楼", state: true },
-                });
-              }}
-            />
-            <div
-              className="event4"
-              onClick={() => {
-                this.setState({
-                  isEventOut: { name: "数字图书馆", state: true },
-                });
-              }}
-            />
-          </div>
-        }
+          />
+          <div
+            className="event3"
+            onClick={() => {
+              this.setState({
+                isEventOut: { name: "信科大楼", state: true },
+              });
+            }}
+          />
+          <div
+            className="event4"
+            onClick={() => {
+              this.setState({
+                isEventOut: { name: "数字图书馆", state: true },
+              });
+            }}
+          />
+          <div
+            className="event5"
+            onClick={() => {
+              this.setState({
+                isEventOut: { name: " 风华运动场", state: true },
+              });
+            }}
+          />
+        </div>
       </div>
     );
   }
