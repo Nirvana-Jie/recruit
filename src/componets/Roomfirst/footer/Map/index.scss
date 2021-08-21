@@ -24,15 +24,16 @@
   height: 3096px;
   position: absolute;
   background-size: cover;
+  transition: .2s linear;
   // transform: translateX(-700px) translateY(-2296px);
-  animation: mapMove 18s linear forwards;
-  @keyframes mapMove {
-    from {
-    }
-    to {
-      transform: translate(0, -300px);
-    }
-  }
+  // animation: mapMove 18s linear forwards;
+  // @keyframes mapMove {
+  //   from {
+  //   }
+  //   to {
+  //     transform: translate(0, -300px);
+  //   }
+  // }
   @keyframes big {
     from {
       width: 75px;
@@ -118,12 +119,6 @@
     left: 540px;
     animation: big 1s infinite;
   }
-}
-.mapActive {
-  animation-play-state: running;
-}
-.mapPaused {
-  animation-play-state: paused;
 }
 .result {
   z-index: 502;
