@@ -16,9 +16,15 @@ import Submit from "./componets/Create/Submit";
 import map from './assets/img/room/Map/map.png'
 import pic from './assets/img/room/Map/pic.jpeg'
 import mapback from './assets/img/room/mapopo/mapback.png'
-import eight from './assets/img/room/mapopo/第八教学楼/0.jpg'
-import old from './assets/img/room/mapopo/老图书馆/0.jpg'
-import number from './assets/img/room/mapopo/数字图书馆/0.jpg'
+import eight1 from './assets/img/room/mapopo/第八教学楼/0.jpg'
+import eight2 from './assets/img/room/mapopo/第八教学楼/1.jpg'
+import eight3 from './assets/img/room/mapopo/第八教学楼/2.jpg'
+import old1 from './assets/img/room/mapopo/老图书馆/0.jpg'
+import old2 from './assets/img/room/mapopo/老图书馆/1.jpg'
+import old3 from './assets/img/room/mapopo/老图书馆/2.jpg'
+import number1 from './assets/img/room/mapopo/数字图书馆/0.jpg'
+import number2 from './assets/img/room/mapopo/数字图书馆/1.jpg'
+import number3 from './assets/img/room/mapopo/数字图书馆/2.jpg'
 import xinKe from './assets/img/room/mapopo/信科大楼/0.jpg'
 import cat from './assets/img/room/mapopo/猫猫/0.jpg'
 import exercise from './assets/img/room/mapopo/运动场/0.jpg'
@@ -48,9 +54,15 @@ class App extends PureComponent {
         }}
       >
       <img alt='预加载' src={map} style={{display:'none'}}></img>
-      <img alt='八教' src={eight} style={{display:'none'}}></img>
-      <img alt='老图' src={old} style={{display:'none'}}></img>
-      <img alt='数图' src={number} style={{display:'none'}}></img>
+      <img alt='八教1' src={eight1} style={{display:'none'}}></img>
+      <img alt='八教2' src={eight2} style={{display:'none'}}></img>
+      <img alt='八教3' src={eight3} style={{display:'none'}}></img>
+      <img alt='老图1' src={old1} style={{display:'none'}}></img>
+      <img alt='老图2' src={old2} style={{display:'none'}}></img>
+      <img alt='老图3' src={old3} style={{display:'none'}}></img>
+      <img alt='数图1' src={number1} style={{display:'none'}}></img>
+      <img alt='数图2' src={number2} style={{display:'none'}}></img>
+      <img alt='数图3' src={number3} style={{display:'none'}}></img>
       <img alt='信科' src={xinKe} style={{display:'none'}}></img>
       <img alt='mapback' src={mapback} style={{display:'none'}}></img>
       <img alt='重邮地图' src={pic} style={{display:'none'}}></img>
