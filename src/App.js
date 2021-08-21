@@ -21,6 +21,8 @@ import old from './assets/img/room/mapopo/老图书馆/0.jpg'
 import number from './assets/img/room/mapopo/数字图书馆/0.jpg'
 import xinKe from './assets/img/room/mapopo/信科大楼/0.jpg'
 import cat from './assets/img/room/mapopo/猫猫/0.jpg'
+import exercise from './assets/img/room/mapopo/运动场/0.jpg'
+
 
  
 //import "antd-mobile/dist/antd-mobile.css"; // or 'antd-mobile/dist/antd-mobile.less'
@@ -53,6 +55,7 @@ class App extends PureComponent {
       <img alt='mapback' src={mapback} style={{display:'none'}}></img>
       <img alt='重邮地图' src={pic} style={{display:'none'}}></img>
       <img alt='猫猫' src={cat} style={{display:'none'}}></img>
+      <img alt ='运动场' src={exercise} style={{display:'none'}}></img>
       <img alt='江南分校食堂' src='https://z3.ax1x.com/2021/08/20/fORjhj.jpg' style={{display:'none'}}></img>
         <Music/>
         <TransitionGroup>
