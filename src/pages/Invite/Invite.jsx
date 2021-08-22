@@ -112,7 +112,7 @@ export default class Invite extends Component {
             </div>
             <div className="invite_body">
               <div className="body1">
-                &nbsp;&nbsp;&nbsp;&nbsp;欢迎来到西南地区海拔最高学府--
+                &nbsp;&nbsp;&nbsp;&nbsp;欢迎来到重庆市海拔最高的学府--
                 <span>重庆邮电大学</span>
                 ，我们将在这3800亩地里播种梦想，扬帆起航。
               </div>
