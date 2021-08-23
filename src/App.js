@@ -14,7 +14,7 @@ import Map from "./componets/Roomfirst/footer/Map";
 import "./assets/styles/font.scss";
 import Submit from "./componets/Create/Submit";
 import map from './assets/img/room/Map/map.png'
-import pic from './assets/img/room/Map/pic.jpeg'
+import pic from './assets/img/room/Map/pic.png'
 import mapback from './assets/img/room/mapopo/mapback.png'
 import eight1 from './assets/img/room/mapopo/第八教学楼/0.jpg'
 import eight2 from './assets/img/room/mapopo/第八教学楼/1.jpg'

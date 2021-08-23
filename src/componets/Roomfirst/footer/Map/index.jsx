@@ -120,7 +120,7 @@ class Map extends PureComponent {
                   <img
                     alt="网络出现错误"
                     src={
-                      require(`../../../../assets/img/room/Map/pic.jpeg`)
+                      require(`../../../../assets/img/room/Map/pic.png`)
                         .default
                     }
                     onClick={this.scale}
