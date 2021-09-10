@@ -22,6 +22,7 @@ export default class home extends Component {
 
     }
     componentDidMount(){
+        const{d,h,m,s} = this.state 
         //获取倒计时
         this.timer = setInterval(() => {
             const {deadline} =this.state
@@ -31,10 +32,10 @@ export default class home extends Component {
             let lefth = Math.floor(leftime/(1000*60*60)%24) ; 
             let leftm = Math.floor(leftime/(1000*60)%60) ; 
             let lefts = Math.floor(leftime/1000%60);
-            if(leftd<10)leftd='0'+leftd;
-            if(lefth<10)lefth='0'+lefth;
-            if(leftm<10)leftm='0'+leftm;
-            if(lefts<10)lefts='0'+lefts;
+            if(leftd>0&&leftd<10)leftd='0'+leftd;
+            if(lefth>0&&lefth<10)lefth='0'+lefth;
+            if(leftm>0&&leftm<10)leftm='0'+leftm;
+            if(lefts>0&&lefts<10)lefts='0'+lefts;
             this.setState({
                 d:leftd,
                 h:lefth,
@@ -42,8 +43,16 @@ export default class home extends Component {
                 s:lefts
             })
         },1000)
+        if(d<=0&&h<=0&&m<=0&&s<=0){
+            clearInterval(this.timer)
+            this.setState({
+                d:'00',
+                h:'00',
+                m:'00',
+                s:'00'
+            })
+        }
         slide(this,this.homeNode,'/create')
-        
         }
     componentWillUnmount(){
         //清除定时器
