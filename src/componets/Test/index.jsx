@@ -108,7 +108,6 @@ const seasons = [
     value: "体育学院",
   },
 ];
-
 class Test extends PureComponent {
   state = {
     subject: "请选择你的学院",
