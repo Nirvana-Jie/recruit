@@ -104,6 +104,9 @@ npm run test
 ## 项目上线时间
 2021.8.23
 
+## 项目成员
+朱宏伟，曾闻捷
+
 ## 代码的 GitHub/GitLab 地址
 
 + Gitlab: https://gitlab.redrock.team/web/fe/welcome-2021.git
