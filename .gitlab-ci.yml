@@ -67,7 +67,7 @@ image_dev:
   script:
     - echo -e "FROM reg.redrock.team/base/redrock-fe-env-caddy:latest\nADD ./build /build" > Dockerfile
     - docker build . -t reg.redrock.team/fe-dev-artifacts/${REPO_NAME}:${CI_COMMIT_SHA}
-    - docker push "reg.redrock.team/fe-dev-artifacts/${REPO_NAME}:${CI_COMMIT_SHA}"
+    - docker push reg.redrock.team/fe-dev-artifacts/${REPO_NAME}:${CI_COMMIT_SHA}
   only:
     - dev
 
@@ -78,11 +78,11 @@ image_prod:
     - redrock-fe
   script:
     - echo -e "FROM reg.redrock.team/base/redrock-fe-env-caddy:latest\nADD ./build /build" > Dockerfile
-    - docker build . -t reg.redrock.team/fe-prod-artifacts/${REPO_NAME}:${CI_COMMIT_SHA}
-    - docker push "reg.redrock.team/fe-prod-artifacts/${REPO_NAME}:${CI_COMMIT_SHA}"
+    - docker build . -t reg.redrock.team/fe-prod-artifacts/${REPO_NAME}:${CI_COMMIT_SHA} -t ccr.ccs.tencentyun.com/redrock/fe-prod-artifacts:${REPO_NAME}-${CI_COMMIT_SHA}
+    - docker push reg.redrock.team/fe-prod-artifacts/${REPO_NAME}:${CI_COMMIT_SHA}
+    - docker push ccr.ccs.tencentyun.com/redrock/fe-prod-artifacts:${REPO_NAME}-${CI_COMMIT_SHA}
   only:
     - master
-
 
 deploy_dev:
   image: reg.redrock.team/base/redrock-kubectl:latest
@@ -103,7 +103,6 @@ deploy_dev:
   only:
     - dev
 
-
 deploy_prod:
   image: reg.redrock.team/base/redrock-kubectl:latest
   stage: deploy
@@ -117,6 +116,12 @@ deploy_prod:
     - sed -i "s/_VERSION_/${VERSION}/" /deploy.yaml
     - sed -i "s/_REPO_NAME_/${REPO_NAME}/" /deploy.yaml
     - kubectl apply -f /deploy.yaml
+    - sed -i "s/_NAMESPACE_/${NAMESPACE}/" /deploy-tx.yaml
+    - sed -i "s/_VERSION_/${VERSION}/" /deploy-tx.yaml
+    - sed -i "s/_REPO_NAME_/${REPO_NAME}/" /deploy-tx.yaml
+    - kubectl --kubeconfig=/config-tx apply -f /deploy-tx.yaml
+    - sleep 10
+    - curl -X POST https://be-prod.redrock.cqupt.edu.cn/cdn-cache-clean/$REPO_NAME
   environment:
     name: $REPO_NAME-prod
     url: https://$NAMESPACE.redrock.team/$REPO_NAME
